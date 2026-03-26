@@ -167,6 +167,37 @@
     line-height: 1.7;
   }
 
+  /* 下段：運用ポイント＋QR */
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 20px;
+  }
+  .operation-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .qr-section {
+    text-align: center;
+    padding: 16px;
+    background: #f7f3ed;
+    border-radius: 6px;
+    border: 1px solid #e5e2dc;
+  }
+  .qr-section canvas, .qr-section svg {
+    display: block;
+    margin: 0 auto;
+  }
+  .qr-label {
+    margin-top: 8px;
+    font-size: 11px;
+    color: #6b6459;
+    letter-spacing: 1px;
+  }
+
   /* フッター */
   .footer-bar {
     position: absolute;
@@ -256,15 +287,21 @@
     </div>
   </div>
 
-  <!-- 運用ポイント -->
-  <div class="operation">
-    <div class="op-card">
-      <h4>随時更新</h4>
-      <p>懇親会の会場が決まり次第、ホテル空き状況の変化、お得な航空券情報など、新しい情報を随時追加していきます。</p>
+  <!-- 運用ポイント＋QRコード -->
+  <div class="bottom-row">
+    <div class="operation-col">
+      <div class="op-card">
+        <h4>随時更新</h4>
+        <p>懇親会の会場が決まり次第、ホテル空き状況の変化、お得な航空券情報など、新しい情報を随時追加していきます。</p>
+      </div>
+      <div class="op-card">
+        <h4>スマホで共有</h4>
+        <p>URLをLINEやメールで共有するだけ。アプリ不要・ログイン不要。メンバー全員がすぐにアクセスできます。</p>
+      </div>
     </div>
-    <div class="op-card">
-      <h4>スマホで共有</h4>
-      <p>URLをLINEやメールで共有するだけ。アプリ不要・ログイン不要。メンバー全員がすぐにアクセスできます。</p>
+    <div class="qr-section">
+      <div id="qrcode"></div>
+      <div class="qr-label">スマホでスキャン</div>
     </div>
   </div>
 </div>
@@ -275,5 +312,12 @@
   <span>青年同友会 全国交流会 in 仙台 2026</span>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+<script>
+  var qr = qrcode(0, 'M');
+  qr.addData('https://sendai.apppro-web.com/');
+  qr.make();
+  document.getElementById('qrcode').innerHTML = qr.createSvgTag({cellSize: 4, margin: 0});
+</script>
 </body>
 </html>
