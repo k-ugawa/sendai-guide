@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旅のしおり ─ 仙台 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --cream: #f7f3ed;
+    --gold: #c4a265;
+    --gold-glow: rgba(196, 162, 101, 0.25);
+    --accent: #b8432f;
+    --accent-soft: rgba(184, 67, 47, 0.12);
+    --teal: #2d6a6a;
+    --muted: #6b6459;
+    --card-bg: rgba(255,255,255,0.6);
+    --section-gap: 80px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    line-height: 1.8;
+  }
+
+  /* ノイズテクスチャ */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ===== ヒーロー ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--ink);
+    color: var(--cream);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(196,162,101,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(45,106,106,0.12) 0%, transparent 60%);
+  }
+  .hero::after {
+    content: '仙台';
+    position: absolute;
+    right: -40px; bottom: -60px;
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(200px, 25vw, 360px);
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 1.2s ease-out;
+  }
+  .hero-label {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 12px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 900;
+    letter-spacing: 8px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(247,243,237,0.6);
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  .countdown {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .cd-item { text-align: center; }
+  .cd-num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    color: var(--gold);
+    display: block;
+    line-height: 1;
+    min-width: 70px;
+  }
+  .cd-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(247,243,237,0.4);
+    text-transform: uppercase;
+    margin-top: 6px;
+    display: block;
+  }
+  .cd-sep {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: rgba(196,162,101,0.3);
+    margin-top: -16px;
+  }
+  .cd-message {
+    font-size: 14px;
+    color: rgba(247,243,237,0.5);
+    margin-top: 32px;
+    margin-bottom: 12px;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: rgba(247,243,237,0.3);
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  /* ===== 共通セクション ===== */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  section { padding: var(--section-gap) 0; }
+
+  .section-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+  .section-num {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--gold);
+    opacity: 0.25;
+    line-height: 1;
+  }
+  .section-title-group h2 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .section-title-group .en {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ===== スケジュール ===== */
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .day-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .day-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--teal));
+  }
+  .day-label {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--teal);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    align-items: center;
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .time {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .event { font-size: 16px; }
+  .badge {
+    font-size: 10px;
+    padding: 3px 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .badge-free {
+    background: var(--gold-glow);
+    color: var(--gold);
+  }
+  .badge-fixed {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  /* 自由時間ハイライト */
+  .free-times {
+    margin-top: 40px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .free-time-card {
+    border-left: 2px solid var(--gold);
+    padding-left: 16px;
+  }
+  .free-time-card .ft-label {
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .free-time-card .ft-desc {
+    font-size: 14px;
+    color: rgba(247,243,237,0.7);
+    line-height: 1.6;
+  }
+
+  /* ===== グルメ ===== */
+  .gourmet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .gourmet-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 32px 28px;
+    position: relative;
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .gourmet-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  }
+  .gourmet-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 3px;
+    background: var(--gold);
+    transition: width 0.5s cubic-bezier(0.25,0.8,0.25,1);
+  }
+  .gourmet-card:hover::after { width: 100%; }
+  .gourmet-emoji {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .gourmet-card h3 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .gourmet-card p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ナイトタイムフロー */
+  .night-flow {
+    margin-top: 48px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: var(--cream);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .night-flow::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 80% 50%, rgba(196,162,101,0.1) 0%, transparent 60%);
+  }
+  .night-flow h3 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 22px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .night-flow h3 span { color: var(--gold); }
+  .flow-steps {
+    display: flex;
+    gap: 0;
+    position: relative;
+    align-items: center;
+  }
+  .flow-step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding: 0 12px;
+  }
+  .flow-step::after {
+    content: '→';
+    position: absolute;
+    right: -8px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 20px;
+  }
+  .flow-step:last-child::after { display: none; }
+  .flow-time {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .flow-label {
+    font-size: 14px;
+    color: rgba(247,243,237,0.8);
+  }
+  .flow-sub {
+    font-size: 12px;
+    color: rgba(247,243,237,0.4);
+    margin-top: 4px;
+  }
+
+  /* ===== アクセス ===== */
+  .access-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 32px;
+  }
+  .flight-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .flight-table thead {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .flight-table th {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 700;
+  }
+  .flight-table td {
+    padding: 14px 16px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .flight-table tr:hover { background: rgba(196,162,101,0.06); }
+  .flight-table .recommend {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .flight-direction {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+  }
+  .fare-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--muted);
+    padding: 16px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+  }
+
+  .local-transport {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .transport-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 24px;
+  }
+  .transport-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .transport-card p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ===== エリアガイド（テキスト形式） ===== */
+  .guide-intro {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .guide-intro p {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  .guide-intro strong { color: var(--ink); }
+  .compare-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .compare-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 28px;
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .compare-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+  }
+  .compare-sendai {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .compare-eq {
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .compare-nagoya {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold-glow);
+  }
+  .compare-card p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .distance-summary {
+    margin-top: 48px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 36px;
+  }
+  .distance-summary h3 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: var(--gold);
+  }
+  .distance-items { display: flex; flex-direction: column; gap: 0; }
+  .dist-row {
+    display: grid;
+    grid-template-columns: 120px 30px 1fr auto;
+    gap: 8px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 15px;
+  }
+  .dist-row:last-child { border-bottom: none; }
+  .dist-from { color: var(--gold); font-weight: 700; }
+  .dist-arrow { color: rgba(247,243,237,0.3); text-align: center; }
+  .dist-to { color: rgba(247,243,237,0.8); }
+  .dist-val {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    color: var(--cream);
+    text-align: right;
+  }
+  @media (max-width: 768px) {
+    .compare-cards { grid-template-columns: 1fr; }
+    .dist-row { grid-template-columns: 1fr; gap: 4px; }
+    .dist-val { text-align: left; }
+  }
+
+  .area-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .area-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 28px;
+    border-left: 4px solid var(--teal);
+  }
+  .area-card h4 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .area-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .nagoya-compare {
+    margin-top: 40px;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 36px;
+  }
+  .nagoya-compare h3 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: var(--gold);
+  }
+  .compare-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 40px;
+  }
+  .compare-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .compare-item .sendai-name { color: var(--gold); font-weight: 700; min-width: 120px; }
+  .compare-item .eq { color: rgba(247,243,237,0.3); }
+  .compare-item .nagoya-name { color: rgba(247,243,237,0.6); }
+
+  /* 距離情報 */
+  .distance-bar {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .dist-item {
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 24px;
+  }
+  .dist-item .route {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .dist-item .method {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--teal);
+  }
+
+  /* ===== リンクスタイル ===== */
+  a.ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--teal);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  a.ext-link:hover {
+    border-bottom-color: var(--teal);
+    color: var(--ink);
+  }
+  a.ext-link::after { content: ' ↗'; font-size: 11px; }
+  .flight-table a {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px dashed var(--teal);
+    transition: color 0.3s;
+  }
+  .flight-table a:hover { color: var(--ink); }
+
+  /* ===== ホテルセクション ===== */
+  .hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .hotel-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 32px 28px;
+    position: relative;
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .hotel-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+  }
+  .hotel-card h3 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .hotel-card .hotel-area {
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .hotel-card p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  /* メリット比較 */
+  .merit-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .merit-box {
+    padding: 28px;
+    border-radius: 4px;
+  }
+  .merit-box h4 {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .merit-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .merit-box li {
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .merit-box li:last-child { border-bottom: none; }
+  .merit-box li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+  .merit-kokubuncho {
+    background: rgba(184,67,47,0.06);
+    border: 1px solid rgba(184,67,47,0.15);
+  }
+  .merit-kokubuncho h4 { color: var(--accent); }
+  .merit-kokubuncho li::before { color: var(--accent); }
+  .merit-station {
+    background: rgba(45,106,106,0.06);
+    border: 1px solid rgba(45,106,106,0.15);
+  }
+  .merit-station h4 { color: var(--teal); }
+  .merit-station li::before { color: var(--teal); }
+  /* エリア見出し */
+  .hotel-area-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  .hotel-area-title span {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  @media (max-width: 768px) {
+    .merit-compare { grid-template-columns: 1fr; }
+  }
+  .hotel-access {
+    font-size: 13px;
+    color: var(--teal);
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: rgba(45,106,106,0.08);
+    border-left: 3px solid var(--teal);
+    line-height: 1.6;
+  }
+
+  /* ===== CSS地図 ===== */
+  .city-map {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 28px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+  }
+  .city-map .ngy {
+    font-size: 12px;
+    color: rgba(196,162,101,0.7);
+    display: block;
+    margin-top: 3px;
+    font-style: italic;
+  }
+  /* 地下鉄線 */
+  .subway-line {
+    position: absolute;
+    left: 32%;
+    top: 8%;
+    bottom: 16%;
+    width: 6px;
+    background: linear-gradient(180deg, rgba(80,200,80,0.7), rgba(80,200,80,0.4));
+    border-radius: 3px;
+    box-shadow: 0 0 12px rgba(80,200,80,0.25);
+  }
+  .subway-label {
+    position: absolute;
+    left: 34%;
+    top: 5%;
+    font-size: 12px;
+    color: rgba(80,200,80,0.8);
+    letter-spacing: 2px;
+    font-weight: 700;
+    writing-mode: vertical-rl;
+  }
+  /* 通り */
+  .jozenji-st {
+    position: absolute;
+    left: 18%;
+    right: 18%;
+    top: 22%;
+    height: 4px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 2px;
+  }
+  .jozenji-label {
+    position: absolute;
+    right: 20%;
+    top: 16.5%;
+    font-size: 13px;
+    color: rgba(247,243,237,0.55);
+    text-align: right;
+    font-weight: 500;
+  }
+  .hirose-st {
+    position: absolute;
+    left: 18%;
+    right: 28%;
+    top: 56%;
+    height: 4px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 2px;
+  }
+  .hirose-label {
+    position: absolute;
+    left: 19%;
+    top: 53%;
+    font-size: 13px;
+    color: rgba(247,243,237,0.45);
+    font-weight: 500;
+  }
+  /* 駅 */
+  .station { position: absolute; }
+  .station-dot {
+    width: 14px; height: 14px;
+    background: #666;
+    border: 3px solid #aaa;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255,255,255,0.15);
+  }
+  .station-name {
+    font-size: 14px;
+    color: rgba(247,243,237,0.85);
+    margin-top: 4px;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+  .sendai-name-lg { font-size: 18px; font-weight: 800; color: var(--cream); }
+  .sendai-dot { width: 18px; height: 18px; background: #fff; border-color: var(--gold); box-shadow: 0 0 14px rgba(196,162,101,0.4); }
+  .station-sub { font-size: 12px; color: rgba(247,243,237,0.5); }
+  .station-kotohdai { left: 29%; top: 17%; }
+  .station-hirose { left: 29%; top: 52%; }
+  .station-sendai { left: 27%; top: 72%; }
+  /* エリア */
+  .map-area {
+    position: absolute;
+    padding: 18px 22px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+  }
+  .area-title {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  }
+  .area-desc { font-size: 13px; color: rgba(247,243,237,0.8); line-height: 1.6; }
+  .area-kokubuncho {
+    left: 42%;
+    top: 25%;
+    background: rgba(184,67,47,0.4);
+    border: 2px solid rgba(184,67,47,0.7);
+    width: 220px;
+    box-shadow: 0 4px 20px rgba(184,67,47,0.2);
+  }
+  .area-hotel {
+    left: 65%;
+    top: 28%;
+    background: rgba(45,106,106,0.4);
+    border: 2px solid rgba(45,106,106,0.7);
+    box-shadow: 0 4px 20px rgba(45,106,106,0.2);
+  }
+  .area-yokocho {
+    left: 44%;
+    top: 53%;
+    background: rgba(196,162,101,0.3);
+    border: 2px solid rgba(196,162,101,0.6);
+    box-shadow: 0 4px 20px rgba(196,162,101,0.15);
+  }
+  /* スポット */
+  .map-spot {
+    position: absolute;
+    font-size: 15px;
+    color: var(--gold);
+    font-weight: 700;
+    white-space: nowrap;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+  .spot-sub { font-size: 12px; color: rgba(247,243,237,0.5); font-weight: 400; }
+  .spot-zuihoden { left: 8%; top: 43%; }
+  .spot-castle { left: 4%; top: 29%; }
+  /* 距離 */
+  .map-distance { position: absolute; text-align: center; }
+  .dist-line { height: 2px; background: rgba(255,255,255,0.2); border-radius: 1px; }
+  .dist-text { font-size: 12px; color: rgba(247,243,237,0.55); margin-top: 4px; font-weight: 500; }
+  .dist-1 { left: 44%; top: 49%; width: 90px; }
+  .dist-2 { left: 32%; top: 69%; width: 140px; transform: rotate(-90deg); transform-origin: left top; }
+  /* 空港 */
+  .map-airport {
+    position: absolute;
+    right: 6%;
+    bottom: 8%;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(247,243,237,0.7);
+    padding: 16px 20px;
+    border: 2px dashed rgba(247,243,237,0.25);
+    border-radius: 6px;
+    text-align: center;
+    background: rgba(255,255,255,0.03);
+  }
+  /* 凡例 */
+  .map-legend {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    display: flex;
+    gap: 20px;
+  }
+  .legend-item { font-size: 12px; color: rgba(247,243,237,0.55); display: flex; align-items: center; gap: 6px; font-weight: 500; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+  @media (max-width: 768px) {
+    .city-map { height: auto; min-height: 600px; }
+    .area-kokubuncho, .area-hotel, .area-yokocho { position: relative; left: auto; top: auto; margin-bottom: 12px; width: auto; }
+    .city-map { display: flex; flex-direction: column; gap: 12px; }
+    .subway-line, .jozenji-st, .hirose-st, .subway-label, .jozenji-label, .hirose-label,
+    .station, .map-spot, .map-distance { display: none; }
+    .map-airport { position: relative; right: auto; bottom: auto; }
+    .map-legend { position: relative; bottom: auto; left: auto; }
+  }
+
+  /* ===== ページ内ナビ ===== */
+  .page-nav {
+    position: fixed;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .page-nav a {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.15);
+    display: block;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .page-nav a:hover {
+    background: var(--gold);
+    transform: scale(1.5);
+  }
+  .page-nav a.active { background: var(--gold); }
+
+  /* ===== 更新バナー ===== */
+  .updated-banner {
+    background: var(--gold-glow);
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .updated-banner strong { color: var(--ink); }
+
+  /* ===== フッター ===== */
+  footer {
+    background: var(--ink);
+    color: rgba(247,243,237,0.3);
+    text-align: center;
+    padding: 40px;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* ===== アニメーション ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* スクロールアニメーション */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== レスポンシブ ===== */
+  @media (max-width: 768px) {
+    /* コンテナ */
+    .container { padding: 0 16px; }
+    section { padding: 48px 0; }
+
+    /* ヒーロー */
+    .hero h1 { font-size: 36px; letter-spacing: 4px; }
+    .hero-sub { font-size: 15px; }
+    .hero-label { font-size: 10px; letter-spacing: 4px; }
+    .cd-num { font-size: 32px; min-width: 50px; }
+    .cd-sep { font-size: 24px; }
+    .cd-label { font-size: 9px; }
+    .scroll-hint { display: none; }
+
+    /* セクションヘッダー */
+    .section-num { font-size: 40px; }
+    .section-title-group h2 { font-size: 24px; }
+    .section-title-group .en { font-size: 10px; }
+
+    /* グリッド系を1カラムに */
+    .schedule-grid,
+    .gourmet-grid,
+    .access-layout,
+    .area-grid,
+    .compare-list,
+    .hotel-grid,
+    .compare-cards,
+    .merit-compare,
+    .free-times { grid-template-columns: 1fr; }
+
+    /* スケジュール */
+    .timeline-item { grid-template-columns: 90px 1fr; gap: 8px; }
+    .timeline-item .time { font-size: 13px; }
+    .timeline-item .event { font-size: 14px; }
+    .badge { grid-column: 2; }
+    .day-card { padding: 24px 20px; }
+
+    /* フロー */
+    .flow-steps { flex-direction: column; gap: 16px; }
+    .flow-step::after { display: none; }
+    .flow-step { display: flex; align-items: center; gap: 16px; text-align: left; }
+    .flow-time { font-size: 20px; min-width: 60px; }
+    .night-flow { padding: 28px 20px; }
+
+    /* グルメ */
+    .gourmet-card { padding: 24px 20px; }
+    .gourmet-emoji { font-size: 28px; }
+    .gourmet-card h3 { font-size: 19px; }
+
+    /* アクセス */
+    .flight-table th, .flight-table td { padding: 10px 12px; font-size: 13px; }
+    .flight-direction { font-size: 13px; }
+    .transport-card { padding: 20px 16px; }
+
+    /* ホテル */
+    .hotel-card { padding: 24px 20px; }
+    .hotel-area-title { font-size: 19px; }
+    .hotel-area-title span { font-size: 13px; display: block; margin-top: 4px; }
+    .merit-box { padding: 20px; }
+    .merit-box h4 { font-size: 16px; }
+    .merit-box li { font-size: 14px; }
+
+    /* エリアガイド */
+    .compare-card { padding: 24px 20px; }
+    .compare-sendai { font-size: 19px; }
+    .compare-nagoya { font-size: 16px; }
+    .compare-card p { font-size: 14px; }
+    .distance-summary { padding: 24px 20px; }
+    .dist-row { grid-template-columns: 1fr; gap: 4px; font-size: 14px; }
+    .dist-val { text-align: left; }
+
+    /* ナビ非表示 */
+    .page-nav { display: none; }
+
+    /* 距離バー */
+    .distance-bar { grid-template-columns: 1fr; }
+  }
+
+  /* 印刷用 */
+  @media print {
+    .hero { min-height: auto; padding: 40px 0; }
+    section { padding: 30px 0; }
+    .reveal { opacity: 1; transform: none; }
+    body::before { display: none; }
+    .page-nav { display: none; }
+    .scroll-hint { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 更新バナー -->
+<div class="updated-banner">最終更新：<strong>2026年3月26日</strong> ─ このページは随時更新されます</div>
+
+<!-- ページ内ナビ -->
+<nav class="page-nav">
+  <a href="#schedule" title="スケジュール"></a>
+  <a href="#gourmet" title="グルメ"></a>
+  <a href="#access" title="アクセス"></a>
+  <a href="#hotel" title="ホテル"></a>
+  <a href="#area" title="エリアガイド"></a>
+</nav>
+
+<!-- ===== ヒーロー ===== -->
+<header class="hero">
+  <div class="hero-content">
+    <span class="hero-label">青年同友会 全国交流会 2026</span>
+    <h1>旅のしおり ─ <span>仙台</span></h1>
+    <p class="hero-sub">2026.10.1（木）─ 10.2（金）</p>
+    <p class="cd-message" id="cd-message"></p>
+    <div class="countdown" id="countdown">
+      <div class="cd-item">
+        <span class="cd-num" id="cd-days">---</span>
+        <span class="cd-label">Days</span>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item">
+        <span class="cd-num" id="cd-hours">--</span>
+        <span class="cd-label">Hours</span>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item">
+        <span class="cd-num" id="cd-min">--</span>
+        <span class="cd-label">Min</span>
+      </div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item">
+        <span class="cd-num" id="cd-sec">--</span>
+        <span class="cd-label">Sec</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL ↓</div>
+</header>
+
+<!-- ===== 1. スケジュール ===== -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">01</div>
+      <div class="section-title-group">
+        <h2>スケジュール概要</h2>
+        <div class="en">Schedule</div>
+      </div>
+    </div>
+
+    <div class="schedule-grid reveal">
+      <!-- Day 1 -->
+      <div class="day-card">
+        <div class="day-label">Day 1 — 10/1 Thu</div>
+        <div class="timeline-item">
+          <span class="time">〜12:00</span>
+          <span class="event">自由時間（観光・牛タン）</span>
+          <span class="badge badge-free">FREE</span>
+        </div>
+        <div class="timeline-item">
+          <span class="time">12:00〜</span>
+          <span class="event">受付開始</span>
+          <span></span>
+        </div>
+        <div class="timeline-item">
+          <span class="time">13:00〜18:00</span>
+          <span class="event">分科会</span>
+          <span class="badge badge-fixed">拘束</span>
+        </div>
+        <div class="timeline-item">
+          <span class="time">19:00〜21:00</span>
+          <span class="event">仲間25名で独自懇親会</span>
+          <span class="badge badge-free">FREE</span>
+        </div>
+        <div class="timeline-item">
+          <span class="time">21:00〜</span>
+          <span class="event">国分町ナイトタイム！</span>
+          <span class="badge badge-free">FREE</span>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="day-card">
+        <div class="day-label">Day 2 — 10/2 Fri</div>
+        <div class="timeline-item">
+          <span class="time">9:00〜9:30</span>
+          <span class="event">開会・歓迎挨拶</span>
+          <span class="badge badge-fixed">拘束</span>
+        </div>
+        <div class="timeline-item">
+          <span class="time">9:30〜11:00</span>
+          <span class="event">基調報告</span>
+          <span class="badge badge-fixed">拘束</span>
+        </div>
+        <div class="timeline-item">
+          <span class="time">11:00〜12:30</span>
+          <span class="event">特別報告</span>
+          <span class="badge badge-fixed">拘束</span>
+        </div>
+        <div class="timeline-item">
+          <span class="time">12:30〜13:30</span>
+          <span class="event">閉会 → ランチ → 解散</span>
+          <span></span>
+        </div>
+        <div class="timeline-item">
+          <span class="time">13:30〜</span>
+          <span class="event">自由時間（観光・帰路）</span>
+          <span class="badge badge-free">FREE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 自由時間ハイライト -->
+    <div class="free-times reveal">
+      <div class="free-time-card">
+        <div class="ft-label">10/1 午前</div>
+        <div class="ft-desc">観光 or 牛タンランチ</div>
+      </div>
+      <div class="free-time-card">
+        <div class="ft-label">10/1 夜</div>
+        <div class="ft-desc">懇親会 → 国分町ナイト</div>
+      </div>
+      <div class="free-time-card">
+        <div class="ft-label">10/2 午後</div>
+        <div class="ft-desc">観光・お土産・帰路</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. グルメ ===== -->
+<section id="gourmet" style="background: rgba(0,0,0,0.02);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">02</div>
+      <div class="section-title-group">
+        <h2>グルメ & 楽しみ方</h2>
+        <div class="en">Gourmet & Entertainment</div>
+      </div>
+    </div>
+
+    <div class="gourmet-grid reveal">
+      <div class="gourmet-card">
+        <span class="gourmet-emoji">🐄</span>
+        <h3>牛タン</h3>
+        <p>利久・善治郎・伊達の牛たん本舗など仙台駅3Fに集結。厚切り炭火焼きは必食！</p>
+        <a href="https://corp.rikyu-gyutan.co.jp/" target="_blank" class="ext-link">利久 公式</a>
+        <a href="https://www.tanya-zenjirou.jp/" target="_blank" class="ext-link">善治郎</a>
+        <a href="https://www.dategyu.jp/" target="_blank" class="ext-link">伊達の牛たん</a>
+      </div>
+      <div class="gourmet-card">
+        <span class="gourmet-emoji">🍡</span>
+        <h3>ずんだ・萩の月</h3>
+        <p>ずんだシェイクはエキナカで手軽に。萩の月はお土産の定番。仙台駅で全部揃う。</p>
+      </div>
+      <div class="gourmet-card">
+        <span class="gourmet-emoji">🦪</span>
+        <h3>三陸海鮮</h3>
+        <p>牡蠣・ホヤ・金華さば・はらこ飯。懇親会3候補すべてで堪能できる。</p>
+      </div>
+      <div class="gourmet-card">
+        <span class="gourmet-emoji">🌿</span>
+        <h3>せり鍋</h3>
+        <p>10月〜シーズン開始の仙台冬の名物。懇親会3候補すべてにせり鍋あり！</p>
+      </div>
+      <div class="gourmet-card">
+        <span class="gourmet-emoji">⛩</span>
+        <h3>瑞鳳殿・仙台城跡</h3>
+        <p>伊達政宗公の霊廟と騎馬像。10月は御開帳あり。るーぷる仙台630円で巡れる。</p>
+        <a href="https://www.zuihoden.com/" target="_blank" class="ext-link">瑞鳳殿 公式</a>
+        <a href="https://loople-sendai.jp/" target="_blank" class="ext-link">るーぷる仙台</a>
+      </div>
+      <div class="gourmet-card">
+        <span class="gourmet-emoji">🍶</span>
+        <h3>地酒・文化横丁</h3>
+        <p>十四代・伯楽星など銘酒が揃う。昭和25年創業の名酒場「源氏」は前泊日に。</p>
+      </div>
+    </div>
+
+    <!-- ナイトタイムフロー -->
+    <div class="night-flow reveal">
+      <h3>🌙 10/1夜 ─ <span>国分町ナイトタイム</span>の流れ</h3>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <span class="flow-time">19:00</span>
+          <div class="flow-label">仲間内懇親会</div>
+          <div class="flow-sub">せり鍋＋海鮮</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-time">21:00</span>
+          <div class="flow-label">文化横丁</div>
+          <div class="flow-sub">はしご酒</div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-time">23:00</span>
+          <div class="flow-label">キャバクラ or クラブ</div>
+          <div class="flow-sub"></div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-time">深夜</span>
+          <div class="flow-label">茶寮で〆</div>
+          <div class="flow-sub">肉まん</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. アクセス ===== -->
+<section id="access">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">03</div>
+      <div class="section-title-group">
+        <h2>移動方法</h2>
+        <div class="en">Access & Transportation</div>
+      </div>
+    </div>
+
+    <div class="access-layout reveal">
+      <div>
+        <!-- 往路 -->
+        <div class="flight-direction">✈ 往路：セントレア → 仙台空港（約1時間10分）</div>
+        <table class="flight-table">
+          <thead>
+            <tr>
+              <th>便名</th>
+              <th>出発</th>
+              <th>到着</th>
+              <th>備考</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://www.ana.co.jp/ja/jp/domestic/" target="_blank">ANA NH361</a></td>
+              <td>08:20</td>
+              <td>09:35</td>
+              <td><span class="recommend">おすすめ</span></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.flypeach.com/en" target="_blank">Peach MM491</a></td>
+              <td>10:15</td>
+              <td>11:30</td>
+              <td>LCC・格安</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.ibexair.co.jp/" target="_blank">IBEX FW23</a></td>
+              <td>14:50</td>
+              <td>15:55</td>
+              <td>前泊（9/30）向け</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 復路 -->
+        <div class="flight-direction" style="margin-top: 28px;">✈ 復路：仙台空港 → セントレア</div>
+        <table class="flight-table">
+          <thead>
+            <tr>
+              <th>便名</th>
+              <th>出発</th>
+              <th>到着</th>
+              <th>備考</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://www.flypeach.com/en" target="_blank">Peach MM494</a></td>
+              <td>18:30</td>
+              <td>19:45</td>
+              <td><span class="recommend">おすすめ</span></td>
+            </tr>
+            <tr>
+              <td><a href="https://www.ana.co.jp/ja/jp/domestic/" target="_blank">ANA NH370</a></td>
+              <td>20:25</td>
+              <td>21:50</td>
+              <td>最終便・午後たっぷり</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="fare-note">
+          運賃目安：Peach 約7,700円〜 ／ ANA 約14,000円〜 ／ IBEX 約11,000円〜<br>
+          <a href="https://www.meitetsu.co.jp/train/centrair/guidance/index.html" target="_blank" class="ext-link" style="color:var(--accent)">名鉄 名古屋駅→セントレア 案内</a>
+        </div>
+      </div>
+
+      <div class="local-transport">
+        <div class="transport-card">
+          <h4>🚃 仙台空港アクセス線</h4>
+          <p>仙台空港 → 仙台駅：約25分 ／ 660円。電車で直結。迷わず行ける。</p>
+          <a href="https://www.senat.co.jp/" target="_blank" class="ext-link">時刻表・運賃</a>
+        </div>
+        <div class="transport-card">
+          <h4>🚌 るーぷる仙台</h4>
+          <p>仙台駅 → 瑞鳳殿・仙台城跡を周回。1日乗車券 630円。観光に最適。</p>
+          <a href="https://loople-sendai.jp/" target="_blank" class="ext-link">ルート・時刻表</a>
+        </div>
+        <div class="transport-card">
+          <h4>🚇 地下鉄（南北線）</h4>
+          <p>仙台駅 ↔ 広瀬通・勾当台公園。国分町まで2〜3駅 ／ 徒歩15分も可。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. ホテル ===== -->
+<section id="hotel" style="background: rgba(0,0,0,0.02);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">04</div>
+      <div class="section-title-group">
+        <h2>宿泊候補</h2>
+        <div class="en">Hotel</div>
+      </div>
+    </div>
+
+    <!-- メリット比較 -->
+    <div class="merit-compare reveal">
+      <div class="merit-box merit-kokubuncho">
+        <h4>国分町エリアに泊まるメリット</h4>
+        <ul>
+          <li>懇親会場まで徒歩0〜5分。飲んだ後すぐ帰れる</li>
+          <li>国分町ナイト（居酒屋・文化横丁・クラブ）がすべて徒歩圏</li>
+          <li>2次会・3次会の移動がラク。終電を気にしなくていい</li>
+          <li>仲間と合流しやすい（ホテルが密集）</li>
+        </ul>
+      </div>
+      <div class="merit-box merit-station">
+        <h4>仙台駅前に泊まるメリット</h4>
+        <ul>
+          <li>空港アクセス線の乗り降りが楽。荷物を置いてすぐ動ける</li>
+          <li>牛タン・ずんだ・お土産を駅ナカで完結できる</li>
+          <li>るーぷる仙台（観光バス）の発着が駅前</li>
+          <li>翌日の帰路がスムーズ。チェックアウト→すぐ空港へ</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 国分町エリア -->
+    <h3 class="hotel-area-title reveal">🍻 国分町エリア <span>─ 夜を楽しむならここ</span></h3>
+    <div class="hotel-grid reveal">
+      <div class="hotel-card">
+        <h3>ホテルグランテラス仙台国分町</h3>
+        <div class="hotel-area">国分町ど真ん中</div>
+        <p>BBHホテルグループ。繁華街の中心で懇親会場・国分町ナイトに最も便利。</p>
+        <div class="hotel-access">🚇 広瀬通駅から徒歩5分 ／ 仙台駅から徒歩15分</div>
+        <a href="https://breezbay-group.com/hgt-s-kokubuncho/" target="_blank" class="ext-link">公式サイトで予約</a>
+      </div>
+      <div class="hotel-card">
+        <h3>スマイルホテル仙台国分町</h3>
+        <div class="hotel-area">国分町エリア</div>
+        <p>リーズナブルで清潔。コスパ重視の方に。国分町の飲食店まで徒歩圏内。</p>
+        <div class="hotel-access">🚇 広瀬通駅から徒歩7分 ／ 仙台駅から徒歩18分</div>
+        <a href="https://smile-hotels.com/hotels/show/sendaikokubuncho" target="_blank" class="ext-link">公式サイトで予約</a>
+      </div>
+      <div class="hotel-card">
+        <h3>御宿 野乃 仙台</h3>
+        <div class="hotel-area">国分町エリア・天然温泉付き</div>
+        <p>ドーミーインチェーン。天然温泉「杜都の湯」と夜鳴きそばが魅力。疲れを癒すなら。</p>
+        <div class="hotel-access">🚇 広瀬通駅から徒歩5分 ／ 仙台駅から徒歩15分</div>
+        <a href="https://dormy-hotels.com/dormyinn/hotels/nono_sendai/" target="_blank" class="ext-link">公式サイトで予約</a>
+      </div>
+    </div>
+
+    <!-- 仙台駅前エリア -->
+    <h3 class="hotel-area-title reveal" style="margin-top: 48px;">🚉 仙台駅前エリア <span>─ 移動の効率重視ならここ</span></h3>
+    <div class="hotel-grid reveal">
+      <div class="hotel-card">
+        <h3>ホテルメトロポリタン仙台</h3>
+        <div class="hotel-area">仙台駅西口直結</div>
+        <p>JR東日本グループ運営の老舗シティホテル。駅直結で雨に濡れずチェックイン。レストラン・設備も充実。</p>
+        <div class="hotel-access">🚉 仙台駅西口直結（徒歩1分）</div>
+        <a href="https://sendai.metropolitan.jp/" target="_blank" class="ext-link">公式サイトで予約</a>
+      </div>
+      <div class="hotel-card">
+        <h3>ダイワロイネットホテル仙台</h3>
+        <div class="hotel-area">仙台駅東口すぐ</div>
+        <p>大和ハウスグループ運営。東口至近の好立地で全室Wi-Fi完備。きれいで安定感のあるビジネスホテル。</p>
+        <div class="hotel-access">🚉 仙台駅東口から徒歩2分</div>
+        <a href="https://www.daiwaroynet.jp/sendai/" target="_blank" class="ext-link">公式サイトで予約</a>
+      </div>
+      <div class="hotel-card">
+        <h3>コンフォートホテル仙台西口</h3>
+        <div class="hotel-area">仙台駅西口・無料朝食付き</div>
+        <p>無料朝食・フリードリンク・ライブラリーカフェ付き。コスパ最強で、朝から動きたい人に最適。</p>
+        <div class="hotel-access">🚉 仙台駅西口から徒歩3分</div>
+        <a href="https://www.choice-hotels.jp/hotel/sendai-w/" target="_blank" class="ext-link">公式サイトで予約</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. エリアガイド（テキスト形式） ===== -->
+<section id="area">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">05</div>
+      <div class="section-title-group">
+        <h2>仙台の街のイメージ</h2>
+        <div class="en">City Guide for Nagoya People</div>
+      </div>
+    </div>
+
+    <!-- 名古屋比較メインメッセージ -->
+    <div class="guide-intro reveal">
+      <p>仙台の繁華街はとてもコンパクト。<strong>すべて徒歩圏内</strong>で完結します。<br>名古屋の人にイメージしやすいように、名古屋の街に例えて紹介します。</p>
+    </div>
+
+    <!-- 名古屋比較カード -->
+    <div class="compare-cards reveal">
+      <div class="compare-card">
+        <div class="compare-sendai">🚉 仙台駅</div>
+        <div class="compare-eq">名古屋でいうと…</div>
+        <div class="compare-nagoya">名古屋駅</div>
+        <p>旅の起点。3F「牛たん通り」で利久・善治郎・伊達の牛たんが全部揃います。お土産もここで完結。</p>
+      </div>
+      <div class="compare-card">
+        <div class="compare-sendai">🍻 国分町</div>
+        <div class="compare-eq">名古屋でいうと…</div>
+        <div class="compare-nagoya">栄・錦（よりコンパクト）</div>
+        <p>東北最大の繁華街。居酒屋・クラブ・キャバクラが集結。ホテルもこのエリアに集中しているので、飲んだ後も歩いて帰れます。</p>
+      </div>
+      <div class="compare-card">
+        <div class="compare-sendai">🏮 文化横丁・壱弐参横丁</div>
+        <div class="compare-eq">名古屋でいうと…</div>
+        <div class="compare-nagoya">大須の横丁</div>
+        <p>大正時代から続く昭和レトロな横丁。昭和25年創業の名酒場「源氏」など、小さな名店がひしめきます。国分町から徒歩5分。</p>
+      </div>
+      <div class="compare-card">
+        <div class="compare-sendai">🌳 定禅寺通り</div>
+        <div class="compare-eq">名古屋でいうと…</div>
+        <div class="compare-nagoya">久屋大通（ケヤキ並木）</div>
+        <p>ケヤキ並木が美しい仙台のシンボルストリート。10月は紅葉が始まる季節。散歩に最適です。</p>
+      </div>
+    </div>
+
+    <!-- 距離感まとめ -->
+    <div class="distance-summary reveal">
+      <h3>距離感まとめ ─ すべて徒歩圏内</h3>
+      <div class="distance-items">
+        <div class="dist-row">
+          <span class="dist-from">仙台駅</span>
+          <span class="dist-arrow">→</span>
+          <span class="dist-to">国分町（繁華街）</span>
+          <span class="dist-val">徒歩15分 / 地下鉄2駅</span>
+        </div>
+        <div class="dist-row">
+          <span class="dist-from">国分町</span>
+          <span class="dist-arrow">→</span>
+          <span class="dist-to">文化横丁</span>
+          <span class="dist-val">徒歩5分</span>
+        </div>
+        <div class="dist-row">
+          <span class="dist-from">ホテル</span>
+          <span class="dist-arrow">→</span>
+          <span class="dist-to">懇親会場</span>
+          <span class="dist-val">徒歩0〜5分</span>
+        </div>
+        <div class="dist-row">
+          <span class="dist-from">仙台駅</span>
+          <span class="dist-arrow">→</span>
+          <span class="dist-to">瑞鳳殿・仙台城跡</span>
+          <span class="dist-val">るーぷるバス15分</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="margin-bottom: 16px;">
+    <a href="https://www.sentabi.jp/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:13px;">せんだい旅日和（仙台観光総合サイト） ↗</a>
+    &nbsp;&nbsp;
+    <a href="https://www.sendai-airport.co.jp/access/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:13px;">仙台空港アクセス総合 ↗</a>
+  </div>
+  青年同友会 全国交流会 in 仙台 2026 ─ 旅のしおり
+</footer>
+
+<script>
+// カウントダウン
+const targetDate = new Date('2026-10-01T08:20:00+09:00'); // 初便出発時刻
+function updateCountdown() {
+  const now = new Date();
+  const diff = targetDate - now;
+  if (diff <= 0) {
+    document.getElementById('cd-message').textContent = '旅の始まりです！';
+    document.getElementById('cd-days').textContent = '0';
+    document.getElementById('cd-hours').textContent = '00';
+    document.getElementById('cd-min').textContent = '00';
+    document.getElementById('cd-sec').textContent = '00';
+    return;
+  }
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const min = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const sec = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById('cd-days').textContent = days;
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('cd-min').textContent = String(min).padStart(2, '0');
+  document.getElementById('cd-sec').textContent = String(sec).padStart(2, '0');
+  document.getElementById('cd-message').textContent = '出発まであと…';
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// スクロールリビールアニメーション
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
