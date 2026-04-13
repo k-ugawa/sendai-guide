@@ -25,6 +25,7 @@
     color: var(--ink);
     overflow-x: hidden;
     line-height: 1.8;
+    font-size: 17px;
   }
 
   /* ノイズテクスチャ */
@@ -73,8 +74,8 @@
   }
   .hero-label {
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 12px;
-    letter-spacing: 6px;
+    font-size: 15px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 24px;
@@ -1039,6 +1040,7 @@
     .hotel-grid,
     .compare-cards,
     .merit-compare,
+    .merit-compare-3,
     .free-times { grid-template-columns: 1fr; }
 
     /* スケジュール */
@@ -1117,9 +1119,10 @@
 <!-- ===== ヒーロー ===== -->
 <header class="hero">
   <div class="hero-content">
-    <span class="hero-label">中小企業家同友会 青年経営者全国交流会 2026</span>
+    <span class="hero-label">第54回 中小企業家同友会 青年経営者全国交流会 in 仙台</span>
     <h1>旅のしおり ─ <span>仙台</span></h1>
-    <p class="hero-sub">2026.10.1（木）─ 10.2（金）</p>
+    <p class="hero-sub">2026.10.1（木）13:00 ─ 10.2（金）12:15</p>
+    <p style="font-size:14px; color:rgba(255,255,255,0.6); margin-top:8px; letter-spacing:1px; font-style:italic;">「逆境こそ挑戦の舞台！～"旗"を掲げ、共に未来を創ろう」</p>
     <p class="cd-message" id="cd-message"></p>
     <div class="countdown" id="countdown">
       <div class="cd-item">
@@ -1152,7 +1155,7 @@
     <div class="section-header reveal">
       <div class="section-num">01</div>
       <div class="section-title-group">
-        <h2>スケジュール概要</h2>
+        <h2>スケジュール案</h2>
         <div class="en">Schedule</div>
       </div>
     </div>
@@ -1173,12 +1176,18 @@
         </div>
         <div class="timeline-item">
           <span class="time">13:00〜18:00</span>
-          <span class="event">分科会</span>
+          <span class="event">分科会（全20分科会）</span>
           <span class="badge badge-fixed">拘束</span>
+        </div>
+        <div style="font-size:13px; color:var(--muted); padding:8px 0 8px 0; line-height:1.8;">
+          <strong style="color:var(--ink);">会場（3か所）</strong><br>
+          📍 <a href="https://www.aobayama.jp/" target="_blank" style="color:var(--teal);">仙台国際センター</a> ─ 青葉区青葉山（地下鉄東西線「国際センター駅」直結）<br>
+          📍 <a href="https://www.koyogh.jp/" target="_blank" style="color:var(--teal);">江陽グランドホテル</a> ─ 青葉区本町2-3-1（地下鉄「広瀬通駅」西1出口前）<br>
+          📍 <a href="https://palace-heian.com/" target="_blank" style="color:var(--teal);">パレスへいあん</a> ─ 青葉区本町1-2-2（JR仙台駅西口 徒歩5分）
         </div>
         <div class="timeline-item">
           <span class="time">19:00〜21:00</span>
-          <span class="event">仲間25名で独自懇親会</span>
+          <span class="event">仲間内で独自懇親会</span>
           <span class="badge badge-free">FREE</span>
         </div>
         <div class="timeline-item">
@@ -1202,18 +1211,16 @@
           <span class="badge badge-fixed">拘束</span>
         </div>
         <div class="timeline-item">
-          <span class="time">11:00〜12:30</span>
-          <span class="event">特別報告</span>
+          <span class="time">11:00〜12:15</span>
+          <span class="event">特別報告 → 閉会</span>
           <span class="badge badge-fixed">拘束</span>
         </div>
-        <div class="timeline-item">
-          <span class="time">12:30〜13:30</span>
-          <span class="event">閉会 → ランチ → 解散</span>
-          <span></span>
+        <div style="font-size:12px; color:var(--muted); padding:4px 0 8px 0; line-height:1.6;">
+          会場：仙台国際センター（全体会）
         </div>
         <div class="timeline-item">
-          <span class="time">13:30〜</span>
-          <span class="event">自由時間（観光・帰路）</span>
+          <span class="time">12:15〜</span>
+          <span class="event">ランチ → 自由時間（観光・帰路）</span>
           <span class="badge badge-free">FREE</span>
         </div>
       </div>
@@ -1322,20 +1329,20 @@
 
         <!-- 2案分岐 -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-          <div style="background:rgba(45,106,106,0.1); border:2px solid var(--teal); border-radius:12px; padding:20px; text-align:center;">
-            <div style="font-size:13px; font-weight:700; color:var(--teal); letter-spacing:2px; margin-bottom:8px;">PLAN A ─ 冒険派</div>
+          <div style="background:rgba(45,106,106,0.15); border:2px solid var(--teal); border-radius:12px; padding:20px; text-align:center;">
+            <div style="font-size:13px; font-weight:700; color:#5cc4c4; letter-spacing:2px; margin-bottom:8px;">PLAN A ─ 冒険派</div>
             <div style="font-size:20px; margin-bottom:4px;">🌈</div>
-            <div style="font-size:17px; font-weight:700; color:var(--ink);">おまんじゅ姫</div>
-            <div style="font-size:13px; color:var(--muted); margin-top:4px;">ニューハーフBAR ★地元推薦</div>
-            <div style="font-size:12px; color:var(--muted); margin-top:8px;">セット4,500円（時間無制限）<br>国分町2-14-25 ホテル定禅寺B1F<br>21:00〜4:00</div>
+            <div style="font-size:17px; font-weight:700; color:#e8e0d4;">おまんじゅ姫</div>
+            <div style="font-size:13px; color:#b8b0a4; margin-top:4px;">ニューハーフBAR ★地元推薦</div>
+            <div style="font-size:12px; color:#a09888; margin-top:8px;">セット4,500円（時間無制限）<br>国分町2-14-25 ホテル定禅寺B1F<br>21:00〜4:00</div>
             <a href="https://kokubuncho-navi.com/bar/110/" target="_blank" class="ext-link" style="margin-top:12px;">詳細</a>
           </div>
-          <div style="background:rgba(139,92,60,0.1); border:2px solid var(--warm); border-radius:12px; padding:20px; text-align:center;">
-            <div style="font-size:13px; font-weight:700; color:var(--warm); letter-spacing:2px; margin-bottom:8px;">PLAN B ─ キレイ目派</div>
+          <div style="background:rgba(139,92,60,0.15); border:2px solid var(--warm); border-radius:12px; padding:20px; text-align:center;">
+            <div style="font-size:13px; font-weight:700; color:#d4a574; letter-spacing:2px; margin-bottom:8px;">PLAN B ─ キレイ目派</div>
             <div style="font-size:20px; margin-bottom:4px;">✨</div>
-            <div style="font-size:17px; font-weight:700; color:var(--ink);">キャバクラ / クラブ</div>
-            <div style="font-size:13px; color:var(--muted); margin-top:4px;">国分町エリアに多数</div>
-            <div style="font-size:12px; color:var(--muted); margin-top:8px;">華やかに楽しみたい人向け<br>国分町通り沿いに集中<br>予算目安 5,000円〜</div>
+            <div style="font-size:17px; font-weight:700; color:#e8e0d4;">キャバクラ / クラブ</div>
+            <div style="font-size:13px; color:#b8b0a4; margin-top:4px;">国分町エリアに多数</div>
+            <div style="font-size:12px; color:#a09888; margin-top:8px;">華やかに楽しみたい人向け<br>国分町通り沿いに集中<br>予算目安 5,000円〜</div>
           </div>
         </div>
 
@@ -1463,29 +1470,61 @@
     </div>
 
     <!-- メリット比較 -->
-    <div class="merit-compare reveal">
-      <div class="merit-box merit-kokubuncho">
-        <h4>国分町エリアに泊まるメリット</h4>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;" class="reveal merit-compare-3">
+      <div class="merit-box" style="border-top:3px solid var(--gold);">
+        <h4>🏢 会場近く</h4>
         <ul>
-          <li>懇親会場まで徒歩0〜5分。飲んだ後すぐ帰れる</li>
-          <li>国分町ナイト（居酒屋・文化横丁・クラブ）がすべて徒歩圏</li>
-          <li>2次会・3次会の移動がラク。終電を気にしなくていい</li>
-          <li>仲間と合流しやすい（ホテルが密集）</li>
+          <li>分科会の会場まで徒歩圏内。当日の移動が最小限</li>
+          <li>江陽グランドホテルなら会場に泊まれる</li>
+          <li>広瀬通駅周辺なら3会場すべてにアクセス良好</li>
         </ul>
       </div>
-      <div class="merit-box merit-station">
-        <h4>仙台駅前に泊まるメリット</h4>
+      <div class="merit-box" style="border-top:3px solid var(--accent);">
+        <h4>🍻 国分町</h4>
         <ul>
-          <li>空港アクセス線の乗り降りが楽。荷物を置いてすぐ動ける</li>
-          <li>牛タン・ずんだ・お土産を駅ナカで完結できる</li>
-          <li>るーぷる仙台（観光バス）の発着が駅前</li>
-          <li>翌日の帰路がスムーズ。チェックアウト→すぐ空港へ</li>
+          <li>懇親会後すぐ帰れる。終電不要</li>
+          <li>国分町ナイト（居酒屋・クラブ）が全て徒歩圏</li>
+          <li>2次会・3次会の移動がラク</li>
+        </ul>
+      </div>
+      <div class="merit-box" style="border-top:3px solid var(--teal);">
+        <h4>🚉 仙台駅前</h4>
+        <ul>
+          <li>空港アクセス線が楽。荷物を置いてすぐ動ける</li>
+          <li>牛タン・お土産を駅ナカで完結</li>
+          <li>翌日の帰路がスムーズ</li>
         </ul>
       </div>
     </div>
 
+    <!-- 会場アクセス重視 -->
+    <h3 class="hotel-area-title reveal">🏢 会場アクセス重視 <span>─ 分科会・全体会に近いホテル</span></h3>
+    <div class="hotel-grid reveal">
+      <div class="hotel-card" style="border-left:3px solid var(--gold);">
+        <h3>江陽グランドホテル <small style="color:var(--accent);">★会場そのもの</small></h3>
+        <div class="hotel-area">1日目分科会・懇親会の会場</div>
+        <p>分科会・懇親会の会場に泊まれる。広瀬通駅直結。移動ゼロで当日の準備も楽。</p>
+        <div class="hotel-access">📍 青葉区本町2-3-1<br>🚇 広瀬通駅 西1出口正面（徒歩0分）</div>
+        <a href="https://www.koyogh.jp/" target="_blank" class="ext-link">公式サイトで予約</a>
+      </div>
+      <div class="hotel-card">
+        <h3>ドーミーイン仙台ANNEX</h3>
+        <div class="hotel-area">江陽グランドホテルまで徒歩7分</div>
+        <p>天然温泉「青葉の湯」完備。名物の無料夜鳴きそばで〆られる。リニューアル済みで綺麗。</p>
+        <div class="hotel-access">📍 青葉区中央2-11-26<br>🚇 広瀬通駅から徒歩2分 ／ パレスへいあんまで徒歩8分</div>
+        <a href="https://dormy-hotels.com/dormyinn/hotels/sendai_ax/" target="_blank" class="ext-link">公式サイトで予約</a>
+      </div>
+      <div class="hotel-card">
+        <h3>スーパーホテル仙台・広瀬通り</h3>
+        <div class="hotel-area">3会場すべてにアクセス良好</div>
+        <p>天然温泉「弦月の湯」付き。焼きたてパンの無料朝食。3会場のどこに当たっても移動しやすい好立地。</p>
+        <div class="hotel-access">📍 青葉区中央2-9-23<br>🚇 広瀬通駅 徒歩3分 ／ 江陽グランドホテルまで徒歩5分</div>
+        <a href="https://www.superhotel.co.jp/s_hotels/hirose/" target="_blank" class="ext-link">公式サイトで予約</a>
+      </div>
+    </div>
+
     <!-- 国分町エリア -->
-    <h3 class="hotel-area-title reveal">🍻 国分町エリア <span>─ 夜を楽しむならここ</span></h3>
+    <h3 class="hotel-area-title reveal" style="margin-top: 48px;">🍻 国分町エリア <span>─ 夜を楽しむならここ</span></h3>
     <div class="hotel-grid reveal">
       <div class="hotel-card">
         <h3>ホテルグランテラス仙台国分町</h3>
