@@ -1167,7 +1167,7 @@
         <div class="timeline-item">
           <span class="time">〜12:00</span>
           <span class="event">自由時間（観光・牛タン）</span>
-          <span class="badge badge-free">FREE</span>
+          <span></span>
         </div>
         <div class="timeline-item">
           <span class="time">12:00〜</span>
@@ -1177,7 +1177,7 @@
         <div class="timeline-item">
           <span class="time">13:00〜18:00</span>
           <span class="event">分科会（全18分科会）</span>
-          <span class="badge badge-fixed">拘束</span>
+          <span></span>
         </div>
         <div style="font-size:13px; color:var(--muted); padding:8px 0 8px 0; line-height:1.8;">
           <strong style="color:var(--ink);">会場（3か所）</strong><br>
@@ -1187,13 +1187,13 @@
         </div>
         <div class="timeline-item">
           <span class="time">19:00〜20:30</span>
-          <span class="event">懇親会（公式）＠江陽グランドホテル</span>
-          <span class="badge badge-fixed">公式</span>
+          <span class="event">懇親会 ＠江陽グランドホテル</span>
+          <span></span>
         </div>
         <div class="timeline-item">
           <span class="time">20:30〜</span>
           <span class="event">国分町で二次会（自由行動）</span>
-          <span class="badge badge-free">FREE</span>
+          <span></span>
         </div>
       </div>
 
@@ -1208,17 +1208,17 @@
         <div class="timeline-item">
           <span class="time">9:00〜</span>
           <span class="event">全体会 開会・歓迎挨拶</span>
-          <span class="badge badge-fixed">拘束</span>
+          <span></span>
         </div>
         <div class="timeline-item">
           <span class="time">9:30〜</span>
           <span class="event">基調講演（後藤清広 氏）</span>
-          <span class="badge badge-fixed">拘束</span>
+          <span></span>
         </div>
         <div class="timeline-item">
           <span class="time">〜12:15</span>
           <span class="event">全体会 閉会</span>
-          <span class="badge badge-fixed">拘束</span>
+          <span></span>
         </div>
         <div style="font-size:12px; color:var(--muted); padding:4px 0 8px 0; line-height:1.6;">
           会場：仙台国際センター（全体会）
@@ -1226,7 +1226,7 @@
         <div class="timeline-item">
           <span class="time">12:15〜</span>
           <span class="event">ランチ → 自由時間（観光・帰路）</span>
-          <span class="badge badge-free">FREE</span>
+          <span></span>
         </div>
       </div>
     </div>
@@ -1266,12 +1266,29 @@
       .keynote-box .k-title { font-family:'Zen Old Mincho',serif; font-size:18px; font-weight:700; color:var(--ink); line-height:1.6; }
       .keynote-box .k-sub { font-size:13px; color:var(--muted); margin-top:6px; }
       .keynote-box .k-speaker { font-size:13.5px; color:var(--ink); margin-top:10px; }
-      .bunkakai-note { font-size:13px; color:var(--muted); margin-bottom:14px; }
-      .bunkakai-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; }
-      .bk-card { background:var(--card-bg); border:1px solid rgba(196,162,101,0.3); border-radius:8px; padding:12px 14px; }
+      /* 基調講演の追加装飾 */
+      .keynote-box .k-story { font-size:14px; color:var(--ink); line-height:1.9; margin-top:14px; }
+      .keynote-box .k-stats { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+      .keynote-box .k-chip { background:rgba(45,106,106,0.1); border:1px solid rgba(45,106,106,0.3); border-radius:8px; padding:8px 14px; font-size:12px; color:var(--muted); display:flex; flex-direction:column; align-items:center; min-width:80px; }
+      .keynote-box .k-chip-num { font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:800; color:var(--teal); }
+      .keynote-box .k-point { font-size:13px; color:var(--ink); line-height:1.8; margin-top:16px; background:rgba(196,162,101,0.12); border-left:3px solid var(--gold); border-radius:6px; padding:12px 14px; }
+      /* 分科会カード */
+      .bunkakai-note { font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.7; }
+      .bunkakai-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(285px,1fr)); gap:12px; }
+      .bk-card { background:var(--card-bg); border:1px solid rgba(196,162,101,0.3); border-radius:10px; padding:15px 17px; }
+      .bk-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:9px; }
       .bk-no { font-family:'Bricolage Grotesque',sans-serif; font-size:12px; font-weight:800; color:var(--gold); letter-spacing:1px; }
-      .bk-region { float:right; font-size:11px; color:var(--muted); background:rgba(45,106,106,0.1); padding:1px 8px; border-radius:10px; }
-      .bk-theme { font-size:14px; color:var(--ink); font-weight:500; line-height:1.5; margin-top:4px; }
+      .bk-region { font-size:11px; color:var(--muted); background:rgba(45,106,106,0.1); padding:2px 9px; border-radius:10px; white-space:nowrap; }
+      .bk-region.local { background:var(--accent); color:#fff; font-weight:700; }
+      .bk-title { font-family:'Zen Old Mincho',serif; font-size:15.5px; font-weight:700; color:var(--ink); line-height:1.55; }
+      .bk-cat { font-size:12px; color:var(--teal); margin-top:7px; font-weight:500; }
+      .bk-details { margin-top:11px; border-top:1px dashed rgba(107,100,89,0.25); padding-top:9px; }
+      .bk-details summary { cursor:pointer; font-size:12px; color:var(--gold); font-weight:700; list-style:none; }
+      .bk-details summary::-webkit-details-marker { display:none; }
+      .bk-details summary::before { content:'＋ '; }
+      .bk-details[open] summary::before { content:'－ '; }
+      .bk-desc { font-size:12.5px; color:var(--muted); line-height:1.85; margin-top:10px; }
+      .bk-rep { font-size:12.5px; color:var(--ink); margin-top:9px; font-weight:600; }
     </style>
     <div class="official-block reveal">
       <div class="ob-head">公式プログラム & お申込み</div>
@@ -1295,29 +1312,181 @@
         <span class="k-tag">2日目 全体会 ─ 基調講演</span>
         <div class="k-title">奪い合う漁業から分かち合う漁業への転換が、<br>付加価値を生み、持続可能な地域づくりに</div>
         <div class="k-sub">〜子ども達の未来のために企業家として何を残すのか〜</div>
-        <div class="k-speaker">講師：<strong>後藤 清広 氏</strong>（後藤海産 代表／宮城県漁協 志津川支所 戸倉出張所カキ部会）</div>
+        <div class="k-speaker">講師：<strong>後藤 清広 氏</strong>（後藤海産 代表／宮城県漁業協同組合 志津川支所 戸倉出張所カキ部会長）</div>
+        <p class="k-story">東日本大震災で、船も養殖設備もすべてを失った後藤氏。絶望のなか、仲間の漁師と<strong>年100回を超える議論</strong>を重ね、養殖いかだを震災前の<strong>3分の1</strong>まで減らす決断をします。量を追う「奪い合う漁業」から、海を育て地域の未来を守る「分け合う漁業」へ──。その結果、南三陸・戸倉のカキは<strong>生産量2倍・所得1.5倍</strong>を実現し、環境負荷はむしろ低下。2016年には<strong>日本初のASC養殖場認証</strong>を取得しました。</p>
+        <div class="k-stats">
+          <div class="k-chip"><span class="k-chip-num">1/3</span>いかだ削減</div>
+          <div class="k-chip"><span class="k-chip-num">2倍</span>生産量</div>
+          <div class="k-chip"><span class="k-chip-num">1.5倍</span>所得</div>
+          <div class="k-chip"><span class="k-chip-num">日本初</span>ASC認証</div>
+        </div>
+        <p class="k-point">🎣 <strong>聞きどころ</strong> ─ 逆境からの大胆な事業転換、仲間との徹底した合意形成、そして持続可能性と収益の両立。まさに今回のテーマ「逆境こそ挑戦の舞台」を体現する、実践に裏打ちされた報告です。</p>
       </div>
 
-      <div class="bunkakai-note"><strong style="color:var(--ink);">1日目 分科会（全18／第1・第2希望を選んで申込）</strong></div>
+      <div class="bunkakai-note"><strong style="color:var(--ink);">1日目 分科会（全18）</strong>　─　参加する分科会を<strong style="color:var(--ink);">第1・第2希望</strong>で選んで申込みます。各カードの「詳しく見る」で内容と報告者を確認できます。<br><span style="color:var(--accent); font-weight:600;">★ 第16分科会は地元・愛知からの報告です。</span></div>
       <div class="bunkakai-grid">
-        <div class="bk-card"><span class="bk-no">第1分科会</span><span class="bk-region">中同協</span><div class="bk-theme">企業づくりと青年部活動は不離一体</div></div>
-        <div class="bk-card"><span class="bk-no">第2分科会</span><span class="bk-region">中同協</span><div class="bk-theme">人を生かす経営〈労使見解〉</div></div>
-        <div class="bk-card"><span class="bk-no">第3分科会</span><span class="bk-region">静岡</span><div class="bk-theme">人を生かす経営で21世紀型企業づくり</div></div>
-        <div class="bk-card"><span class="bk-no">第4分科会</span><span class="bk-region">岩手</span><div class="bk-theme">経営者の全人格的成長</div></div>
-        <div class="bk-card"><span class="bk-no">第5分科会</span><span class="bk-region">熊本</span><div class="bk-theme">経営者の自己変革</div></div>
-        <div class="bk-card"><span class="bk-no">第6分科会</span><span class="bk-region">大阪</span><div class="bk-theme">経営指針の実践と確立</div></div>
-        <div class="bk-card"><span class="bk-no">第7分科会</span><span class="bk-region">鹿児島</span><div class="bk-theme">経営指針の実践と確立</div></div>
-        <div class="bk-card"><span class="bk-no">第8分科会</span><span class="bk-region">香川</span><div class="bk-theme">10年ビジョン</div></div>
-        <div class="bk-card"><span class="bk-no">第9分科会</span><span class="bk-region">島根</span><div class="bk-theme">変革と挑戦</div></div>
-        <div class="bk-card"><span class="bk-no">第10分科会</span><span class="bk-region">広島</span><div class="bk-theme">採用・教育</div></div>
-        <div class="bk-card"><span class="bk-no">第11分科会</span><span class="bk-region">滋賀</span><div class="bk-theme">共に学び、共に育つ</div></div>
-        <div class="bk-card"><span class="bk-no">第12分科会</span><span class="bk-region">東京</span><div class="bk-theme">人が輝く企業づくり</div></div>
-        <div class="bk-card"><span class="bk-no">第13分科会</span><span class="bk-region">秋田</span><div class="bk-theme">経営戦略の転換・差別化を図る</div></div>
-        <div class="bk-card"><span class="bk-no">第14分科会</span><span class="bk-region">北海道</span><div class="bk-theme">付加価値を高める</div></div>
-        <div class="bk-card"><span class="bk-no">第15分科会</span><span class="bk-region">埼玉</span><div class="bk-theme">事業承継</div></div>
-        <div class="bk-card"><span class="bk-no">第16分科会</span><span class="bk-region">愛知</span><div class="bk-theme">地域が輝く企業づくり</div></div>
-        <div class="bk-card"><span class="bk-no">第17分科会</span><span class="bk-region">奈良</span><div class="bk-theme">企業づくりと地域づくりを一体として</div></div>
-        <div class="bk-card"><span class="bk-no">第18分科会</span><span class="bk-region">宮城</span><div class="bk-theme">世界とつながる</div></div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第1分科会</span><span class="bk-region">中同協</span></div>
+          <div class="bk-title">青年部活動は会社経営に何をもたらすのか</div>
+          <div class="bk-cat">企業づくりと青年部活動は不離一体</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">長年役を受け、事業承継・企業変革・新たな挑戦に本気で向き合ってきた実践者が登壇。青年部活動で得た学びや仲間との関わりを、どう自社経営に生かしてきたかを本音で語り合う。</p>
+            <p class="bk-rep">報告：大垣 広太 氏（KSP／東京）ほかパネリスト3名</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第2分科会</span><span class="bk-region">中同協</span></div>
+          <div class="bk-title">変化の時代に維持発展し続ける企業とは何か</div>
+          <div class="bk-cat">人を生かす経営〈労使見解〉</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">中小企業として「人を生かす経営」を目指すなかで、社員教育・共育をどう捉え実践するか。社員をパートナーとして向き合い、悩みや失敗も含めて今後を学び合う分科会。</p>
+            <p class="bk-rep">報告：梶谷 俊介 氏（岡山トヨタ自動車／岡山）ほか</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第3分科会</span><span class="bk-region">静岡</span></div>
+          <div class="bk-title">社員と共に歩む、じぶん・かいしゃ・まちづくり</div>
+          <div class="bk-cat">人を生かす経営で21世紀型企業づくり</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">父の急逝で突如承継し、社員との溝に悩んだ小野寺氏。同友会での学びから大きく自己変革し、「社員や未来の人財に選ばれる会社」を目指す、ありのままの実践報告。</p>
+            <p class="bk-rep">報告：小野寺 敦嗣 氏（富士設計／静岡）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第4分科会</span><span class="bk-region">岩手</span></div>
+          <div class="bk-title">挫折から救ってくれたのは社員と仲間だった</div>
+          <div class="bk-cat">経営者の全人格的成長</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">3代目として都市圏へ出店し顧客を開拓。自信満々で臨んだ経営指針実践塾でどん底に。声を掛けてくれたベテラン社員に認められ気づいた「自分らしく生きる」ことの意味。</p>
+            <p class="bk-rep">報告：昆 卓広 氏（昆石材店／岩手）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第5分科会</span><span class="bk-region">熊本</span></div>
+          <div class="bk-title">「モメて モメて モメた！」衝突の先の経営の核</div>
+          <div class="bk-cat">経営者の自己変革</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">社員の相次ぐ退職、先代との軋轢、青年部での孤立。すべてを周りのせいにする「他責思考」を脱し、痛みを伴う経験を学びに変えて、愛情を持ったリーダーへ脱皮した物語。</p>
+            <p class="bk-rep">報告：小屋松 俊太 氏（司法書士法人小屋松事務所／熊本）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第6分科会</span><span class="bk-region">大阪</span></div>
+          <div class="bk-title">ひとりで背負う経営から、社員と描くビジョンへ</div>
+          <div class="bk-cat">経営指針の実践と確立</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">完成された成功談ではなく、不満や混乱という逆境の中で、経営者自らが"旗"を掲げ社員と共に未来を創ろうと挑戦し続ける、変革真っ只中の報告。あきらめない心と向き合い方。</p>
+            <p class="bk-rep">報告：山川 耕平 氏（高洋商会／大阪）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第7分科会</span><span class="bk-region">鹿児島</span></div>
+          <div class="bk-title">理念が人を引き寄せ、指針が未来を動かす</div>
+          <div class="bk-cat">経営指針の実践と確立</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">繁華街で理髪店を営む亀澤氏。順調な経営がコロナで揺らぐなか、支えとなったのは同友会で学んだ経営指針。理念をもとに、働きがいのある環境づくりに挑戦した実践。</p>
+            <p class="bk-rep">報告：亀澤 隼人 氏（ブリッジ／鹿児島）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第8分科会</span><span class="bk-region">香川</span></div>
+          <div class="bk-title">地域の健康インフラをつくる会社になる</div>
+          <div class="bk-cat">10年ビジョン</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">「業界を変えたい」と独立するも、自分自身が同じ構造を再現。組織崩壊を経て、社員と共に10年ビジョンを描いたことが転機に。ビジョンを判断基準に業界の変革へ。</p>
+            <p class="bk-rep">報告：中川 郁也 氏（EARCS／香川）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第9分科会</span><span class="bk-region">島根</span></div>
+          <div class="bk-title">債務超過を乗り越えた後継者の本気の覚悟</div>
+          <div class="bk-cat">変革と挑戦</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">突然の承継で待っていたのは4,400万円の債務超過。「すべては経営者の責任」と向き合った時、会社は変わり始めた。対話・職場改善・自社施工率UPを泥臭く実践。</p>
+            <p class="bk-rep">報告：林 洋介 氏（林商事／島根）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第10分科会</span><span class="bk-region">広島</span></div>
+          <div class="bk-title">パワハラを恐れず、本気本音で関わる覚悟</div>
+          <div class="bk-cat">採用・教育</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">「言っても変わらない」と社員への期待を諦めていないか。成果だけを追い社員を"道具"扱いした結果、離職率8割に直面し改心。本音で関わる採用と教育の本質を問う。</p>
+            <p class="bk-rep">報告：小濱 亮介 氏（シナジー／広島）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第11分科会</span><span class="bk-region">滋賀</span></div>
+          <div class="bk-title">人を信じられなかった僕が、仲間に救われるまで</div>
+          <div class="bk-cat">共に学び、共に育つ</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">"0日デビュー"など独自戦略で成長した美容室MIO。根底にあるのは「多様性こそが人と組織を強くする」という考え。一人ひとりの個性と強みを生かす経営ストーリー。</p>
+            <p class="bk-rep">報告：本田 哲也 氏（Mio／滋賀）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第12分科会</span><span class="bk-region">東京</span></div>
+          <div class="bk-title">「ここが私の居場所」とみんなが言える会社へ</div>
+          <div class="bk-cat">人が輝く企業づくり</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">一見「よい会社」になったものの、本当に働きがいがあるのか？組織崩壊を恐れて自分の意見を殺していた経営者が、社員一人ひとりと本音で向き合う一歩を踏み出す。</p>
+            <p class="bk-rep">報告：秋吉 利恵 氏（エンジェルサポート／東京）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第13分科会</span><span class="bk-region">秋田</span></div>
+          <div class="bk-title">売上半減。その時、あなたは何をしますか？</div>
+          <div class="bk-cat">経営戦略の転換・差別化を図る</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">売上の約半分を占めた除雪事業が、暖冬で半減し債務超過目前に。会社を守るため何を捨て何を残すか──企業体質を見直し、自社の「強み」に集中して粗利2倍を実現。</p>
+            <p class="bk-rep">報告：珍田 正輝 氏（珍田建設／秋田）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第14分科会</span><span class="bk-region">北海道</span></div>
+          <div class="bk-title">創業91年、老舗の未来をつなぐ「正解のない承継」</div>
+          <div class="bk-cat">付加価値を高める</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">北海道で唯一ゴム長靴を国内生産する第一ゴム。後継予定のなかった自分と、銀行員から社長になった父。価値観の違う二人が挑戦を重ね、老舗の未来を模索してきた歩み。</p>
+            <p class="bk-rep">報告：藤本 賢人 氏（第一ゴム／北海道）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第15分科会</span><span class="bk-region">埼玉</span></div>
+          <div class="bk-title">誰が継ぐ？人生をかけた先代の想い</div>
+          <div class="bk-cat">事業承継 ─ 3兄弟のキングギドラ経営</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">工場移転を機に3兄弟で会社と向き合う時間が始まる。「誰が継いでもいい会社にしよう」──三人の信頼関係を大切に、それぞれの立場で向き合う事業承継の話。</p>
+            <p class="bk-rep">報告：林 俊治 氏（林塗装工業所／埼玉）</p>
+          </details>
+        </div>
+        <div class="bk-card" style="border-color:rgba(184,67,47,0.5);">
+          <div class="bk-top"><span class="bk-no">第16分科会</span><span class="bk-region local">愛知（地元）</span></div>
+          <div class="bk-title">「どうせならおもしろい地域の未来」を共に創る</div>
+          <div class="bk-cat">地域が輝く企業づくり</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">ノリと勢いで起業し、失敗と仲間の離脱を経て同友会へ。三位一体経営の学びから「地域の良循環が自社の好環境をつくる」と気づき、人と地域を主語に置く企業へ変革。地元・愛知からの報告です。</p>
+            <p class="bk-rep">報告：千賀 信義 氏（レジスタ／愛知）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第17分科会</span><span class="bk-region">奈良</span></div>
+          <div class="bk-title">熱のある地域へ！〜小さく固く転がっていく〜</div>
+          <div class="bk-cat">企業づくりと地域づくりを一体として</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">薬局を通じて「熱のある地域」をつくることを目指す。薬を処方するだけでなく、その人の背景を理解し人生に寄り添う「接遇」で、地域のつながりを生み出す実践。</p>
+            <p class="bk-rep">報告：吉川 晃之祐 氏（ショーワ薬局／奈良）</p>
+          </details>
+        </div>
+        <div class="bk-card">
+          <div class="bk-top"><span class="bk-no">第18分科会</span><span class="bk-region">宮城</span></div>
+          <div class="bk-title">鼻につくエリートが、ヒトに助けられてつながった世界</div>
+          <div class="bk-cat">世界とつながる</div>
+          <details class="bk-details"><summary>詳しく見る</summary>
+            <p class="bk-desc">震災で全壊した会社を見て大手商社を退社。「自分だけを信じて」始めた経営で理想と現実に打ちのめされ、「一人では局面を打開できない」と価値観を崩していく開催地・宮城の報告。</p>
+            <p class="bk-rep">報告：布施 太一 氏（布施商店／宮城）</p>
+          </details>
+        </div>
       </div>
     </div>
   </div>
