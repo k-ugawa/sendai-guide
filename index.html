@@ -13,7 +13,7 @@
     --gold-glow: rgba(196, 162, 101, 0.25);
     --accent: #b8432f;
     --accent-soft: rgba(184, 67, 47, 0.12);
-    --teal: #2d6a6a;
+    --teal: #3a544f;
     --muted: #6b6459;
     --card-bg: rgba(255,255,255,0.6);
     --section-gap: 80px;
@@ -1257,32 +1257,37 @@
       .apply-box .fee { flex:1 1 200px; background:rgba(255,255,255,0.06); border:1px solid rgba(196,162,101,0.35); border-radius:10px; padding:14px 18px; }
       .apply-box .fee .amt { font-family:'Bricolage Grotesque',sans-serif; font-size:26px; font-weight:800; color:var(--gold); }
       .apply-box .fee .lbl { font-size:13px; color:rgba(247,243,237,0.7); }
-      .apply-box .deadline { display:inline-block; background:var(--accent); color:#fff; font-weight:700; font-size:13px; padding:5px 14px; border-radius:6px; letter-spacing:1px; }
+      .apply-box .deadline { display:inline-block; background:transparent; color:var(--gold); font-weight:700; font-size:13px; padding:5px 14px; border:1px solid rgba(196,162,101,0.6); border-radius:6px; letter-spacing:1px; }
       .apply-box ul { list-style:none; margin:16px 0 0; padding:0; }
       .apply-box li { font-size:13.5px; color:rgba(247,243,237,0.8); padding:3px 0 3px 20px; position:relative; line-height:1.7; }
       .apply-box li::before { content:'▸'; position:absolute; left:0; color:var(--gold); }
-      .keynote-box { background:var(--card-bg); border-left:4px solid var(--teal); border-radius:10px; padding:20px 22px; margin-bottom:28px; }
-      .keynote-box .k-tag { display:inline-block; font-size:11px; letter-spacing:2px; color:var(--teal); font-weight:700; margin-bottom:8px; }
-      .keynote-box .k-title { font-family:'Zen Old Mincho',serif; font-size:18px; font-weight:700; color:var(--ink); line-height:1.6; }
-      .keynote-box .k-sub { font-size:13px; color:var(--muted); margin-top:6px; }
-      .keynote-box .k-speaker { font-size:13.5px; color:var(--ink); margin-top:10px; }
-      /* 基調講演の追加装飾 */
-      .keynote-box .k-story { font-size:14px; color:var(--ink); line-height:1.9; margin-top:14px; }
-      .keynote-box .k-stats { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
-      .keynote-box .k-chip { background:rgba(45,106,106,0.1); border:1px solid rgba(45,106,106,0.3); border-radius:8px; padding:8px 14px; font-size:12px; color:var(--muted); display:flex; flex-direction:column; align-items:center; min-width:80px; }
-      .keynote-box .k-chip-num { font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:800; color:var(--teal); }
-      .keynote-box .k-point { font-size:13px; color:var(--ink); line-height:1.8; margin-top:16px; background:rgba(196,162,101,0.12); border-left:3px solid var(--gold); border-radius:6px; padding:12px 14px; }
-      /* 分科会カード */
-      .bunkakai-note { font-size:13px; color:var(--muted); margin-bottom:14px; line-height:1.7; }
+      /* 基調講演 */
+      .keynote-box { background:var(--card-bg); border:1px solid rgba(196,162,101,0.35); border-radius:12px; padding:24px 26px; margin-bottom:28px; }
+      .keynote-box .k-tag { display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:12px; }
+      .keynote-box .k-title { font-family:'Zen Old Mincho',serif; font-size:19px; font-weight:700; color:var(--ink); line-height:1.6; }
+      .keynote-box .k-sub { font-size:13px; color:var(--muted); margin-top:8px; }
+      .keynote-box .k-speaker { font-size:13.5px; color:var(--ink); margin-top:14px; padding-top:14px; border-top:1px solid rgba(26,26,46,0.08); }
+      .keynote-box .k-story { font-size:14px; color:var(--ink); line-height:2.0; margin-top:14px; }
+      /* 実績スタットバンド（塗りなし・社報風） */
+      .keynote-box .k-stats { display:flex; flex-wrap:wrap; margin-top:22px; border-top:1px solid rgba(26,26,46,0.12); border-bottom:1px solid rgba(26,26,46,0.12); }
+      .keynote-box .k-stat { flex:1 1 0; min-width:74px; text-align:center; padding:16px 6px; position:relative; }
+      .keynote-box .k-stat + .k-stat::before { content:''; position:absolute; left:0; top:22%; height:56%; width:1px; background:rgba(26,26,46,0.1); }
+      .keynote-box .k-stat-num { display:block; font-family:'Zen Old Mincho',serif; font-size:25px; font-weight:900; color:var(--gold); line-height:1.1; }
+      .keynote-box .k-stat-lbl { display:block; font-size:11px; color:var(--muted); margin-top:8px; letter-spacing:0.5px; }
+      .keynote-box .k-point { font-size:13px; color:var(--muted); line-height:1.95; margin-top:20px; }
+      .keynote-box .k-point strong { color:var(--ink); font-family:'Zen Old Mincho',serif; font-weight:700; }
+      /* 分科会カード（塗り・枠を抑えた落ち着いた配色） */
+      .bunkakai-note { font-size:13px; color:var(--muted); margin-bottom:16px; line-height:1.7; }
       .bunkakai-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(285px,1fr)); gap:12px; }
-      .bk-card { background:var(--card-bg); border:1px solid rgba(196,162,101,0.3); border-radius:10px; padding:15px 17px; }
-      .bk-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:9px; }
-      .bk-no { font-family:'Bricolage Grotesque',sans-serif; font-size:12px; font-weight:800; color:var(--gold); letter-spacing:1px; }
-      .bk-region { font-size:11px; color:var(--muted); background:rgba(45,106,106,0.1); padding:2px 9px; border-radius:10px; white-space:nowrap; }
-      .bk-region.local { background:var(--accent); color:#fff; font-weight:700; }
+      .bk-card { background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-radius:10px; padding:16px 18px; transition:border-color .2s ease; }
+      .bk-card:hover { border-color:rgba(196,162,101,0.55); }
+      .bk-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px; gap:8px; }
+      .bk-no { font-family:'Bricolage Grotesque',sans-serif; font-size:12px; font-weight:800; color:var(--gold); letter-spacing:1px; white-space:nowrap; }
+      .bk-region { font-size:11px; color:var(--muted); letter-spacing:0.5px; white-space:nowrap; }
+      .bk-region.local { color:var(--gold); font-weight:700; }
       .bk-title { font-family:'Zen Old Mincho',serif; font-size:15.5px; font-weight:700; color:var(--ink); line-height:1.55; }
-      .bk-cat { font-size:12px; color:var(--teal); margin-top:7px; font-weight:500; }
-      .bk-details { margin-top:11px; border-top:1px dashed rgba(107,100,89,0.25); padding-top:9px; }
+      .bk-cat { font-size:12px; color:var(--muted); margin-top:7px; }
+      .bk-details { margin-top:11px; border-top:1px solid rgba(26,26,46,0.08); padding-top:9px; }
       .bk-details summary { cursor:pointer; font-size:12px; color:var(--gold); font-weight:700; list-style:none; }
       .bk-details summary::-webkit-details-marker { display:none; }
       .bk-details summary::before { content:'＋ '; }
@@ -1315,15 +1320,15 @@
         <div class="k-speaker">講師：<strong>後藤 清広 氏</strong>（後藤海産 代表／宮城県漁業協同組合 志津川支所 戸倉出張所カキ部会長）</div>
         <p class="k-story">東日本大震災で、船も養殖設備もすべてを失った後藤氏。絶望のなか、仲間の漁師と<strong>年100回を超える議論</strong>を重ね、養殖いかだを震災前の<strong>3分の1</strong>まで減らす決断をします。量を追う「奪い合う漁業」から、海を育て地域の未来を守る「分け合う漁業」へ──。その結果、南三陸・戸倉のカキは<strong>生産量2倍・所得1.5倍</strong>を実現し、環境負荷はむしろ低下。2016年には<strong>日本初のASC養殖場認証</strong>を取得しました。</p>
         <div class="k-stats">
-          <div class="k-chip"><span class="k-chip-num">1/3</span>いかだ削減</div>
-          <div class="k-chip"><span class="k-chip-num">2倍</span>生産量</div>
-          <div class="k-chip"><span class="k-chip-num">1.5倍</span>所得</div>
-          <div class="k-chip"><span class="k-chip-num">日本初</span>ASC認証</div>
+          <div class="k-stat"><span class="k-stat-num">1/3</span><span class="k-stat-lbl">いかだ削減</span></div>
+          <div class="k-stat"><span class="k-stat-num">2倍</span><span class="k-stat-lbl">生産量</span></div>
+          <div class="k-stat"><span class="k-stat-num">1.5倍</span><span class="k-stat-lbl">所得</span></div>
+          <div class="k-stat"><span class="k-stat-num">日本初</span><span class="k-stat-lbl">ASC認証</span></div>
         </div>
-        <p class="k-point">🎣 <strong>聞きどころ</strong> ─ 逆境からの大胆な事業転換、仲間との徹底した合意形成、そして持続可能性と収益の両立。まさに今回のテーマ「逆境こそ挑戦の舞台」を体現する、実践に裏打ちされた報告です。</p>
+        <p class="k-point"><strong>聞きどころ ─</strong> 逆境からの大胆な事業転換、仲間との徹底した合意形成、そして持続可能性と収益の両立。まさに今回のテーマ「逆境こそ挑戦の舞台」を体現する、実践に裏打ちされた報告です。</p>
       </div>
 
-      <div class="bunkakai-note"><strong style="color:var(--ink);">1日目 分科会（全18）</strong>　─　参加する分科会を<strong style="color:var(--ink);">第1・第2希望</strong>で選んで申込みます。各カードの「詳しく見る」で内容と報告者を確認できます。<br><span style="color:var(--accent); font-weight:600;">★ 第16分科会は地元・愛知からの報告です。</span></div>
+      <div class="bunkakai-note"><strong style="color:var(--ink);">1日目 分科会（全18）</strong>　─　参加する分科会を<strong style="color:var(--ink);">第1・第2希望</strong>で選んで申込みます。各カードの「詳しく見る」で内容と報告者を確認できます。<br><span style="color:var(--gold); font-weight:700;">★ 第16分科会は自地区・愛知からの報告です。</span></div>
       <div class="bunkakai-grid">
         <div class="bk-card">
           <div class="bk-top"><span class="bk-no">第1分科会</span><span class="bk-region">中同協</span></div>
@@ -1460,12 +1465,12 @@
             <p class="bk-rep">報告：林 俊治 氏（林塗装工業所／埼玉）</p>
           </details>
         </div>
-        <div class="bk-card" style="border-color:rgba(184,67,47,0.5);">
-          <div class="bk-top"><span class="bk-no">第16分科会</span><span class="bk-region local">愛知（地元）</span></div>
+        <div class="bk-card" style="border-color:rgba(196,162,101,0.6);">
+          <div class="bk-top"><span class="bk-no">第16分科会</span><span class="bk-region local">愛知（自地区）</span></div>
           <div class="bk-title">「どうせならおもしろい地域の未来」を共に創る</div>
           <div class="bk-cat">地域が輝く企業づくり</div>
           <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">ノリと勢いで起業し、失敗と仲間の離脱を経て同友会へ。三位一体経営の学びから「地域の良循環が自社の好環境をつくる」と気づき、人と地域を主語に置く企業へ変革。地元・愛知からの報告です。</p>
+            <p class="bk-desc">ノリと勢いで起業し、失敗と仲間の離脱を経て同友会へ。三位一体経営の学びから「地域の良循環が自社の好環境をつくる」と気づき、人と地域を主語に置く企業へ変革。自地区・愛知からの報告です。</p>
             <p class="bk-rep">報告：千賀 信義 氏（レジスタ／愛知）</p>
           </details>
         </div>
