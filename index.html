@@ -1262,7 +1262,11 @@
     <style>
       .official-block { margin-top: 56px; }
       .official-block .ob-head { font-family:'Zen Old Mincho',serif; font-size:22px; font-weight:900; color:var(--ink); margin-bottom:6px; }
-      .official-block .ob-en { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:24px; }
+      .official-block .ob-en { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+      .pdf-link { display:inline-flex; align-items:center; gap:9px; margin-bottom:26px; padding:12px 22px; border:1px solid var(--ink); border-radius:8px; color:var(--ink); text-decoration:none; font-size:14px; font-weight:700; transition:background .2s ease, color .2s ease; }
+      .pdf-link:hover { background:var(--ink); color:var(--cream); }
+      .pdf-link .pdf-ico { font-size:16px; }
+      .pdf-link .pdf-arrow { font-size:13px; opacity:0.7; }
       .apply-box { background:var(--ink); color:var(--cream); border-radius:14px; padding:28px 26px; margin-bottom:28px; }
       .apply-box .fee-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
       .apply-box .fee { flex:1 1 200px; background:rgba(255,255,255,0.06); border:1px solid rgba(196,162,101,0.35); border-radius:10px; padding:14px 18px; }
@@ -1309,6 +1313,7 @@
     <div class="official-block reveal">
       <div class="ob-head">公式プログラム & お申込み</div>
       <div class="ob-en">Official Program</div>
+      <a href="/pamphlet.pdf" target="_blank" rel="noopener" class="pdf-link"><span class="pdf-ico">📄</span>公式パンフレット（PDF）を開く<span class="pdf-arrow">↗</span></a>
 
       <div class="apply-box">
         <div class="fee-row">
@@ -1895,6 +1900,8 @@
 
 <footer>
   <div style="margin-bottom: 16px;">
+    <a href="/pamphlet.pdf" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">公式パンフレット（PDF） ↗</a>
+    &nbsp;&nbsp;
     <a href="https://www.sentabi.jp/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">せんだい旅日和（仙台観光総合サイト） ↗</a>
     &nbsp;&nbsp;
     <a href="https://www.sendai-airport.co.jp/access/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">仙台空港アクセス総合 ↗</a>
