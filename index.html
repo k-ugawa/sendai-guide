@@ -1701,6 +1701,66 @@
         </div>
       </div>
     </div>
+
+    <!-- 会場アクセス（住所・TEL・地図） -->
+    <style>
+      .venue-access { margin-top: 44px; }
+      .venue-access .va-head { font-family:'Zen Old Mincho',serif; font-size:20px; font-weight:700; color:var(--ink); margin-bottom:6px; }
+      .venue-access .va-sub { font-size:13px; color:var(--muted); margin-bottom:20px; line-height:1.7; }
+      .venue-card { display:grid; grid-template-columns:1fr 1.15fr; background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-radius:12px; overflow:hidden; margin-bottom:16px; }
+      .venue-card .vc-info { padding:20px 22px; }
+      .venue-card .vc-no { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; color:var(--gold); font-size:12px; letter-spacing:1px; }
+      .venue-card .vc-role { font-size:12px; color:var(--muted); margin-left:8px; }
+      .venue-card .vc-name { font-family:'Zen Old Mincho',serif; font-size:18px; font-weight:700; color:var(--ink); margin:5px 0 10px; }
+      .venue-card .vc-row { font-size:13px; color:var(--muted); line-height:1.95; }
+      .venue-card .vc-link { display:inline-block; margin-top:12px; font-size:13px; color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
+      .venue-card .vc-link:hover { color:var(--ink); }
+      .venue-card .vc-map { width:100%; height:100%; min-height:230px; border:0; display:block; }
+      @media (max-width:640px){ .venue-card { grid-template-columns:1fr; } .venue-card .vc-map { min-height:220px; } }
+    </style>
+    <div class="venue-access reveal">
+      <h3 class="va-head">会場アクセス</h3>
+      <p class="va-sub">3会場はすべて青葉区内。各地図はGoogleマップと連動しています（「Googleマップで開く」から経路案内へ）。</p>
+
+      <div class="venue-card">
+        <div class="vc-info">
+          <span class="vc-no">① 会場</span><span class="vc-role">1日目 分科会 ＋ 2日目 全体会</span>
+          <div class="vc-name">仙台国際センター</div>
+          <div class="vc-row">📍 仙台市青葉区青葉山無番地</div>
+          <div class="vc-row">☎ 022-265-2211（代）</div>
+          <div class="vc-row">🚇 地下鉄東西線「国際センター駅」徒歩約1分</div>
+          <div class="vc-row">🚗 東北自動車道「仙台宮城IC」から約10〜15分</div>
+          <a class="vc-link" href="https://www.google.com/maps/search/?api=1&query=仙台国際センター" target="_blank" rel="noopener">Google マップで開く ↗</a>
+        </div>
+        <iframe class="vc-map" src="https://maps.google.com/maps?q=仙台国際センター&z=16&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="仙台国際センターの地図"></iframe>
+      </div>
+
+      <div class="venue-card">
+        <div class="vc-info">
+          <span class="vc-no">② 会場</span><span class="vc-role">1日目 分科会 ＋ 懇親会</span>
+          <div class="vc-name">江陽グランドホテル</div>
+          <div class="vc-row">📍 仙台市青葉区本町2-3-1</div>
+          <div class="vc-row">☎ 022-267-5111（代）</div>
+          <div class="vc-row">🚉 JR「仙台駅」より徒歩約13分</div>
+          <div class="vc-row">🚗 東北自動車道「仙台宮城IC」から約15〜20分</div>
+          <a class="vc-link" href="https://www.google.com/maps/search/?api=1&query=江陽グランドホテル 仙台市青葉区本町2-3-1" target="_blank" rel="noopener">Google マップで開く ↗</a>
+        </div>
+        <iframe class="vc-map" src="https://maps.google.com/maps?q=江陽グランドホテル 仙台市青葉区本町2-3-1&z=16&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="江陽グランドホテルの地図"></iframe>
+      </div>
+
+      <div class="venue-card">
+        <div class="vc-info">
+          <span class="vc-no">③ 会場</span><span class="vc-role">1日目 分科会</span>
+          <div class="vc-name">パレスへいあん</div>
+          <div class="vc-row">📍 仙台市青葉区本町1-2-2</div>
+          <div class="vc-row">☎ 022-265-5111</div>
+          <div class="vc-row">🚉 JR「仙台駅」より徒歩約5分</div>
+          <div class="vc-row">🚗 東北自動車道「仙台宮城IC」から約15〜20分</div>
+          <a class="vc-link" href="https://www.google.com/maps/search/?api=1&query=パレスへいあん 仙台市青葉区本町1-2-2" target="_blank" rel="noopener">Google マップで開く ↗</a>
+        </div>
+        <iframe class="vc-map" src="https://maps.google.com/maps?q=パレスへいあん 仙台市青葉区本町1-2-2&z=16&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="パレスへいあんの地図"></iframe>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1907,6 +1967,19 @@
     <a href="https://www.sentabi.jp/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">せんだい旅日和（仙台観光総合サイト） ↗</a>
     &nbsp;&nbsp;
     <a href="https://www.sendai-airport.co.jp/access/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">仙台空港アクセス総合 ↗</a>
+  </div>
+
+  <div style="max-width:840px; margin:0 auto 22px; display:flex; flex-wrap:wrap; gap:18px 44px; justify-content:center; text-align:left;">
+    <div style="font-size:12px; color:rgba(247,243,237,0.6); line-height:1.75;">
+      <div style="color:var(--gold); font-weight:700; margin-bottom:3px;">主催　中小企業家同友会全国協議会</div>
+      〒101-0032 東京都千代田区岩本町3-9-13 岩本町寿共同ビル3F<br>
+      TEL 03-5829-9335／FAX 03-5829-9336　<a href="https://www.doyu.jp/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">doyu.jp ↗</a>
+    </div>
+    <div style="font-size:12px; color:rgba(247,243,237,0.6); line-height:1.75;">
+      <div style="color:var(--gold); font-weight:700; margin-bottom:3px;">設営　一般社団法人宮城県中小企業家同友会</div>
+      〒983-0852 仙台市宮城野区榴岡1-6-3 東口鳳月ビル4F<br>
+      TEL 022-355-2771／FAX 022-257-3220　<a href="https://miyagi.doyu.jp/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">miyagi.doyu.jp ↗</a>
+    </div>
   </div>
   中小企業家同友会 青年経営者全国交流会 in 仙台 2026 ─ 旅のしおり
 </footer>
