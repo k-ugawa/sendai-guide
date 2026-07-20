@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>旅のしおり ─ 仙台 2026</title>
+<title>青全交のしおり in 仙台 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1120,7 +1120,7 @@
 <header class="hero">
   <div class="hero-content">
     <span class="hero-label">第54回 中小企業家同友会 青年経営者全国交流会 in 仙台</span>
-    <h1>旅のしおり ─ <span>仙台</span></h1>
+    <h1>青全交のしおり<br><span>in 仙台</span></h1>
     <p class="hero-sub">2026.10.1（木）13:00 ─ 10.2（金）12:15</p>
     <p style="font-size:15px; color:rgba(255,255,255,0.6); margin-top:8px; letter-spacing:1px; font-style:italic;">「逆境こそ挑戦の舞台！～"旗"を掲げ、共に未来を創ろう」</p>
     <p class="cd-message" id="cd-message"></p>
@@ -2026,17 +2026,17 @@
       TEL 022-355-2771／FAX 022-257-3220　<a href="https://miyagi.doyu.jp/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">miyagi.doyu.jp ↗</a>
     </div>
   </div>
-  中小企業家同友会 青年経営者全国交流会 in 仙台 2026 ─ 旅のしおり
+  中小企業家同友会 青年経営者全国交流会 in 仙台 2026 ─ 青全交のしおり
 </footer>
 
 <script>
 // カウントダウン
-const targetDate = new Date('2026-10-01T08:20:00+09:00'); // 初便出発時刻
+const targetDate = new Date('2026-10-01T13:00:00+09:00'); // 1日目 分科会 開会
 function updateCountdown() {
   const now = new Date();
   const diff = targetDate - now;
   if (diff <= 0) {
-    document.getElementById('cd-message').textContent = '旅の始まりです！';
+    document.getElementById('cd-message').textContent = '開催中です！';
     document.getElementById('cd-days').textContent = '0';
     document.getElementById('cd-hours').textContent = '00';
     document.getElementById('cd-min').textContent = '00';
@@ -2051,7 +2051,7 @@ function updateCountdown() {
   document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
   document.getElementById('cd-min').textContent = String(min).padStart(2, '0');
   document.getElementById('cd-sec').textContent = String(sec).padStart(2, '0');
-  document.getElementById('cd-message').textContent = '出発まであと…';
+  document.getElementById('cd-message').textContent = '開催まであと…';
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
