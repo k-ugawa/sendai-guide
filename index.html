@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>青全交のしおり in 仙台 2026</title>
+<meta name="description" content="第54回 中小企業家同友会 青年経営者全国交流会 in 仙台（2026年10月1日〜2日）の参加者向けしおり。日程・会場・宿泊・移動・グルメをまとめています。">
+<!-- 共有時のカード表示（LINE・メール等で裸のURLにならないように） -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="青全交のしおり in 仙台 2026">
+<meta property="og:title" content="青全交のしおり in 仙台 2026">
+<meta property="og:description" content="第54回 青年経営者全国交流会 in 仙台（10/1〜2）の参加者向けしおり。日程・会場・宿泊・移動・グルメをまとめています。">
+<meta property="og:url" content="https://sendai.apppro-web.com/">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1988,6 +1997,36 @@
 </section>
 
 <footer>
+  <!-- 共有ボタン -->
+  <style>
+    .share-block { margin: 0 auto 30px; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--gold);
+      border: 1px solid rgba(196,162,101,0.6); border-radius: 8px;
+      padding: 14px 28px; min-height: 48px;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 15px; font-weight: 700; letter-spacing: 1px;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .share-btn:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .share-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .share-btn .share-ico { font-size: 17px; line-height: 1; }
+    .share-note {
+      font-size: 12.5px; color: rgba(247,243,237,0.6);
+      margin-top: 12px; min-height: 1.5em; line-height: 1.7;
+      word-break: break-all;
+    }
+  </style>
+  <div class="share-block">
+    <button type="button" class="share-btn" id="share-btn">
+      <span class="share-ico" aria-hidden="true">⤴</span>
+      <span>このしおりを共有する</span>
+    </button>
+    <p class="share-note" id="share-note" role="status" aria-live="polite"></p>
+  </div>
+
   <div style="margin-bottom: 16px;">
     <a href="/pamphlet.pdf" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">公式パンフレット（PDF） ↗</a>
     &nbsp;&nbsp;
@@ -2037,6 +2076,42 @@ function updateCountdown() {
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+// 共有ボタン（スマホ=OSの共有シート／PC=URLをコピー）
+(function () {
+  const btn = document.getElementById('share-btn');
+  const note = document.getElementById('share-note');
+  if (!btn) return;
+
+  const shareUrl = 'https://sendai.apppro-web.com/';
+  const shareData = {
+    title: '青全交のしおり in 仙台 2026',
+    text: '第54回 青年経営者全国交流会 in 仙台（10/1〜2）のしおりです。日程・会場・宿泊・移動をまとめています。',
+    url: shareUrl,
+  };
+
+  btn.addEventListener('click', async () => {
+    // 1) OSの共有シート（iPhone/Android）
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        note.textContent = '';
+        return;
+      } catch (e) {
+        // ユーザーが閉じただけなら何もしない。それ以外はコピーへ回す
+        if (e && e.name === 'AbortError') { note.textContent = ''; return; }
+      }
+    }
+    // 2) URLをクリップボードへ（PC）
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      note.textContent = 'URLをコピーしました。LINEやメールに貼り付けてください。';
+    } catch (e) {
+      // 3) それも使えない環境では、手でコピーしてもらう案内を出す
+      note.textContent = '下のURLを長押し（PCは選択）してコピーしてください　' + shareUrl;
+    }
+  });
+})();
 
 // スクロールリビールアニメーション
 const reveals = document.querySelectorAll('.reveal');
