@@ -4,2050 +4,1202 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>青全交のしおり in 仙台 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="第54回 中小企業家同友会 青年経営者全国交流会 in 仙台（2026年10月1日〜2日）。名古屋青年同友会 第9支部の参加者向けの行程・会場・宿泊・移動のしおり。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #1a1a2e;
-    --cream: #f7f3ed;
-    --gold: #c4a265;
-    --gold-glow: rgba(196, 162, 101, 0.25);
-    --accent: #b8432f;
-    --accent-soft: rgba(184, 67, 47, 0.12);
-    --teal: #3a544f;
-    --muted: #6b6459;
-    --card-bg: rgba(255,255,255,0.6);
-    --section-gap: 80px;
+  /* ============================================================
+     青全交のしおり in 仙台 ─ 二色刷りの行程表
+     墨 = 事実 / 藍 = 自由・案内 / 朱 = 締切と注意 のみ
+     ============================================================ */
+  :root{
+    --sumi:#16191E;
+    --ai:#0B4F9E;
+    --ai-pale:rgba(11,79,158,.07);
+    --shu:#C8371D;
+    --shu-pale:rgba(200,55,29,.06);
+    --kami:#F7F7F5;
+    --usu:#63686F;
+    --keisen:rgba(22,25,30,.16);
+    --hair:rgba(22,25,30,.09);
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
-    overflow-x: hidden;
-    line-height: 1.8;
-    font-size: 18px;
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:56px}
+  body{
+    font-family:'Zen Kaku Gothic New',sans-serif;
+    background:var(--kami);
+    color:var(--sumi);
+    font-size:16px;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%;
+  }
+  .mono{font-family:'DM Mono',ui-monospace,monospace;font-feature-settings:"tnum";letter-spacing:.02em}
+  a{color:var(--ai);text-underline-offset:3px}
+  a:focus-visible,summary:focus-visible,.tocbar a:focus-visible{outline:2px solid var(--ai);outline-offset:3px;border-radius:2px}
+  img,iframe{max-width:100%}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+
+  /* ---------- 更新バナー ---------- */
+  .updated{
+    background:var(--sumi);color:var(--kami);
+    font-size:11.5px;letter-spacing:.12em;text-align:center;padding:9px 16px;line-height:1.7;
+  }
+  .updated b{color:#fff;font-weight:500}
+
+  /* ---------- 目次バー ---------- */
+  .tocbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,247,245,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--hair);
+  }
+  .tocbar ul{display:flex;list-style:none;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .tocbar ul::-webkit-scrollbar{display:none}
+  .tocbar a{
+    display:block;padding:14px 15px;font-size:12.5px;
+    color:var(--usu);text-decoration:none;white-space:nowrap;
+    border-bottom:2px solid transparent;transition:color .18s,border-color .18s;
+  }
+  .tocbar a:hover{color:var(--sumi);border-bottom-color:var(--sumi)}
+
+  /* ---------- 表紙 ---------- */
+  .cover{padding:52px 0 4px}
+  .cover .rule{border-top:2px solid var(--sumi);border-bottom:1px solid var(--sumi);height:5px;margin-bottom:26px}
+  .cover .kaisai{font-size:12px;letter-spacing:.14em;color:var(--usu);line-height:1.85}
+  .cover h1{
+    font-family:'Shippori Mincho B1',serif;font-weight:800;
+    font-size:clamp(38px,10.5vw,66px);line-height:1.2;letter-spacing:.03em;margin:14px 0 0;
+  }
+  .cover h1 em{display:block;font-style:normal;color:var(--ai)}
+  .cover .dates{margin-top:22px;font-size:clamp(12.5px,3.4vw,16px);font-weight:500;padding-top:16px;border-top:1px solid var(--keisen)}
+  .cover .theme{font-family:'Shippori Mincho B1',serif;font-weight:500;font-size:15.5px;margin-top:14px;line-height:1.95}
+  .cover .who{font-size:12.5px;color:var(--usu);margin-top:6px}
+  .countbox{
+    display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+    margin-top:26px;padding:14px 18px;background:var(--ai-pale);border-left:2px solid var(--ai);
+  }
+  .countbox .lbl{font-size:12.5px;color:var(--ai);letter-spacing:.08em}
+  .countbox .val{font-size:30px;font-weight:500;color:var(--ai);line-height:1}
+  .countbox .val small{font-size:14px;margin-left:2px}
+  .countbox .sub{font-size:12px;color:var(--usu);margin-left:auto}
+
+  /* ---------- 行程レール（署名要素） ---------- */
+  .rail{position:relative;padding-left:86px;padding-bottom:8px}
+  .rail .line{position:absolute;left:70px;top:0;bottom:0;width:2px;background:var(--sumi);transform-origin:top center}
+  /* fill-mode は付けない。アニメが走らない環境（非表示タブ・低速端末）では
+     scaleY(1) の静止状態のまま＝線がそのまま見える、を保証するため。 */
+  .drawn .line{animation:draw 1.5s cubic-bezier(.65,0,.35,1)}
+  @keyframes draw{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+  .daymark{position:relative;margin:40px 0 4px}
+  .daymark:first-of-type{margin-top:26px}
+  .daymark .tag{
+    position:absolute;left:-86px;top:2px;
+    background:var(--sumi);color:var(--kami);
+    font-size:11px;letter-spacing:.14em;padding:5px 9px;white-space:nowrap;
+  }
+  .daymark .cap{font-family:'Shippori Mincho B1',serif;font-weight:700;font-size:20px;padding-left:2px;line-height:1.5}
+  .daymark .cap span{
+    font-size:12.5px;color:var(--usu);font-family:'Zen Kaku Gothic New',sans-serif;
+    font-weight:400;margin-left:10px;letter-spacing:.04em;
   }
 
-  /* ノイズテクスチャ */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
+  .stop{position:relative;padding:16px 0;border-bottom:1px solid var(--hair)}
+  .stop:last-child{border-bottom:none}
+  .stop > time{
+    position:absolute;left:-86px;width:62px;text-align:right;
+    font-family:'DM Mono',ui-monospace,monospace;font-size:13px;font-weight:500;
+    line-height:1.9;color:var(--sumi);font-feature-settings:"tnum";
   }
+  .stop::before{
+    content:'';position:absolute;left:-19.5px;top:24px;
+    width:9px;height:9px;border-radius:50%;
+    background:var(--sumi);box-shadow:0 0 0 4px var(--kami);
+  }
+  .stop h3{font-size:17px;font-weight:700;line-height:1.65}
+  .stop .place{font-size:13.5px;color:var(--usu);margin-top:2px;line-height:1.8}
 
-  /* ===== ヒーロー ===== */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background: var(--ink);
-    color: var(--cream);
-    overflow: hidden;
+  /* 自由時間 = レールが開いている区間 */
+  .stop.free::before{background:var(--kami);border:2px solid var(--ai);width:11px;height:11px;left:-20.5px}
+  .stop.free > time{color:var(--ai)}
+  .free-body{background:#fff;border:1px solid var(--hair);border-left:2px solid var(--ai);padding:14px 16px;margin-top:11px}
+  .free-body .fh{
+    font-size:11.5px;letter-spacing:.14em;color:var(--ai);
+    display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;
   }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse at 20% 80%, rgba(196,162,101,0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(45,106,106,0.12) 0%, transparent 60%);
+  .free-body ul{list-style:none}
+  .free-body li{font-size:14px;line-height:1.85;padding:9px 0;border-top:1px solid var(--hair)}
+  .free-body li:first-child{border-top:none}
+  .free-body li b{font-weight:700;display:block}
+  .free-body li b .mark{
+    font-size:10.5px;letter-spacing:.1em;color:var(--ai);font-weight:500;
+    border:1px solid rgba(11,79,158,.4);padding:1px 6px;margin-left:8px;vertical-align:2px;
   }
-  .hero::after {
-    content: '仙台';
-    position: absolute;
-    right: -40px; bottom: -60px;
-    font-family: 'Zen Old Mincho', serif;
-    font-size: clamp(200px, 25vw, 360px);
-    font-weight: 900;
-    color: rgba(255,255,255,0.03);
-    line-height: 1;
-    pointer-events: none;
-  }
-  .hero-content {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    animation: fadeUp 1.2s ease-out;
-  }
-  .hero-label {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 16px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-    display: block;
-  }
-  .hero h1 {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: clamp(42px, 7vw, 72px);
-    font-weight: 900;
-    letter-spacing: 8px;
-    margin-bottom: 16px;
-    line-height: 1.2;
-  }
-  .hero h1 span { color: var(--gold); }
-  .hero-sub {
-    font-size: 19px;
-    color: rgba(247,243,237,0.6);
-    margin-bottom: 12px;
-    letter-spacing: 2px;
-  }
-  .countdown {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-  }
-  .cd-item { text-align: center; }
-  .cd-num {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 800;
-    color: var(--gold);
-    display: block;
-    line-height: 1;
-    min-width: 70px;
-  }
-  .cd-label {
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: rgba(247,243,237,0.4);
-    text-transform: uppercase;
-    margin-top: 6px;
-    display: block;
-  }
-  .cd-sep {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 36px;
-    font-weight: 800;
-    color: rgba(196,162,101,0.3);
-    margin-top: -16px;
-  }
-  .cd-message {
-    font-size: 15px;
-    color: rgba(247,243,237,0.5);
-    margin-top: 32px;
-    margin-bottom: 12px;
-    letter-spacing: 3px;
-    text-align: center;
-  }
-  .scroll-hint {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    letter-spacing: 4px;
-    color: rgba(247,243,237,0.3);
-    animation: bounce 2s ease-in-out infinite;
-  }
+  .free-body li p{color:var(--usu);font-size:13px;line-height:1.8;margin-top:2px}
+  .free-body li .links{margin-top:2px;display:flex;flex-wrap:wrap;gap:0 16px}
+  .free-body li .links a{font-size:12.5px;display:inline-block;padding:8px 0;line-height:20px}
 
-  /* ===== 共通セクション ===== */
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
-  section { padding: var(--section-gap) 0; }
+  /* 行程内の会場一覧 */
+  .venues{margin-top:12px;border-top:1px solid var(--hair)}
+  .venue{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:11px 0;border-bottom:1px solid var(--hair);align-items:baseline}
+  .venue:last-child{border-bottom:none}
+  .venue .vn{font-size:14.5px;font-weight:700}
+  .venue .vt{font-size:11px;letter-spacing:.1em;color:var(--ai);white-space:nowrap}
+  .venue .vl{font-size:12.5px;color:var(--usu);grid-column:1/-1;line-height:1.75}
 
-  .section-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 20px;
-    align-items: center;
-    margin-bottom: 48px;
-  }
-  .section-num {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 64px;
-    font-weight: 800;
-    color: var(--gold);
-    opacity: 0.25;
-    line-height: 1;
-  }
-  .section-title-group h2 {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
-  .section-title-group .en {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 12px;
-    letter-spacing: 4px;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
+  /* ---------- セクション共通 ---------- */
+  section{padding:66px 0 0}
+  .sechead{display:flex;align-items:baseline;gap:14px;border-top:2px solid var(--sumi);padding-top:12px;margin-bottom:24px}
+  .sechead h2{font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:26px;letter-spacing:.04em;line-height:1.4}
+  .sechead .count{font-size:11.5px;color:var(--usu);margin-left:auto;white-space:nowrap;letter-spacing:.1em}
+  .lead{font-size:14px;color:var(--usu);line-height:1.95;margin-bottom:20px}
+  .lead b{color:var(--sumi)}
 
-  /* ===== スケジュール ===== */
-  .schedule-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-  .day-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 36px;
-    position: relative;
-    overflow: hidden;
-  }
-  .day-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 4px;
-    background: linear-gradient(90deg, var(--gold), var(--teal));
-  }
-  .day-label {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: var(--teal);
-    margin-bottom: 24px;
-    text-transform: uppercase;
-  }
-  .timeline-item {
-    display: grid;
-    grid-template-columns: 120px 1fr auto;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    align-items: center;
-  }
-  .timeline-item:last-child { border-bottom: none; }
-  .time {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--ink);
-  }
-  .event { font-size: 17px; }
-  .badge {
-    font-size: 11px;
-    padding: 3px 10px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .badge-free {
-    background: var(--gold-glow);
-    color: var(--gold);
-  }
-  .badge-fixed {
-    background: var(--accent-soft);
-    color: var(--accent);
-  }
+  /* ---------- 注意ブロック ---------- */
+  .note{background:var(--shu-pale);border:1px solid var(--hair);border-top:2px solid var(--shu);padding:16px 18px;margin-top:24px}
+  .note .nh{font-size:11.5px;letter-spacing:.12em;color:var(--shu);margin-bottom:5px}
+  .note p{font-size:14px;line-height:1.95}
+  .note p b{font-weight:700}
 
-  /* 自由時間ハイライト */
-  .free-times {
-    margin-top: 40px;
-    background: var(--ink);
-    color: var(--cream);
-    padding: 32px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .free-time-card {
-    border-left: 2px solid var(--gold);
-    padding-left: 16px;
-  }
-  .free-time-card .ft-label {
-    font-size: 12px;
-    color: var(--gold);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .free-time-card .ft-desc {
-    font-size: 15px;
-    color: rgba(247,243,237,0.7);
-    line-height: 1.6;
-  }
+  /* ---------- 申込 ---------- */
+  .apply{background:var(--sumi);color:var(--kami);padding:24px 22px}
+  .apply .fees{display:flex;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.2);margin-bottom:18px}
+  .apply .fee{flex:1 1 170px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+  .apply .fee + .fee{border-left:1px solid rgba(255,255,255,.2);padding-left:18px}
+  .apply .amt{font-size:25px;font-weight:500;display:block;line-height:1.25}
+  .apply .lbl{font-size:12.5px;color:rgba(247,247,245,.65)}
+  .apply .deadline{display:inline-block;background:var(--shu);color:#fff;font-size:13px;font-weight:500;padding:7px 14px;letter-spacing:.06em}
+  .apply ul{list-style:none;margin-top:16px}
+  .apply li{font-size:13.5px;color:rgba(247,247,245,.82);line-height:1.9;padding:5px 0 5px 18px;position:relative}
+  .apply li::before{content:'—';position:absolute;left:0;color:rgba(247,247,245,.4)}
+  .apply li b{color:#fff;font-weight:700}
+  .pdf{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:12px 20px;border:1px solid var(--sumi);color:var(--sumi);text-decoration:none;font-size:13.5px;font-weight:700;transition:background .18s,color .18s}
+  .pdf:hover{background:var(--sumi);color:var(--kami)}
+  .pdf .m{font-size:11px;letter-spacing:.12em;font-weight:500;color:var(--ai)}
+  .pdf:hover .m{color:rgba(247,247,245,.7)}
 
-  /* ===== グルメ ===== */
-  .gourmet-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .gourmet-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 32px 28px;
-    position: relative;
-    transition: transform 0.4s, box-shadow 0.4s;
-  }
-  .gourmet-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-  }
-  .gourmet-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 3px;
-    background: var(--gold);
-    transition: width 0.5s cubic-bezier(0.25,0.8,0.25,1);
-  }
-  .gourmet-card:hover::after { width: 100%; }
-  .gourmet-emoji {
-    font-size: 36px;
-    margin-bottom: 12px;
-    display: block;
-  }
-  .gourmet-card h3 {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .gourmet-card p {
-    font-size: 16px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
+  /* ---------- 基調講演 ---------- */
+  .keynote{border:1px solid var(--keisen);background:#fff;padding:24px 22px}
+  .keynote .kt{font-size:11.5px;letter-spacing:.14em;color:var(--ai)}
+  .keynote h3{font-family:'Shippori Mincho B1',serif;font-weight:700;font-size:19px;line-height:1.7;margin-top:10px}
+  .keynote .ks{font-size:13.5px;color:var(--usu);margin-top:6px}
+  .keynote .spk{font-size:13.5px;margin-top:14px;padding-top:14px;border-top:1px solid var(--hair);line-height:1.85}
+  .keynote .story{font-size:14.5px;line-height:2.05;margin-top:12px}
+  .keynote .story b{font-weight:700}
+  .kstats{display:flex;flex-wrap:wrap;margin-top:20px;border-top:1px solid var(--keisen);border-bottom:1px solid var(--keisen)}
+  .kstat{flex:1 1 0;min-width:70px;text-align:center;padding:14px 4px;position:relative}
+  .kstat + .kstat::before{content:'';position:absolute;left:0;top:22%;height:56%;width:1px;background:var(--hair)}
+  .kstat .n{display:block;font-family:'Shippori Mincho B1',serif;font-weight:800;font-size:23px;color:var(--ai);line-height:1.2}
+  .kstat .l{display:block;font-size:11.5px;color:var(--usu);margin-top:4px}
+  .keynote .point{font-size:13.5px;color:var(--usu);line-height:1.95;margin-top:18px}
+  .keynote .point b{color:var(--sumi);font-family:'Shippori Mincho B1',serif;font-weight:700}
 
-  /* ナイトタイムフロー */
-  .night-flow {
-    margin-top: 48px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: var(--cream);
-    padding: 40px;
-    position: relative;
-    overflow: hidden;
-  }
-  .night-flow::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(circle at 80% 50%, rgba(196,162,101,0.1) 0%, transparent 60%);
-  }
-  .night-flow h3 {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 22px;
-    margin-bottom: 32px;
-    position: relative;
-  }
-  .night-flow h3 span { color: var(--gold); }
-  .flow-steps {
-    display: flex;
-    gap: 0;
-    position: relative;
-    align-items: center;
-  }
-  .flow-step {
-    flex: 1;
-    text-align: center;
-    position: relative;
-    padding: 0 12px;
-  }
-  .flow-step::after {
-    content: '→';
-    position: absolute;
-    right: -8px; top: 50%;
-    transform: translateY(-50%);
-    color: var(--gold);
-    font-size: 20px;
-  }
-  .flow-step:last-child::after { display: none; }
-  .flow-time {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--gold);
-    display: block;
-    margin-bottom: 8px;
-  }
-  .flow-label {
-    font-size: 15px;
-    color: rgba(247,243,237,0.8);
-  }
-  .flow-sub {
-    font-size: 13px;
-    color: rgba(247,243,237,0.4);
-    margin-top: 4px;
-  }
+  /* ---------- 分科会 ---------- */
+  .bk{border-top:1px solid var(--hair);padding:15px 0}
+  .bk:first-of-type{border-top:1px solid var(--keisen)}
+  .bk-top{display:flex;gap:10px;align-items:baseline;justify-content:space-between}
+  .bk-no{font-size:12px;font-weight:500;color:var(--ai);white-space:nowrap}
+  .bk-region{font-size:11.5px;color:var(--usu);letter-spacing:.08em;white-space:nowrap}
+  .bk.local .bk-region{color:var(--shu);font-weight:700}
+  .bk.local .bk-no{color:var(--shu)}
+  .bk h3{font-family:'Shippori Mincho B1',serif;font-weight:700;font-size:16.5px;line-height:1.7;margin-top:5px}
+  .bk .cat{font-size:12.5px;color:var(--usu);margin-top:3px;line-height:1.75}
+  .bk details{margin-top:8px}
+  .bk summary{cursor:pointer;font-size:12.5px;color:var(--ai);list-style:none;display:inline-block;padding:9px 4px 9px 0;min-height:40px;line-height:22px}
+  .bk summary::-webkit-details-marker{display:none}
+  .bk summary::before{content:'＋ '}
+  .bk details[open] summary::before{content:'− '}
+  .bk .desc{font-size:13.5px;color:var(--usu);line-height:1.95;margin-top:8px}
+  .bk .rep{font-size:13.5px;margin-top:7px;line-height:1.85}
 
-  /* ===== アクセス ===== */
-  .access-layout {
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 32px;
+  /* ---------- 時刻表（フライト） ---------- */
+  .tt{margin-bottom:6px}
+  .tt-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:24px 0 8px;padding-bottom:7px;border-bottom:1px solid var(--sumi)}
+  .tt-head .dir{font-size:15px;font-weight:700}
+  .tt-head .via{font-size:12.5px;color:var(--usu);margin-left:auto;white-space:nowrap}
+  table.tt-table{width:100%;border-collapse:collapse}
+  table.tt-table th{
+    font-size:11px;letter-spacing:.1em;color:var(--usu);font-weight:400;text-align:left;
+    padding:7px 6px;border-bottom:1px solid var(--hair);
   }
-  .flight-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--card-bg);
-    border: 1px solid rgba(0,0,0,0.06);
-  }
-  .flight-table thead {
-    background: var(--ink);
-    color: var(--cream);
-  }
-  .flight-table th {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 14px 16px;
-    text-align: left;
-    font-weight: 700;
-  }
-  .flight-table td {
-    padding: 14px 16px;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-  }
-  .flight-table tr:hover { background: rgba(196,162,101,0.06); }
-  .flight-table .recommend {
-    color: var(--accent);
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .flight-direction {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--gold);
-    display: inline-block;
-  }
-  .fare-note {
-    margin-top: 16px;
-    font-size: 14px;
-    color: var(--muted);
-    padding: 16px;
-    background: var(--accent-soft);
-    border-left: 3px solid var(--accent);
-  }
+  table.tt-table th.num,table.tt-table td.num{text-align:right;font-family:'DM Mono',ui-monospace,monospace;font-feature-settings:"tnum"}
+  table.tt-table td{padding:11px 6px;border-bottom:1px solid var(--hair);font-size:13.5px;vertical-align:baseline}
+  table.tt-table td.num{font-size:14.5px;font-weight:500;white-space:nowrap}
+  table.tt-table td:first-child,table.tt-table th:first-child{padding-left:0}
+  table.tt-table td:last-child,table.tt-table th:last-child{padding-right:0;text-align:right}
+  table.tt-table td .memo{font-size:12px;color:var(--usu);line-height:1.6;display:block}
+  .rec{display:inline-block;font-size:10.5px;letter-spacing:.1em;color:var(--ai);border:1px solid rgba(11,79,158,.45);padding:1px 6px;margin-right:6px;white-space:nowrap}
+  .fare{font-size:12.5px;color:var(--usu);line-height:1.9;margin-top:12px}
+  .fare b{color:var(--sumi);font-weight:500}
 
-  .local-transport {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .transport-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 24px;
-  }
-  .transport-card h4 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .transport-card p {
-    font-size: 16px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
+  /* ---------- 代替ルート ---------- */
+  .alt{border:1px solid var(--hair);background:#fff;padding:18px 20px;margin-top:16px}
+  .alt .ah{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+  .alt .ah .m{font-size:11px;letter-spacing:.12em;color:var(--ai)}
+  .alt .ah h4{font-size:15px;font-weight:700}
+  .alt .route{font-size:13.5px;line-height:2;color:var(--sumi)}
+  .alt .route span{color:var(--usu)}
+  .alt .meta{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:11px;padding-top:11px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--usu)}
+  .alt .meta b{color:var(--sumi);font-family:'DM Mono',ui-monospace,monospace;font-size:14px;font-weight:500;margin-left:4px}
+  .alt .anote{font-size:12.5px;color:var(--usu);line-height:1.85;margin-top:9px}
+  .alt a{font-size:12.5px;display:inline-block;margin-top:9px}
 
-  /* ===== エリアガイド（テキスト形式） ===== */
-  .guide-intro {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .guide-intro p {
-    font-size: 18px;
-    color: var(--muted);
-    line-height: 1.9;
-  }
-  .guide-intro strong { color: var(--ink); }
-  .compare-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-  .compare-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 28px;
-    transition: transform 0.4s, box-shadow 0.4s;
-  }
-  .compare-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-  }
-  .compare-sendai {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 6px;
-  }
-  .compare-eq {
-    font-size: 13px;
-    color: var(--gold);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-  .compare-nagoya {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 19px;
-    font-weight: 700;
-    color: var(--teal);
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--gold-glow);
-  }
-  .compare-card p {
-    font-size: 16px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-  .distance-summary {
-    margin-top: 48px;
-    background: var(--ink);
-    color: var(--cream);
-    padding: 36px;
-  }
-  .distance-summary h3 {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 20px;
-    margin-bottom: 24px;
-    color: var(--gold);
-  }
-  .distance-items { display: flex; flex-direction: column; gap: 0; }
-  .dist-row {
-    display: grid;
-    grid-template-columns: 120px 30px 1fr auto;
-    gap: 8px;
-    align-items: center;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-size: 16px;
-  }
-  .dist-row:last-child { border-bottom: none; }
-  .dist-from { color: var(--gold); font-weight: 700; }
-  .dist-arrow { color: rgba(247,243,237,0.3); text-align: center; }
-  .dist-to { color: rgba(247,243,237,0.8); }
-  .dist-val {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 700;
-    color: var(--cream);
-    text-align: right;
-  }
-  @media (max-width: 768px) {
-    .compare-cards { grid-template-columns: 1fr; }
-    .dist-row { grid-template-columns: 1fr; gap: 4px; }
-    .dist-val { text-align: left; }
-  }
+  /* ---------- 現地交通 ---------- */
+  .local{display:grid;grid-template-columns:1fr;gap:0;margin-top:26px;border-top:1px solid var(--keisen)}
+  .local .lc{padding:14px 0;border-bottom:1px solid var(--hair)}
+  .local .lc .lh{display:flex;align-items:baseline;gap:10px}
+  .local .lc .m{font-size:11px;letter-spacing:.12em;color:var(--ai);white-space:nowrap}
+  .local .lc h4{font-size:15px;font-weight:700}
+  .local .lc p{font-size:13.5px;color:var(--usu);line-height:1.85;margin-top:3px}
+  .local .lc a{font-size:12.5px}
 
-  .area-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-  }
-  .area-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 28px;
-    border-left: 4px solid var(--teal);
-  }
-  .area-card h4 {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 19px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .area-card p {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-  .nagoya-compare {
-    margin-top: 40px;
-    background: var(--ink);
-    color: var(--cream);
-    padding: 36px;
-  }
-  .nagoya-compare h3 {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 20px;
-    margin-bottom: 24px;
-    color: var(--gold);
-  }
-  .compare-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px 40px;
-  }
-  .compare-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 16px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .compare-item .sendai-name { color: var(--gold); font-weight: 700; min-width: 120px; }
-  .compare-item .eq { color: rgba(247,243,237,0.3); }
-  .compare-item .nagoya-name { color: rgba(247,243,237,0.6); }
+  /* ---------- 会場アクセス ---------- */
+  .vcard{border:1px solid var(--keisen);background:#fff;margin-bottom:16px;overflow:hidden}
+  .vcard .vi{padding:20px 22px}
+  .vcard .vno{font-size:11px;letter-spacing:.12em;color:var(--ai);font-weight:500}
+  .vcard .vrole{font-size:12px;color:var(--usu);margin-left:10px}
+  .vcard .vname{font-family:'Shippori Mincho B1',serif;font-size:19px;font-weight:700;margin:6px 0 12px}
+  .vcard .vrow{display:grid;grid-template-columns:52px 1fr;gap:4px 12px;font-size:13px;color:var(--usu);line-height:1.85;padding:3px 0}
+  .vcard .vrow .k{font-size:11px;letter-spacing:.1em;color:var(--ai);padding-top:3px}
+  .vcard .vlink{display:inline-block;margin-top:13px;font-size:13px}
+  .vcard iframe{width:100%;height:230px;border:0;display:block;border-top:1px solid var(--keisen)}
 
-  /* 距離情報 */
-  .distance-bar {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .dist-item {
-    text-align: center;
-    background: var(--card-bg);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 24px;
-  }
-  .dist-item .route {
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 8px;
-  }
-  .dist-item .method {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--teal);
-  }
+  /* ---------- 宿泊 ---------- */
+  .merits{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--keisen);margin-bottom:34px}
+  .merit{padding:16px 0;border-bottom:1px solid var(--hair)}
+  .merit h4{font-size:15px;font-weight:700;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .merit h4 .verdict{font-size:11px;letter-spacing:.1em;font-weight:500;color:var(--usu);margin-left:auto}
+  .merit.best h4 .verdict{color:var(--ai)}
+  .merit ul{list-style:none;margin-top:7px}
+  .merit li{font-size:13px;color:var(--usu);line-height:1.85;padding:2px 0 2px 15px;position:relative}
+  .merit li::before{content:'·';position:absolute;left:3px;color:var(--ai)}
 
-  /* ===== リンクスタイル ===== */
-  a.ext-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    color: var(--teal);
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    margin-top: 10px;
-    padding: 4px 0;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s, color 0.3s;
-  }
-  a.ext-link:hover {
-    border-bottom-color: var(--teal);
-    color: var(--ink);
-  }
-  a.ext-link::after { content: ' ↗'; font-size: 12px; }
-  .flight-table a {
-    color: var(--teal);
-    text-decoration: none;
-    font-weight: 700;
-    border-bottom: 1px dashed var(--teal);
-    transition: color 0.3s;
-  }
-  .flight-table a:hover { color: var(--ink); }
+  .harea{margin-top:30px}
+  .harea .ht{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;font-size:15px;font-weight:700;padding-bottom:8px;border-bottom:1px solid var(--sumi)}
+  .harea .ht .verdict{font-size:11.5px;font-weight:400;letter-spacing:.08em;color:var(--usu);margin-left:auto}
+  .harea.best .ht .verdict{color:var(--ai);font-weight:500}
+  .harea .hnote{font-size:13px;color:var(--usu);line-height:1.9;margin-top:12px}
+  .harea .hnote b{color:var(--sumi)}
+  .hotel{padding:14px 0;border-bottom:1px solid var(--hair)}
+  .hotel .hn{font-size:15.5px;font-weight:700;line-height:1.6}
+  .hotel .hn small{font-size:11px;color:var(--shu);font-weight:500;margin-left:8px;letter-spacing:.08em;white-space:nowrap}
+  .hotel .hd{font-size:13.5px;color:var(--usu);line-height:1.85;margin-top:3px}
+  .hotel .ha{display:grid;grid-template-columns:44px 1fr;gap:2px 12px;font-size:12.5px;color:var(--usu);line-height:1.8;margin-top:7px}
+  .hotel .ha .k{font-size:10.5px;letter-spacing:.1em;color:var(--ai);padding-top:3px}
+  .hotel a{font-size:12.5px;display:inline-block;margin-top:8px}
 
-  /* ===== ホテルセクション ===== */
-  .hotel-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .hotel-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 32px 28px;
-    position: relative;
-    transition: transform 0.4s, box-shadow 0.4s;
-  }
-  .hotel-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
-  }
-  .hotel-card h3 {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-  .hotel-card .hotel-area {
-    font-size: 14px;
-    color: var(--gold);
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-  }
-  .hotel-card p {
-    font-size: 16px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-  /* メリット比較 */
-  .merit-compare {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-bottom: 48px;
-  }
-  .merit-box {
-    padding: 28px;
-    border-radius: 4px;
-  }
-  .merit-box h4 {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 19px;
-    font-weight: 700;
-    margin-bottom: 16px;
-  }
-  .merit-box ul {
-    list-style: none;
-    padding: 0;
-  }
-  .merit-box li {
-    font-size: 16px;
-    line-height: 1.7;
-    padding: 8px 0;
-    padding-left: 20px;
-    position: relative;
-    border-bottom: 1px solid rgba(0,0,0,0.04);
-  }
-  .merit-box li:last-child { border-bottom: none; }
-  .merit-box li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    font-weight: 700;
-  }
-  .merit-kokubuncho {
-    background: rgba(184,67,47,0.06);
-    border: 1px solid rgba(184,67,47,0.15);
-  }
-  .merit-kokubuncho h4 { color: var(--accent); }
-  .merit-kokubuncho li::before { color: var(--accent); }
-  .merit-station {
-    background: rgba(45,106,106,0.06);
-    border: 1px solid rgba(45,106,106,0.15);
-  }
-  .merit-station h4 { color: var(--teal); }
-  .merit-station li::before { color: var(--teal); }
-  /* エリア見出し */
-  .hotel-area-title {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--ink);
-  }
-  .hotel-area-title span {
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--muted);
-  }
-  @media (max-width: 768px) {
-    .merit-compare { grid-template-columns: 1fr; }
-  }
-  .hotel-access {
-    font-size: 14px;
-    color: var(--teal);
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: rgba(45,106,106,0.08);
-    border-left: 3px solid var(--teal);
-    line-height: 1.6;
-  }
+  /* ---------- 街のイメージ ---------- */
+  .eq{border-top:1px solid var(--keisen)}
+  .eqrow{padding:15px 0;border-bottom:1px solid var(--hair)}
+  .eqtop{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:baseline}
+  .eqtop .s{font-size:15.5px;font-weight:700}
+  .eqtop .op{font-family:'DM Mono',ui-monospace,monospace;font-size:14px;color:var(--ai)}
+  .eqtop .n{font-size:14.5px;color:var(--ai);text-align:right;font-weight:500;line-height:1.6}
+  .eqrow p{font-size:13.5px;color:var(--usu);line-height:1.9;margin-top:6px}
+  .dist{margin-top:30px;border-top:2px solid var(--sumi)}
+  .dist h3{font-family:'Shippori Mincho B1',serif;font-size:17px;font-weight:700;padding:12px 0 8px}
+  .drow{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:11px 0;border-top:1px solid var(--hair);align-items:baseline}
+  .drow .seg{font-size:14px;line-height:1.7}
+  .drow .seg span{color:var(--usu);margin:0 6px}
+  .drow .val{font-family:'DM Mono',ui-monospace,monospace;font-size:13px;color:var(--ai);white-space:nowrap;text-align:right}
 
-  /* ===== CSS地図 ===== */
-  .city-map {
-    position: relative;
-    width: 100%;
-    height: 700px;
-    background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
-    border-radius: 4px;
-    overflow: hidden;
-    padding: 28px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
-  }
-  .city-map .ngy {
-    font-size: 13px;
-    color: rgba(196,162,101,0.7);
-    display: block;
-    margin-top: 3px;
-    font-style: italic;
-  }
-  /* 地下鉄線 */
-  .subway-line {
-    position: absolute;
-    left: 32%;
-    top: 8%;
-    bottom: 16%;
-    width: 6px;
-    background: linear-gradient(180deg, rgba(80,200,80,0.7), rgba(80,200,80,0.4));
-    border-radius: 3px;
-    box-shadow: 0 0 12px rgba(80,200,80,0.25);
-  }
-  .subway-label {
-    position: absolute;
-    left: 34%;
-    top: 5%;
-    font-size: 13px;
-    color: rgba(80,200,80,0.8);
-    letter-spacing: 2px;
-    font-weight: 700;
-    writing-mode: vertical-rl;
-  }
-  /* 通り */
-  .jozenji-st {
-    position: absolute;
-    left: 18%;
-    right: 18%;
-    top: 22%;
-    height: 4px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 2px;
-  }
-  .jozenji-label {
-    position: absolute;
-    right: 20%;
-    top: 16.5%;
-    font-size: 14px;
-    color: rgba(247,243,237,0.55);
-    text-align: right;
-    font-weight: 500;
-  }
-  .hirose-st {
-    position: absolute;
-    left: 18%;
-    right: 28%;
-    top: 56%;
-    height: 4px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 2px;
-  }
-  .hirose-label {
-    position: absolute;
-    left: 19%;
-    top: 53%;
-    font-size: 14px;
-    color: rgba(247,243,237,0.45);
-    font-weight: 500;
-  }
-  /* 駅 */
-  .station { position: absolute; }
-  .station-dot {
-    width: 14px; height: 14px;
-    background: #666;
-    border: 3px solid #aaa;
-    border-radius: 50%;
-    box-shadow: 0 0 8px rgba(255,255,255,0.15);
-  }
-  .station-name {
-    font-size: 15px;
-    color: rgba(247,243,237,0.85);
-    margin-top: 4px;
-    white-space: nowrap;
-    font-weight: 700;
-  }
-  .sendai-name-lg { font-size: 19px; font-weight: 800; color: var(--cream); }
-  .sendai-dot { width: 18px; height: 18px; background: #fff; border-color: var(--gold); box-shadow: 0 0 14px rgba(196,162,101,0.4); }
-  .station-sub { font-size: 13px; color: rgba(247,243,237,0.5); }
-  .station-kotohdai { left: 29%; top: 17%; }
-  .station-hirose { left: 29%; top: 52%; }
-  .station-sendai { left: 27%; top: 72%; }
-  /* エリア */
-  .map-area {
-    position: absolute;
-    padding: 18px 22px;
-    border-radius: 6px;
-    backdrop-filter: blur(4px);
-  }
-  .area-title {
-    font-family: 'Zen Old Mincho', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 6px;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
-  }
-  .area-desc { font-size: 14px; color: rgba(247,243,237,0.8); line-height: 1.6; }
-  .area-kokubuncho {
-    left: 42%;
-    top: 25%;
-    background: rgba(184,67,47,0.4);
-    border: 2px solid rgba(184,67,47,0.7);
-    width: 220px;
-    box-shadow: 0 4px 20px rgba(184,67,47,0.2);
-  }
-  .area-hotel {
-    left: 65%;
-    top: 28%;
-    background: rgba(45,106,106,0.4);
-    border: 2px solid rgba(45,106,106,0.7);
-    box-shadow: 0 4px 20px rgba(45,106,106,0.2);
-  }
-  .area-yokocho {
-    left: 44%;
-    top: 53%;
-    background: rgba(196,162,101,0.3);
-    border: 2px solid rgba(196,162,101,0.6);
-    box-shadow: 0 4px 20px rgba(196,162,101,0.15);
-  }
-  /* スポット */
-  .map-spot {
-    position: absolute;
-    font-size: 16px;
-    color: var(--gold);
-    font-weight: 700;
-    white-space: nowrap;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
-  }
-  .spot-sub { font-size: 13px; color: rgba(247,243,237,0.5); font-weight: 400; }
-  .spot-zuihoden { left: 8%; top: 43%; }
-  .spot-castle { left: 4%; top: 29%; }
-  /* 距離 */
-  .map-distance { position: absolute; text-align: center; }
-  .dist-line { height: 2px; background: rgba(255,255,255,0.2); border-radius: 1px; }
-  .dist-text { font-size: 13px; color: rgba(247,243,237,0.55); margin-top: 4px; font-weight: 500; }
-  .dist-1 { left: 44%; top: 49%; width: 90px; }
-  .dist-2 { left: 32%; top: 69%; width: 140px; transform: rotate(-90deg); transform-origin: left top; }
-  /* 空港 */
-  .map-airport {
-    position: absolute;
-    right: 6%;
-    bottom: 8%;
-    font-size: 17px;
-    font-weight: 700;
-    color: rgba(247,243,237,0.7);
-    padding: 16px 20px;
-    border: 2px dashed rgba(247,243,237,0.25);
-    border-radius: 6px;
-    text-align: center;
-    background: rgba(255,255,255,0.03);
-  }
-  /* 凡例 */
-  .map-legend {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    display: flex;
-    gap: 20px;
-  }
-  .legend-item { font-size: 13px; color: rgba(247,243,237,0.55); display: flex; align-items: center; gap: 6px; font-weight: 500; }
-  .legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  /* ---------- フッター ---------- */
+  footer{margin-top:70px;border-top:2px solid var(--sumi);padding:24px 0 64px}
+  .flinks{display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:22px}
+  .flinks a{font-size:13px}
+  .org{display:grid;grid-template-columns:1fr;gap:18px;padding-top:20px;border-top:1px solid var(--hair)}
+  .org div{font-size:12px;color:var(--usu);line-height:1.85}
+  .org .on{color:var(--sumi);font-weight:700;font-size:12.5px;display:block;margin-bottom:2px}
+  .colophon{font-size:11.5px;color:var(--usu);margin-top:24px;padding-top:16px;border-top:1px solid var(--hair);letter-spacing:.06em;line-height:1.9}
 
-  @media (max-width: 768px) {
-    .city-map { height: auto; min-height: 600px; }
-    .area-kokubuncho, .area-hotel, .area-yokocho { position: relative; left: auto; top: auto; margin-bottom: 12px; width: auto; }
-    .city-map { display: flex; flex-direction: column; gap: 12px; }
-    .subway-line, .jozenji-st, .hirose-st, .subway-label, .jozenji-label, .hirose-label,
-    .station, .map-spot, .map-distance { display: none; }
-    .map-airport { position: relative; right: auto; bottom: auto; }
-    .map-legend { position: relative; bottom: auto; left: auto; }
+  /* ---------- 出現 ---------- */
+  .rev{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .rev.in{opacity:1;transform:none}
+
+  /* ---------- レスポンシブ ---------- */
+  @media (min-width:640px){
+    .merits{grid-template-columns:repeat(3,1fr);gap:0 24px}
+    .merit{border-bottom:none;border-top:none}
+    .local{grid-template-columns:repeat(3,1fr);gap:0 24px}
+    .local .lc{border-bottom:none}
+    .org{grid-template-columns:1fr 1fr;gap:32px}
+    .vcard{display:grid;grid-template-columns:1fr 1.05fr}
+    .vcard iframe{height:100%;min-height:250px;border-top:none;border-left:1px solid var(--keisen)}
   }
-
-  /* ===== ページ内ナビ ===== */
-  .page-nav {
-    position: fixed;
-    right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  @media (max-width:520px){
+    body{font-size:15.5px}
+    .rail{padding-left:66px}
+    .rail .line{left:52px}
+    .stop > time{left:-66px;width:46px;font-size:12px}
+    .stop::before{left:-17.5px}
+    .stop.free::before{left:-18.5px}
+    .daymark .tag{left:-66px}
+    .venue{grid-template-columns:1fr}
+    .venue .vt{grid-row:1;justify-self:start}
+    .eqtop{grid-template-columns:1fr;gap:2px}
+    .eqtop .n{text-align:left}
+    .eqtop .op{display:none}
+    .eqtop .n::before{content:'≒ 名古屋の ';font-size:12px;color:var(--usu)}
+    .drow{grid-template-columns:1fr}
+    .drow .val{text-align:left}
+    table.tt-table td .memo{font-size:11.5px}
   }
-  .page-nav a {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.15);
-    display: block;
-    transition: background 0.3s, transform 0.3s;
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .rev{opacity:1;transform:none}
+    html{scroll-behavior:auto}
   }
-  .page-nav a:hover {
-    background: var(--gold);
-    transform: scale(1.5);
-  }
-  .page-nav a.active { background: var(--gold); }
-
-  /* ===== 更新バナー ===== */
-  .updated-banner {
-    background: var(--gold-glow);
-    text-align: center;
-    padding: 10px;
-    font-size: 13px;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
-  .updated-banner strong { color: var(--ink); }
-
-  /* ===== フッター ===== */
-  footer {
-    background: var(--ink);
-    color: rgba(247,243,237,0.3);
-    text-align: center;
-    padding: 40px;
-    font-size: 13px;
-    letter-spacing: 2px;
-  }
-
-  /* ===== アニメーション ===== */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
-
-  /* スクロールアニメーション */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ===== レスポンシブ ===== */
-  @media (max-width: 768px) {
-    /* コンテナ */
-    .container { padding: 0 16px; }
-    section { padding: 48px 0; }
-
-    /* ヒーロー */
-    .hero h1 { font-size: 36px; letter-spacing: 4px; }
-    .hero-sub { font-size: 16px; }
-    .hero-label { font-size: 11px; letter-spacing: 4px; }
-    .cd-num { font-size: 32px; min-width: 50px; }
-    .cd-sep { font-size: 24px; }
-    .cd-label { font-size: 9px; }
-    .scroll-hint { display: none; }
-
-    /* セクションヘッダー */
-    .section-num { font-size: 40px; }
-    .section-title-group h2 { font-size: 24px; }
-    .section-title-group .en { font-size: 11px; }
-
-    /* グリッド系を1カラムに */
-    .schedule-grid,
-    .gourmet-grid,
-    .access-layout,
-    .area-grid,
-    .compare-list,
-    .hotel-grid,
-    .compare-cards,
-    .merit-compare,
-    .merit-compare-3,
-    .free-times { grid-template-columns: 1fr; }
-
-    /* スケジュール */
-    .timeline-item { grid-template-columns: 90px 1fr; gap: 8px; }
-    .timeline-item .time { font-size: 14px; }
-    .timeline-item .event { font-size: 15px; }
-    .badge { grid-column: 2; }
-    .day-card { padding: 24px 20px; }
-
-    /* フロー */
-    .flow-steps { flex-direction: column; gap: 16px; }
-    .flow-step::after { display: none; }
-    .flow-step { display: flex; align-items: center; gap: 16px; text-align: left; }
-    .flow-time { font-size: 20px; min-width: 60px; }
-    .night-flow { padding: 28px 20px; }
-
-    /* グルメ */
-    .gourmet-card { padding: 24px 20px; }
-    .gourmet-emoji { font-size: 28px; }
-    .gourmet-card h3 { font-size: 20px; }
-
-    /* アクセス */
-    .flight-table th, .flight-table td { padding: 10px 12px; font-size: 14px; }
-    .flight-direction { font-size: 14px; }
-    .transport-card { padding: 20px 16px; }
-
-    /* ホテル */
-    .hotel-card { padding: 24px 20px; }
-    .hotel-area-title { font-size: 20px; }
-    .hotel-area-title span { font-size: 14px; display: block; margin-top: 4px; }
-    .merit-box { padding: 20px; }
-    .merit-box h4 { font-size: 17px; }
-    .merit-box li { font-size: 15px; }
-
-    /* エリアガイド */
-    .compare-card { padding: 24px 20px; }
-    .compare-sendai { font-size: 20px; }
-    .compare-nagoya { font-size: 17px; }
-    .compare-card p { font-size: 15px; }
-    .distance-summary { padding: 24px 20px; }
-    .dist-row { grid-template-columns: 1fr; gap: 4px; font-size: 15px; }
-    .dist-val { text-align: left; }
-
-    /* ナビ非表示 */
-    .page-nav { display: none; }
-
-    /* 距離バー */
-    .distance-bar { grid-template-columns: 1fr; }
-  }
-
-  /* 印刷用 */
-  @media print {
-    .hero { min-height: auto; padding: 40px 0; }
-    section { padding: 30px 0; }
-    .reveal { opacity: 1; transform: none; }
-    body::before { display: none; }
-    .page-nav { display: none; }
-    .scroll-hint { display: none; }
+  @media print{
+    .tocbar,.updated{display:none}
+    body{background:#fff;font-size:12px}
+    .rev{opacity:1;transform:none}
+    section{padding-top:28px;break-inside:avoid}
+    .vcard iframe{display:none}
   }
 </style>
 </head>
 <body>
 
-<!-- 更新バナー -->
-<div class="updated-banner">最終更新：<strong>2026年7月20日</strong> ─ このページは随時更新されます</div>
+<div class="updated">最終更新 <b>2026年7月20日</b> ─ このページは随時更新されます</div>
 
-<!-- ページ内ナビ -->
-<nav class="page-nav">
-  <a href="#schedule" title="スケジュール"></a>
-  <a href="#gourmet" title="グルメ"></a>
-  <a href="#access" title="アクセス"></a>
-  <a href="#hotel" title="ホテル"></a>
-  <a href="#area" title="エリアガイド"></a>
+<nav class="tocbar" aria-label="目次">
+  <div class="wrap">
+    <ul>
+      <li><a href="#kotei">行程</a></li>
+      <li><a href="#moshikomi">申込・締切</a></li>
+      <li><a href="#kicho">基調講演</a></li>
+      <li><a href="#bunkakai">分科会</a></li>
+      <li><a href="#ido">移動</a></li>
+      <li><a href="#kaijo">会場</a></li>
+      <li><a href="#yado">宿泊</a></li>
+      <li><a href="#machi">街のイメージ</a></li>
+    </ul>
+  </div>
 </nav>
 
-<!-- ===== ヒーロー ===== -->
-<header class="hero">
-  <div class="hero-content">
-    <span class="hero-label">第54回 中小企業家同友会 青年経営者全国交流会 in 仙台</span>
-    <h1>青全交のしおり<br><span>in 仙台</span></h1>
-    <p class="hero-sub">2026.10.1（木）13:00 ─ 10.2（金）12:15</p>
-    <p style="font-size:15px; color:rgba(255,255,255,0.6); margin-top:8px; letter-spacing:1px; font-style:italic;">「逆境こそ挑戦の舞台！～"旗"を掲げ、共に未来を創ろう」</p>
-    <p class="cd-message" id="cd-message"></p>
-    <div class="countdown" id="countdown">
-      <div class="cd-item">
-        <span class="cd-num" id="cd-days">---</span>
-        <span class="cd-label">Days</span>
-      </div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item">
-        <span class="cd-num" id="cd-hours">--</span>
-        <span class="cd-label">Hours</span>
-      </div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item">
-        <span class="cd-num" id="cd-min">--</span>
-        <span class="cd-label">Min</span>
-      </div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item">
-        <span class="cd-num" id="cd-sec">--</span>
-        <span class="cd-label">Sec</span>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-hint">SCROLL ↓</div>
-</header>
+<div class="wrap">
 
-<!-- ===== 1. スケジュール ===== -->
-<section id="schedule">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">01</div>
-      <div class="section-title-group">
-        <h2>スケジュール案</h2>
-        <div class="en">Schedule</div>
-      </div>
-    </div>
+  <!-- ============ 表紙 ============ -->
+  <header class="cover">
+    <div class="rule"></div>
+    <p class="kaisai">第54回 中小企業家同友会<br>青年経営者全国交流会</p>
+    <h1>青全交のしおり<em>in 仙台</em></h1>
+    <p class="dates mono">2026.10.01 THU 13:00 — 10.02 FRI 12:15</p>
+    <p class="theme">「逆境こそ挑戦の舞台！<br>　〜"旗"を掲げ、共に未来を創ろう」</p>
+    <p class="who">名古屋青年同友会 第9支部 ／ 参加 約25名</p>
 
-    <div class="schedule-grid reveal">
-      <!-- Day 1 -->
-      <div class="day-card">
-        <div class="day-label">Day 1 — 10/1 Thu</div>
-        <div class="timeline-item">
-          <span class="time">〜12:00</span>
-          <span class="event">自由時間（観光・牛タン）</span>
-          <span></span>
+    <div class="countbox">
+      <span class="lbl">開会まで</span>
+      <span class="val mono"><span id="cd-days">--</span><small>日</small></span>
+      <span class="sub mono" id="cd-detail">10.01 13:00 開会</span>
+    </div>
+  </header>
+
+  <!-- ============ 行程 ============ -->
+  <main id="kotei">
+    <div class="rail" id="rail">
+      <div class="line"></div>
+
+      <!-- ===== DAY 1 ===== -->
+      <div class="daymark">
+        <span class="tag mono">DAY 1</span>
+        <div class="cap">10月1日<span>木曜</span></div>
+      </div>
+
+      <div class="stop free">
+        <time>〜12:00</time>
+        <div>
+          <h3>自由時間</h3>
+          <p class="place">仙台着後、受付まで</p>
+          <div class="free-body">
+            <div class="fh"><span>この時間にできること</span><span class="mono">FREE</span></div>
+            <ul>
+              <li>
+                <b>牛タン</b>
+                <p>利久・善治郎・伊達の牛たん本舗など仙台駅3Fに集結。厚切り炭火焼きは必食。</p>
+                <span class="links">
+                  <a href="https://corp.rikyu-gyutan.co.jp/" target="_blank" rel="noopener">利久</a>
+                  <a href="https://www.tanya-zenjirou.jp/" target="_blank" rel="noopener">善治郎</a>
+                  <a href="https://www.dategyu.jp/" target="_blank" rel="noopener">伊達の牛たん</a>
+                </span>
+              </li>
+              <li>
+                <b>塩竃すし哲<span class="mark">地元推薦</span></b>
+                <p>塩釜の名店が仙台駅エスパルB1Fに。塩釜まで行かなくても本格寿司が駅ナカで楽しめてコスパ抜群。テイクアウトして新幹線で食べるのもあり。お座敷の予約も可。</p>
+                <span class="links">
+                  <a href="https://www.shiogama-sushitetsu.com/s-pal_sendai/" target="_blank" rel="noopener">公式サイト</a>
+                  <a href="https://tabelog.com/miyagi/A0401/A040101/4000160/" target="_blank" rel="noopener">食べログ</a>
+                </span>
+              </li>
+              <li>
+                <b>瑞鳳殿・仙台城跡</b>
+                <p>伊達政宗公の霊廟と騎馬像。10月は御開帳あり。るーぷる仙台 630円で巡れる。</p>
+                <span class="links">
+                  <a href="https://www.zuihoden.com/" target="_blank" rel="noopener">瑞鳳殿</a>
+                  <a href="https://loople-sendai.jp/" target="_blank" rel="noopener">るーぷる仙台</a>
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="timeline-item">
-          <span class="time">12:00〜</span>
-          <span class="event">受付開始</span>
-          <span></span>
-        </div>
-        <div class="timeline-item">
-          <span class="time">13:00〜18:00</span>
-          <span class="event">分科会（全18分科会）</span>
-          <span></span>
-        </div>
-        <div style="font-size:14px; color:var(--muted); padding:8px 0; line-height:1.8;">
-          <strong style="color:var(--ink);">会場（3か所）</strong>
-          <div style="margin-top:8px;">
-            <div style="margin-bottom:12px;">
-              📍 <a href="https://www.aobayama.jp/" target="_blank" style="color:var(--teal); font-weight:600;">仙台国際センター</a>
-              <div style="padding-left:1.6em; font-size:13.5px; margin-top:2px;">青葉区青葉山（地下鉄東西線「国際センター駅」徒歩1分）</div>
+      </div>
+
+      <div class="stop">
+        <time>12:00</time>
+        <div><h3>受付開始</h3></div>
+      </div>
+
+      <div class="stop">
+        <time>13:00<br>−18:00</time>
+        <div>
+          <h3>分科会（全18分科会）</h3>
+          <p class="place">申込時に第1・第2希望を提出。会場は3か所に分かれます。</p>
+          <div class="venues">
+            <div class="venue">
+              <span class="vn"><a href="https://www.aobayama.jp/" target="_blank" rel="noopener">仙台国際センター</a></span>
+              <span class="vt mono">東西線</span>
+              <span class="vl">青葉区青葉山　国際センター駅 徒歩1分</span>
             </div>
-            <div style="margin-bottom:12px;">
-              📍 <a href="https://www.koyogh.jp/" target="_blank" style="color:var(--teal); font-weight:600;">江陽グランドホテル</a>
-              <div style="padding-left:1.6em; font-size:13.5px; margin-top:2px;">青葉区本町2-3-1（JR仙台駅 徒歩13分／懇親会会場）</div>
+            <div class="venue">
+              <span class="vn"><a href="https://www.koyogh.jp/" target="_blank" rel="noopener">江陽グランドホテル</a></span>
+              <span class="vt mono">懇親会場</span>
+              <span class="vl">青葉区本町2-3-1　JR仙台駅 徒歩13分</span>
             </div>
-            <div>
-              📍 <a href="https://palace-heian.com/" target="_blank" style="color:var(--teal); font-weight:600;">パレスへいあん</a>
-              <div style="padding-left:1.6em; font-size:13.5px; margin-top:2px;">青葉区本町1-2-2（JR仙台駅 徒歩5分）</div>
+            <div class="venue">
+              <span class="vn"><a href="https://palace-heian.com/" target="_blank" rel="noopener">パレスへいあん</a></span>
+              <span class="vt mono">本町</span>
+              <span class="vl">青葉区本町1-2-2　JR仙台駅 徒歩5分</span>
             </div>
           </div>
         </div>
-        <div class="timeline-item">
-          <span class="time">19:00〜20:30</span>
-          <span class="event">懇親会 ＠江陽グランドホテル</span>
-          <span></span>
-        </div>
-        <div class="timeline-item">
-          <span class="time">20:30〜</span>
-          <span class="event">国分町で二次会（自由行動）</span>
-          <span></span>
+      </div>
+
+      <div class="stop">
+        <time>19:00<br>−20:30</time>
+        <div>
+          <h3>懇親会</h3>
+          <p class="place">江陽グランドホテル（定員1,000名）</p>
         </div>
       </div>
 
-      <!-- Day 2 -->
-      <div class="day-card">
-        <div class="day-label">Day 2 — 10/2 Fri</div>
-        <div class="timeline-item">
-          <span class="time">8:30〜</span>
-          <span class="event">開場</span>
-          <span></span>
+      <div class="stop free">
+        <time>20:30〜</time>
+        <div>
+          <h3>自由行動</h3>
+          <p class="place">国分町で二次会</p>
+          <div class="free-body">
+            <div class="fh"><span>この時間にできること</span><span class="mono">FREE</span></div>
+            <ul>
+              <li>
+                <b>おしか半島<span class="mark">地元推薦</span></b>
+                <p>仙台名物が一通り揃う人気居酒屋。三陸の海鮮・牡鹿島豚の原始焼きなど宮城の味を堪能できる。仙台駅前店・国分町店あり。</p>
+                <span class="links">
+                  <a href="https://oshikahantou-ekimae.owst.jp/" target="_blank" rel="noopener">仙台駅前店</a>
+                  <a href="https://tabelog.com/miyagi/A0401/A040101/4005955/" target="_blank" rel="noopener">食べログ（国分町店）</a>
+                </span>
+              </li>
+              <li>
+                <b>地酒・文化横丁</b>
+                <p>十四代・伯楽星など銘酒が揃う。昭和25年創業の名酒場「源氏」は前泊日に。</p>
+              </li>
+              <li>
+                <b>せり鍋</b>
+                <p>観光客向けの冬グルメ（10月〜）。実は地元民はほとんど食べないそう。話のネタに一度は体験してみるのもあり。</p>
+              </li>
+              <li>
+                <b>茶寮の肉まん<span class="mark">深夜の〆</span></b>
+                <p>国分町で30年以上続く路面の肉まんスタンド。NHK「ドキュメント72時間」でも紹介された地元の名物。月〜土は翌5:00まで営業しているので、飲んだ後の〆にちょうどいい一個。</p>
+                <span class="links">
+                  <a href="https://www.google.com/maps/search/?api=1&query=茶寮 仙台国分町店" target="_blank" rel="noopener">地図で見る</a>
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="timeline-item">
-          <span class="time">9:00〜</span>
-          <span class="event">全体会 開会・歓迎挨拶</span>
-          <span></span>
+      </div>
+
+      <!-- ===== DAY 2 ===== -->
+      <div class="daymark">
+        <span class="tag mono">DAY 2</span>
+        <div class="cap">10月2日<span>金曜</span></div>
+      </div>
+
+      <div class="stop">
+        <time>8:30</time>
+        <div>
+          <h3>開場</h3>
+          <p class="place">仙台国際センター（全体会）</p>
         </div>
-        <div class="timeline-item">
-          <span class="time">9:30〜</span>
-          <span class="event">基調講演（後藤清広 氏）</span>
-          <span></span>
+      </div>
+
+      <div class="stop">
+        <time>9:00</time>
+        <div><h3>全体会 開会・歓迎挨拶</h3></div>
+      </div>
+
+      <div class="stop">
+        <time>9:30</time>
+        <div>
+          <h3>基調講演</h3>
+          <p class="place">後藤 清広 氏（後藤海産 代表）　<a href="#kicho">講演の内容を見る</a></p>
         </div>
-        <div class="timeline-item">
-          <span class="time">〜12:15</span>
-          <span class="event">全体会 閉会</span>
-          <span></span>
-        </div>
-        <div style="font-size:13px; color:var(--muted); padding:4px 0 8px 0; line-height:1.6;">
-          会場：仙台国際センター（全体会）
-        </div>
-        <div class="timeline-item">
-          <span class="time">12:15〜</span>
-          <span class="event">ランチ → 自由時間（観光・帰路）</span>
-          <span></span>
+      </div>
+
+      <div class="stop">
+        <time>12:15</time>
+        <div><h3>全体会 閉会</h3></div>
+      </div>
+
+      <div class="stop free">
+        <time>12:15〜</time>
+        <div>
+          <h3>ランチ・自由時間 ─ 帰路へ</h3>
+          <div class="free-body">
+            <div class="fh"><span>この時間にできること</span><span class="mono">FREE</span></div>
+            <ul>
+              <li>
+                <b>ずんだ・萩の月</b>
+                <p>ずんだシェイクはエキナカで手軽に。萩の月はお土産の定番。仙台駅で全部揃う。</p>
+              </li>
+              <li>
+                <b>三陸海鮮</b>
+                <p>牡蠣・ホヤ・金華さば・はらこ飯。宮城の海を代表する味覚。</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- 自由時間ハイライト -->
-    <div class="free-times reveal">
-      <div class="free-time-card">
-        <div class="ft-label">10/1 午前</div>
-        <div class="ft-desc">観光 or 牛タンランチ</div>
-      </div>
-      <div class="free-time-card">
-        <div class="ft-label">10/1 夜</div>
-        <div class="ft-desc">懇親会後 → 二次会（自由）</div>
-      </div>
-      <div class="free-time-card">
-        <div class="ft-label">10/2 午後</div>
-        <div class="ft-desc">観光・お土産・帰路</div>
-      </div>
+    <div class="note">
+      <div class="nh">移動でいちばん間違えやすい点</div>
+      <p>2日目の全体会は<b>青葉山の仙台国際センター＝地下鉄東西線</b>です。1日目の本町の会場に近い<b>広瀬通駅は南北線</b>で、東西線には直行できません。二日間を通していちばん動きやすいのは<b>仙台駅前</b>です。</p>
+    </div>
+  </main>
+
+  <!-- ============ 申込 ============ -->
+  <section id="moshikomi">
+    <div class="sechead">
+      <h2>申込と締切</h2>
+      <span class="count mono">2 PLANS</span>
     </div>
 
-    <!-- 公式プログラム & お申込み -->
-    <style>
-      .official-block { margin-top: 56px; }
-      .official-block .ob-head { font-family:'Zen Old Mincho',serif; font-size:22px; font-weight:900; color:var(--ink); margin-bottom:6px; }
-      .official-block .ob-en { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
-      .pdf-link { display:inline-flex; align-items:center; gap:9px; margin-bottom:26px; padding:12px 22px; border:1px solid var(--ink); border-radius:8px; color:var(--ink); text-decoration:none; font-size:14px; font-weight:700; transition:background .2s ease, color .2s ease; }
-      .pdf-link:hover { background:var(--ink); color:var(--cream); }
-      .pdf-link .pdf-ico { font-size:16px; }
-      .pdf-link .pdf-arrow { font-size:13px; opacity:0.7; }
-      .apply-box { background:var(--ink); color:var(--cream); border-radius:14px; padding:28px 26px; margin-bottom:28px; }
-      .apply-box .fee-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
-      .apply-box .fee { flex:1 1 200px; background:rgba(255,255,255,0.06); border:1px solid rgba(196,162,101,0.35); border-radius:10px; padding:14px 18px; }
-      .apply-box .fee .amt { font-family:'Bricolage Grotesque',sans-serif; font-size:26px; font-weight:800; color:var(--gold); }
-      .apply-box .fee .lbl { font-size:14px; color:rgba(247,243,237,0.7); }
-      .apply-box .deadline { display:inline-block; background:transparent; color:var(--gold); font-weight:700; font-size:14px; padding:5px 14px; border:1px solid rgba(196,162,101,0.6); border-radius:6px; letter-spacing:1px; }
-      .apply-box ul { list-style:none; margin:16px 0 0; padding:0; }
-      .apply-box li { font-size:14.5px; color:rgba(247,243,237,0.8); padding:3px 0 3px 20px; position:relative; line-height:1.7; }
-      .apply-box li::before { content:'▸'; position:absolute; left:0; color:var(--gold); }
-      /* 基調講演 */
-      .keynote-box { background:var(--card-bg); border:1px solid rgba(196,162,101,0.35); border-radius:12px; padding:24px 26px; margin-bottom:28px; }
-      .keynote-box .k-tag { display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:12px; }
-      .keynote-box .k-title { font-family:'Zen Old Mincho',serif; font-size:20px; font-weight:700; color:var(--ink); line-height:1.6; }
-      .keynote-box .k-sub { font-size:14px; color:var(--muted); margin-top:8px; }
-      .keynote-box .k-speaker { font-size:14.5px; color:var(--ink); margin-top:14px; padding-top:14px; border-top:1px solid rgba(26,26,46,0.08); }
-      .keynote-box .k-story { font-size:15px; color:var(--ink); line-height:2.0; margin-top:14px; }
-      /* 実績スタットバンド（塗りなし・社報風） */
-      .keynote-box .k-stats { display:flex; flex-wrap:wrap; margin-top:22px; border-top:1px solid rgba(26,26,46,0.12); border-bottom:1px solid rgba(26,26,46,0.12); }
-      .keynote-box .k-stat { flex:1 1 0; min-width:74px; text-align:center; padding:16px 6px; position:relative; }
-      .keynote-box .k-stat + .k-stat::before { content:''; position:absolute; left:0; top:22%; height:56%; width:1px; background:rgba(26,26,46,0.1); }
-      .keynote-box .k-stat-num { display:block; font-family:'Zen Old Mincho',serif; font-size:25px; font-weight:900; color:var(--gold); line-height:1.1; }
-      .keynote-box .k-stat-lbl { display:block; font-size:12px; color:var(--muted); margin-top:8px; letter-spacing:0.5px; }
-      .keynote-box .k-point { font-size:14px; color:var(--muted); line-height:1.95; margin-top:20px; }
-      .keynote-box .k-point strong { color:var(--ink); font-family:'Zen Old Mincho',serif; font-weight:700; }
-      /* 分科会カード（塗り・枠を抑えた落ち着いた配色） */
-      .bunkakai-note { font-size:14px; color:var(--muted); margin-bottom:16px; line-height:1.7; }
-      .bunkakai-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(285px,1fr)); gap:12px; }
-      .bk-card { background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-radius:10px; padding:16px 18px; transition:border-color .2s ease; }
-      .bk-card:hover { border-color:rgba(196,162,101,0.55); }
-      .bk-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px; gap:8px; }
-      .bk-no { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:800; color:var(--gold); letter-spacing:1px; white-space:nowrap; }
-      .bk-region { font-size:12px; color:var(--muted); letter-spacing:0.5px; white-space:nowrap; }
-      .bk-region.local { color:var(--gold); font-weight:700; }
-      .bk-title { font-family:'Zen Old Mincho',serif; font-size:16.5px; font-weight:700; color:var(--ink); line-height:1.55; }
-      .bk-cat { font-size:13px; color:var(--muted); margin-top:7px; }
-      .bk-details { margin-top:11px; border-top:1px solid rgba(26,26,46,0.08); padding-top:9px; }
-      .bk-details summary { cursor:pointer; font-size:13px; color:var(--gold); font-weight:700; list-style:none; }
-      .bk-details summary::-webkit-details-marker { display:none; }
-      .bk-details summary::before { content:'＋ '; }
-      .bk-details[open] summary::before { content:'－ '; }
-      .bk-desc { font-size:13.5px; color:var(--muted); line-height:1.85; margin-top:10px; }
-      .bk-rep { font-size:13.5px; color:var(--ink); margin-top:9px; font-weight:600; }
-      .bk-rep a { color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
-      .bk-rep a:hover { color:var(--ink); }
-    </style>
-    <div class="official-block reveal">
-      <div class="ob-head">公式プログラム & お申込み</div>
-      <div class="ob-en">Official Program</div>
-      <a href="/pamphlet.pdf" target="_blank" rel="noopener" class="pdf-link"><span class="pdf-ico">📄</span>公式パンフレット（PDF）を開く<span class="pdf-arrow">↗</span></a>
-
-      <div class="apply-box">
-        <div class="fee-row">
-          <div class="fee"><span class="amt">29,000円</span><div class="lbl">懇親会あり（定員1,000名）</div></div>
-          <div class="fee"><span class="amt">16,000円</span><div class="lbl">懇親会なし</div></div>
-        </div>
-        <span class="deadline">申込締切　2026年9月16日（水）</span>
-        <ul>
-          <li><strong style="color:var(--cream);">2日間参加が必須</strong>（宿泊・交通費は別）</li>
-          <li>事前申込制。希望分科会を<strong style="color:var(--cream);">第1・第2希望</strong>で申請し、懇親会の参加/不参加を選択します</li>
-          <li>お申込みは所属同友会（名古屋・第9支部）経由で。会場の都合で第2希望になる場合あり</li>
-          <li>9/17（木）以降のキャンセルは会費を全額ご負担いただきます</li>
-        </ul>
+    <div class="apply">
+      <div class="fees">
+        <div class="fee"><span class="amt mono">29,000円</span><span class="lbl">懇親会あり（定員1,000名）</span></div>
+        <div class="fee"><span class="amt mono">16,000円</span><span class="lbl">懇親会なし</span></div>
       </div>
-
-      <div class="keynote-box">
-        <span class="k-tag">2日目 全体会 ─ 基調講演</span>
-        <div class="k-title">奪い合う漁業から分かち合う漁業への転換が、<br>付加価値を生み、持続可能な地域づくりに</div>
-        <div class="k-sub">〜子ども達の未来のために企業家として何を残すのか〜</div>
-        <div class="k-speaker">講師：<strong>後藤 清広 氏</strong>（後藤海産 代表／宮城県漁業協同組合 志津川支所 戸倉出張所カキ部会長）</div>
-        <p class="k-story">東日本大震災で、船も養殖設備もすべてを失った後藤氏。絶望のなか、仲間の漁師と<strong>年100回を超える議論</strong>を重ね、養殖いかだを震災前の<strong>3分の1</strong>まで減らす決断をします。量を追う「奪い合う漁業」から、海を育て地域の未来を守る「分け合う漁業」へ──。その結果、南三陸・戸倉のカキは<strong>生産量2倍・所得1.5倍</strong>を実現し、環境負荷はむしろ低下。2016年には<strong>日本初のASC養殖場認証</strong>を取得しました。</p>
-        <div class="k-stats">
-          <div class="k-stat"><span class="k-stat-num">1/3</span><span class="k-stat-lbl">いかだ削減</span></div>
-          <div class="k-stat"><span class="k-stat-num">2倍</span><span class="k-stat-lbl">生産量</span></div>
-          <div class="k-stat"><span class="k-stat-num">1.5倍</span><span class="k-stat-lbl">所得</span></div>
-          <div class="k-stat"><span class="k-stat-num">日本初</span><span class="k-stat-lbl">ASC認証</span></div>
-        </div>
-        <p class="k-point"><strong>聞きどころ ─</strong> 逆境からの大胆な事業転換、仲間との徹底した合意形成、そして持続可能性と収益の両立。まさに今回のテーマ「逆境こそ挑戦の舞台」を体現する、実践に裏打ちされた報告です。</p>
-      </div>
-
-      <div class="bunkakai-note"><strong style="color:var(--ink);">1日目 分科会（全18）</strong>　─　参加する分科会を<strong style="color:var(--ink);">第1・第2希望</strong>で選んで申込みます。各カードの「詳しく見る」で内容と報告者を確認できます。<br><span style="color:var(--gold); font-weight:700;">★ 第16分科会は自地区・愛知からの報告です。</span></div>
-      <div class="bunkakai-grid">
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第1分科会</span><span class="bk-region">中同協</span></div>
-          <div class="bk-title">青年部活動は会社経営に何をもたらすのか</div>
-          <div class="bk-cat">企業づくりと青年部活動は不離一体</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">長年役を受け、事業承継・企業変革・新たな挑戦に本気で向き合ってきた実践者が登壇。青年部活動で得た学びや仲間との関わりを、どう自社経営に生かしてきたかを本音で語り合う。</p>
-            <p class="bk-rep">報告：大垣 広太 氏（<a href="https://bodyguard.co.jp/" target="_blank" rel="noopener">KSP</a>／東京）／パネリスト：<a href="https://www.n-cars.jp/" target="_blank" rel="noopener">オートモールジャパン</a>・<a href="https://www.nihon-ibushikawara.co.jp/" target="_blank" rel="noopener">日本いぶし瓦</a>・<a href="https://kyuken-system.com/" target="_blank" rel="noopener">キューケンシステム</a></p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第2分科会</span><span class="bk-region">中同協</span></div>
-          <div class="bk-title">変化の時代に維持発展し続ける企業とは何か</div>
-          <div class="bk-cat">人を生かす経営〈労使見解〉</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">中小企業として「人を生かす経営」を目指すなかで、社員教育・共育をどう捉え実践するか。社員をパートナーとして向き合い、悩みや失敗も含めて今後を学び合う分科会。</p>
-            <p class="bk-rep">報告：梶谷 俊介 氏（<a href="https://okayamatoyota.com/" target="_blank" rel="noopener">岡山トヨタ自動車</a>／岡山）／パネリスト：<a href="https://a-monline.jp/" target="_blank" rel="noopener">A.モンライン</a>・<a href="https://www.1st-dt.com/" target="_blank" rel="noopener">ファーストディレクション</a></p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第3分科会</span><span class="bk-region">静岡</span></div>
-          <div class="bk-title">社員と共に歩む、じぶん・かいしゃ・まちづくり</div>
-          <div class="bk-cat">人を生かす経営で21世紀型企業づくり</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">父の急逝で突如承継し、社員との溝に悩んだ小野寺氏。同友会での学びから大きく自己変革し、「社員や未来の人財に選ばれる会社」を目指す、ありのままの実践報告。</p>
-            <p class="bk-rep">報告：小野寺 敦嗣 氏（<a href="https://fujiarchitect.co.jp/" target="_blank" rel="noopener">富士設計</a>／静岡）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第4分科会</span><span class="bk-region">岩手</span></div>
-          <div class="bk-title">挫折から救ってくれたのは社員と仲間だった</div>
-          <div class="bk-cat">経営者の全人格的成長</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">3代目として都市圏へ出店し顧客を開拓。自信満々で臨んだ経営指針実践塾でどん底に。声を掛けてくれたベテラン社員に認められ気づいた「自分らしく生きる」ことの意味。</p>
-            <p class="bk-rep">報告：昆 卓広 氏（<a href="https://kon-sekizai.com/" target="_blank" rel="noopener">昆石材店</a>／岩手）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第5分科会</span><span class="bk-region">熊本</span></div>
-          <div class="bk-title">「モメて モメて モメた！」衝突の先の経営の核</div>
-          <div class="bk-cat">経営者の自己変革</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">社員の相次ぐ退職、先代との軋轢、青年部での孤立。すべてを周りのせいにする「他責思考」を脱し、痛みを伴う経験を学びに変えて、愛情を持ったリーダーへ脱皮した物語。</p>
-            <p class="bk-rep">報告：小屋松 俊太 氏（<a href="https://www.hikosan.jp/" target="_blank" rel="noopener">司法書士法人小屋松事務所</a>／熊本）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第6分科会</span><span class="bk-region">大阪</span></div>
-          <div class="bk-title">ひとりで背負う経営から、社員と描くビジョンへ</div>
-          <div class="bk-cat">経営指針の実践と確立</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">完成された成功談ではなく、不満や混乱という逆境の中で、経営者自らが"旗"を掲げ社員と共に未来を創ろうと挑戦し続ける、変革真っ只中の報告。あきらめない心と向き合い方。</p>
-            <p class="bk-rep">報告：山川 耕平 氏（<a href="https://www.kouyou-shokai.co.jp/" target="_blank" rel="noopener">高洋商会</a>／大阪）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第7分科会</span><span class="bk-region">鹿児島</span></div>
-          <div class="bk-title">理念が人を引き寄せ、指針が未来を動かす</div>
-          <div class="bk-cat">経営指針の実践と確立</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">繁華街で理髪店を営む亀澤氏。順調な経営がコロナで揺らぐなか、支えとなったのは同友会で学んだ経営指針。理念をもとに、働きがいのある環境づくりに挑戦した実践。</p>
-            <p class="bk-rep">報告：亀澤 隼人 氏（<a href="https://www.bridge-ltd.co.jp" target="_blank" rel="noopener">ブリッジ</a>／鹿児島）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第8分科会</span><span class="bk-region">香川</span></div>
-          <div class="bk-title">地域の健康インフラをつくる会社になる</div>
-          <div class="bk-cat">10年ビジョン</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">「業界を変えたい」と独立するも、自分自身が同じ構造を再現。組織崩壊を経て、社員と共に10年ビジョンを描いたことが転機に。ビジョンを判断基準に業界の変革へ。</p>
-            <p class="bk-rep">報告：中川 郁也 氏（<a href="https://earcs.co.jp/" target="_blank" rel="noopener">EARCS</a>／香川）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第9分科会</span><span class="bk-region">島根</span></div>
-          <div class="bk-title">債務超過を乗り越えた後継者の本気の覚悟</div>
-          <div class="bk-cat">変革と挑戦</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">突然の承継で待っていたのは4,400万円の債務超過。「すべては経営者の責任」と向き合った時、会社は変わり始めた。対話・職場改善・自社施工率UPを泥臭く実践。</p>
-            <p class="bk-rep">報告：林 洋介 氏（<a href="https://hayasi-shoji.com/" target="_blank" rel="noopener">林商事</a>／島根）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第10分科会</span><span class="bk-region">広島</span></div>
-          <div class="bk-title">パワハラを恐れず、本気本音で関わる覚悟</div>
-          <div class="bk-cat">採用・教育</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">「言っても変わらない」と社員への期待を諦めていないか。成果だけを追い社員を"道具"扱いした結果、離職率8割に直面し改心。本音で関わる採用と教育の本質を問う。</p>
-            <p class="bk-rep">報告：小濱 亮介 氏（<a href="https://www.kk-synergy.co.jp/" target="_blank" rel="noopener">シナジー</a>／広島）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第11分科会</span><span class="bk-region">滋賀</span></div>
-          <div class="bk-title">人を信じられなかった僕が、仲間に救われるまで</div>
-          <div class="bk-cat">共に学び、共に育つ</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">"0日デビュー"など独自戦略で成長した美容室MIO。根底にあるのは「多様性こそが人と組織を強くする」という考え。一人ひとりの個性と強みを生かす経営ストーリー。</p>
-            <p class="bk-rep">報告：本田 哲也 氏（<a href="https://www.big-advance.site/c/135/1920" target="_blank" rel="noopener">Mio</a>／滋賀）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第12分科会</span><span class="bk-region">東京</span></div>
-          <div class="bk-title">「ここが私の居場所」とみんなが言える会社へ</div>
-          <div class="bk-cat">人が輝く企業づくり</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">一見「よい会社」になったものの、本当に働きがいがあるのか？組織崩壊を恐れて自分の意見を殺していた経営者が、社員一人ひとりと本音で向き合う一歩を踏み出す。</p>
-            <p class="bk-rep">報告：秋吉 利恵 氏（<a href="http://care-support-angel.com/" target="_blank" rel="noopener">エンジェルサポート</a>／東京）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第13分科会</span><span class="bk-region">秋田</span></div>
-          <div class="bk-title">売上半減。その時、あなたは何をしますか？</div>
-          <div class="bk-cat">経営戦略の転換・差別化を図る</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">売上の約半分を占めた除雪事業が、暖冬で半減し債務超過目前に。会社を守るため何を捨て何を残すか──企業体質を見直し、自社の「強み」に集中して粗利2倍を実現。</p>
-            <p class="bk-rep">報告：珍田 正輝 氏（<a href="https://chinda.jp/recruit/" target="_blank" rel="noopener">珍田建設</a>／秋田）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第14分科会</span><span class="bk-region">北海道</span></div>
-          <div class="bk-title">創業91年、老舗の未来をつなぐ「正解のない承継」</div>
-          <div class="bk-cat">付加価値を高める</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">北海道で唯一ゴム長靴を国内生産する第一ゴム。後継予定のなかった自分と、銀行員から社長になった父。価値観の違う二人が挑戦を重ね、老舗の未来を模索してきた歩み。</p>
-            <p class="bk-rep">報告：藤本 賢人 氏（<a href="https://www.daiichi-gomu.co.jp/" target="_blank" rel="noopener">第一ゴム</a>／北海道）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第15分科会</span><span class="bk-region">埼玉</span></div>
-          <div class="bk-title">誰が継ぐ？人生をかけた先代の想い</div>
-          <div class="bk-cat">事業承継 ─ 3兄弟のキングギドラ経営</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">工場移転を機に3兄弟で会社と向き合う時間が始まる。「誰が継いでもいい会社にしよう」──三人の信頼関係を大切に、それぞれの立場で向き合う事業承継の話。</p>
-            <p class="bk-rep">報告：林 俊治 氏（<a href="https://hayashi-coating.co.jp/" target="_blank" rel="noopener">林塗装工業所</a>／埼玉）</p>
-          </details>
-        </div>
-        <div class="bk-card" style="border-color:rgba(196,162,101,0.6);">
-          <div class="bk-top"><span class="bk-no">第16分科会</span><span class="bk-region local">愛知（自地区）</span></div>
-          <div class="bk-title">「どうせならおもしろい地域の未来」を共に創る</div>
-          <div class="bk-cat">地域が輝く企業づくり</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">ノリと勢いで起業し、失敗と仲間の離脱を経て同友会へ。三位一体経営の学びから「地域の良循環が自社の好環境をつくる」と気づき、人と地域を主語に置く企業へ変革。自地区・愛知からの報告です。</p>
-            <p class="bk-rep">報告：千賀 信義 氏（<a href="https://rgst.net/" target="_blank" rel="noopener">レジスタ</a>／愛知）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第17分科会</span><span class="bk-region">奈良</span></div>
-          <div class="bk-title">熱のある地域へ！〜小さく固く転がっていく〜</div>
-          <div class="bk-cat">企業づくりと地域づくりを一体として</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">薬局を通じて「熱のある地域」をつくることを目指す。薬を処方するだけでなく、その人の背景を理解し人生に寄り添う「接遇」で、地域のつながりを生み出す実践。</p>
-            <p class="bk-rep">報告：吉川 晃之祐 氏（<a href="https://jibun-pharmacy.com/" target="_blank" rel="noopener">ショーワ薬局</a>／奈良）</p>
-          </details>
-        </div>
-        <div class="bk-card">
-          <div class="bk-top"><span class="bk-no">第18分科会</span><span class="bk-region">宮城</span></div>
-          <div class="bk-title">鼻につくエリートが、ヒトに助けられてつながった世界</div>
-          <div class="bk-cat">世界とつながる</div>
-          <details class="bk-details"><summary>詳しく見る</summary>
-            <p class="bk-desc">震災で全壊した会社を見て大手商社を退社。「自分だけを信じて」始めた経営で理想と現実に打ちのめされ、「一人では局面を打開できない」と価値観を崩していく開催地・宮城の報告。</p>
-            <p class="bk-rep">報告：布施 太一 氏（<a href="http://fusesyouten.co.jp/" target="_blank" rel="noopener">布施商店</a>／宮城）</p>
-          </details>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 2. グルメ ===== -->
-<section id="gourmet" style="background: rgba(0,0,0,0.02);">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">02</div>
-      <div class="section-title-group">
-        <h2>グルメ & 楽しみ方</h2>
-        <div class="en">Gourmet & Entertainment</div>
-      </div>
+      <span class="deadline mono">申込締切　2026年9月16日（水）</span>
+      <ul>
+        <li><b>2日間参加が必須</b>です。宿泊・交通費は別。</li>
+        <li>事前申込制。希望分科会を<b>第1・第2希望</b>で出し、懇親会の参加／不参加を選びます。</li>
+        <li>申込は所属同友会（名古屋・第9支部）経由で。会場の都合で第2希望になる場合があります。</li>
+        <li>9/17（木）以降のキャンセルは会費を全額ご負担いただきます。</li>
+      </ul>
     </div>
 
-    <div class="gourmet-grid reveal">
-      <div class="gourmet-card">
-        <span class="gourmet-emoji">🐄</span>
-        <h3>牛タン</h3>
-        <p>利久・善治郎・伊達の牛たん本舗など仙台駅3Fに集結。厚切り炭火焼きは必食！</p>
-        <a href="https://corp.rikyu-gyutan.co.jp/" target="_blank" class="ext-link">利久 公式</a>
-        <a href="https://www.tanya-zenjirou.jp/" target="_blank" class="ext-link">善治郎</a>
-        <a href="https://www.dategyu.jp/" target="_blank" class="ext-link">伊達の牛たん</a>
-      </div>
-      <div class="gourmet-card">
-        <span class="gourmet-emoji">🍡</span>
-        <h3>ずんだ・萩の月</h3>
-        <p>ずんだシェイクはエキナカで手軽に。萩の月はお土産の定番。仙台駅で全部揃う。</p>
-      </div>
-      <div class="gourmet-card">
-        <span class="gourmet-emoji">🦪</span>
-        <h3>三陸海鮮</h3>
-        <p>牡蠣・ホヤ・金華さば・はらこ飯。宮城の海を代表する味覚。懇親会でも味わえます。</p>
-      </div>
-      <div class="gourmet-card">
-        <span class="gourmet-emoji">🌿</span>
-        <h3>せり鍋</h3>
-        <p>観光客向けの冬グルメ（10月〜）。実は地元民はほとんど食べないそう。話のネタに一度は体験してみるのもアリ！</p>
-      </div>
-      <div class="gourmet-card">
-        <span class="gourmet-emoji">🍣</span>
-        <h3>塩竃すし哲 <small>★地元推薦</small></h3>
-        <p>塩釜の名店が仙台駅エスパルB1Fに。塩釜まで行かなくても本格寿司が駅ナカで楽しめてコスパ抜群！テイクアウトして新幹線で食べるのもアリ。お座敷の予約も可。</p>
-        <a href="https://tabelog.com/miyagi/A0401/A040101/4000160/" target="_blank" class="ext-link">食べログ</a>
-        <a href="https://www.shiogama-sushitetsu.com/s-pal_sendai/" target="_blank" class="ext-link">公式サイト</a>
-      </div>
-      <div class="gourmet-card">
-        <span class="gourmet-emoji">🐙</span>
-        <h3>おしか半島 <small>★地元推薦</small></h3>
-        <p>仙台名物が一通り揃う人気居酒屋。三陸の海鮮・牡鹿島豚の原始焼きなど宮城の味を堪能できる。仙台駅前店・国分町店あり。</p>
-        <a href="https://tabelog.com/miyagi/A0401/A040101/4005955/" target="_blank" class="ext-link">食べログ（国分町店）</a>
-        <a href="https://oshikahantou-ekimae.owst.jp/" target="_blank" class="ext-link">仙台駅前店 公式</a>
-      </div>
-      <div class="gourmet-card">
-        <span class="gourmet-emoji">⛩</span>
-        <h3>瑞鳳殿・仙台城跡</h3>
-        <p>伊達政宗公の霊廟と騎馬像。10月は御開帳あり。るーぷる仙台630円で巡れる。</p>
-        <a href="https://www.zuihoden.com/" target="_blank" class="ext-link">瑞鳳殿 公式</a>
-        <a href="https://loople-sendai.jp/" target="_blank" class="ext-link">るーぷる仙台</a>
-      </div>
-      <div class="gourmet-card">
-        <span class="gourmet-emoji">🍶</span>
-        <h3>地酒・文化横丁</h3>
-        <p>十四代・伯楽星など銘酒が揃う。昭和25年創業の名酒場「源氏」は前泊日に。</p>
-      </div>
-      <div class="gourmet-card">
-        <span class="gourmet-emoji">🥟</span>
-        <h3>茶寮の肉まん <small>★深夜の〆</small></h3>
-        <p>国分町で30年以上続く路面の肉まんスタンド。NHK「ドキュメント72時間」でも紹介された地元の名物。月〜土は翌5:00まで営業しているので、飲んだ後の〆にちょうどいい一個。</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=茶寮 仙台国分町店" target="_blank" rel="noopener" class="ext-link">地図で見る</a>
-      </div>
+    <a class="pdf" href="/pamphlet.pdf" target="_blank" rel="noopener"><span class="m mono">PDF</span>公式パンフレットを開く ↗</a>
+  </section>
+
+  <!-- ============ 基調講演 ============ -->
+  <section id="kicho">
+    <div class="sechead">
+      <h2>基調講演</h2>
+      <span class="count mono">DAY 2 / 9:30</span>
     </div>
 
-  </div>
-</section>
-
-<!-- ===== 3. アクセス ===== -->
-<section id="access">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">03</div>
-      <div class="section-title-group">
-        <h2>移動方法</h2>
-        <div class="en">Access & Transportation</div>
+    <div class="keynote rev">
+      <span class="kt mono">2日目 全体会 ─ 仙台国際センター</span>
+      <h3>奪い合う漁業から分かち合う漁業への転換が、付加価値を生み、持続可能な地域づくりに</h3>
+      <p class="ks">〜子ども達の未来のために企業家として何を残すのか〜</p>
+      <p class="spk">講師：<b>後藤 清広 氏</b><br>後藤海産 代表／宮城県漁業協同組合 志津川支所 戸倉出張所カキ部会長</p>
+      <p class="story">東日本大震災で、船も養殖設備もすべてを失った後藤氏。絶望のなか、仲間の漁師と<b>年100回を超える議論</b>を重ね、養殖いかだを震災前の<b>3分の1</b>まで減らす決断をします。量を追う「奪い合う漁業」から、海を育て地域の未来を守る「分け合う漁業」へ──。その結果、南三陸・戸倉のカキは<b>生産量2倍・所得1.5倍</b>を実現し、環境負荷はむしろ低下。2016年には<b>日本初のASC養殖場認証</b>を取得しました。</p>
+      <div class="kstats">
+        <div class="kstat"><span class="n">1/3</span><span class="l">いかだ削減</span></div>
+        <div class="kstat"><span class="n">2倍</span><span class="l">生産量</span></div>
+        <div class="kstat"><span class="n">1.5倍</span><span class="l">所得</span></div>
+        <div class="kstat"><span class="n">日本初</span><span class="l">ASC認証</span></div>
       </div>
+      <p class="point"><b>聞きどころ ─</b> 逆境からの大胆な事業転換、仲間との徹底した合意形成、そして持続可能性と収益の両立。まさに今回のテーマ「逆境こそ挑戦の舞台」を体現する、実践に裏打ちされた報告です。</p>
+    </div>
+  </section>
+
+  <!-- ============ 分科会 ============ -->
+  <section id="bunkakai">
+    <div class="sechead">
+      <h2>分科会</h2>
+      <span class="count mono">18 SESSIONS</span>
+    </div>
+    <p class="lead">1日目 13:00〜18:00。参加する分科会を<b>第1・第2希望</b>で選んで申し込みます。各項目の「詳しく見る」で内容と報告者を確認できます。<br><b style="color:var(--shu)">第16分科会は自地区・愛知からの報告です。</b></p>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第1分科会</span><span class="bk-region">中同協</span></div>
+      <h3>青年部活動は会社経営に何をもたらすのか</h3>
+      <p class="cat">企業づくりと青年部活動は不離一体</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">長年役を受け、事業承継・企業変革・新たな挑戦に本気で向き合ってきた実践者が登壇。青年部活動で得た学びや仲間との関わりを、どう自社経営に生かしてきたかを本音で語り合う。</p>
+        <p class="rep">報告：大垣 広太 氏（<a href="https://bodyguard.co.jp/" target="_blank" rel="noopener">KSP</a>／東京）<br>パネリスト：<a href="https://www.n-cars.jp/" target="_blank" rel="noopener">オートモールジャパン</a>・<a href="https://www.nihon-ibushikawara.co.jp/" target="_blank" rel="noopener">日本いぶし瓦</a>・<a href="https://kyuken-system.com/" target="_blank" rel="noopener">キューケンシステム</a></p>
+      </details>
     </div>
 
-    <div class="access-layout reveal">
-      <div>
-        <!-- 往路 -->
-        <div class="flight-direction">✈ 往路：セントレア → 仙台空港（約1時間10分）</div>
-        <table class="flight-table">
-          <thead>
-            <tr>
-              <th>便名</th>
-              <th>出発</th>
-              <th>到着</th>
-              <th>備考</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="https://www.ana.co.jp/ja/jp/domestic/" target="_blank">ANA NH361</a></td>
-              <td>08:15</td>
-              <td>09:30</td>
-              <td><span class="recommend">おすすめ</span>（当日入り）</td>
-            </tr>
-            <tr>
-              <td><a href="https://www.flypeach.com/en" target="_blank">Peach MM491</a></td>
-              <td>10:10</td>
-              <td>11:25</td>
-              <td>LCC・格安</td>
-            </tr>
-            <tr>
-              <td><a href="https://www.ana.co.jp/ja/jp/domestic/" target="_blank">ANA NH363</a></td>
-              <td>11:50</td>
-              <td>13:05</td>
-              <td>前泊（9/30）向け</td>
-            </tr>
-            <tr>
-              <td><a href="https://www.ibexair.co.jp/" target="_blank">IBEX FW23</a></td>
-              <td>13:40</td>
-              <td>14:45</td>
-              <td>前泊（9/30）向け</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- 復路 -->
-        <div class="flight-direction" style="margin-top: 28px;">✈ 復路：仙台空港 → セントレア</div>
-        <table class="flight-table">
-          <thead>
-            <tr>
-              <th>便名</th>
-              <th>出発</th>
-              <th>到着</th>
-              <th>備考</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="https://www.ibexair.co.jp/" target="_blank">IBEX FW24</a></td>
-              <td>15:20</td>
-              <td>16:30</td>
-              <td>閉会後の早め便</td>
-            </tr>
-            <tr>
-              <td><a href="https://www.flypeach.com/en" target="_blank">Peach MM494</a></td>
-              <td>18:30</td>
-              <td>19:45</td>
-              <td><span class="recommend">おすすめ</span></td>
-            </tr>
-            <tr>
-              <td><a href="https://www.ana.co.jp/ja/jp/domestic/" target="_blank">ANA NH370</a></td>
-              <td>20:25</td>
-              <td>21:40</td>
-              <td>最終便・午後たっぷり</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="fare-note">
-          運賃目安：Peach 約7,700円〜 ／ ANA 約14,000円〜 ／ IBEX 約11,000円〜<br>
-          <span style="font-size:12px;">※ 時刻は2026年夏ダイヤ基準。10月の便・時刻は変わる場合があるため、予約時に各社公式でご確認ください。</span><br>
-          <a href="https://www.meitetsu.co.jp/train/centrair/guidance/index.html" target="_blank" class="ext-link" style="color:var(--accent)">名鉄 名古屋駅→セントレア 案内</a>
-        </div>
-
-        <!-- 新幹線・車での来仙 -->
-        <style>
-          .travel-alt { background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-radius:12px; padding:18px 20px; margin-top:20px; }
-          .travel-alt .ta-head { font-family:'Zen Old Mincho',serif; font-size:16px; font-weight:700; color:var(--ink); margin-bottom:9px; }
-          .travel-alt .ta-route { font-size:13.5px; color:var(--ink); line-height:1.95; }
-          .travel-alt .ta-meta { display:flex; flex-wrap:wrap; gap:6px 20px; margin-top:11px; font-size:13px; color:var(--muted); }
-          .travel-alt .ta-meta b { color:var(--gold); font-family:'Bricolage Grotesque',sans-serif; font-size:15px; }
-          .travel-alt .ta-note { font-size:12px; color:var(--muted); margin-top:9px; line-height:1.75; }
-          .travel-alt a.ext-link { display:inline-block; margin-top:11px; }
-        </style>
-        <div class="travel-alt">
-          <div class="ta-head">🚄 新幹線でお越しの方</div>
-          <div class="ta-route">名古屋 <span style="color:var(--muted);">─（東海道新幹線 のぞみ 約1時間40分）→</span> 東京 <span style="color:var(--muted);">〔乗換〕─（東北新幹線 はやぶさ 約1時間30分）→</span> 仙台</div>
-          <div class="ta-meta"><span>所要 <b>約3時間30分</b>〜</span><span>料金 <b>約18,680円</b>（指定席・通常期）</span></div>
-          <div class="ta-note">直通はなく東京で乗り換え。のぞみ・はやぶさとも本数が多いため、出発時刻は柔軟に選べます。</div>
-          <a href="https://ekitan.com/transit/route/sf-4455/st-1021" target="_blank" rel="noopener" class="ext-link">名古屋→仙台 乗換案内</a>
-        </div>
-        <div class="travel-alt">
-          <div class="ta-head">🚗 お車でお越しの方</div>
-          <div class="ta-route">名古屋IC <span style="color:var(--muted);">─（東名・新東名・圏央道・東北自動車道 ほか）→</span> 仙台宮城IC</div>
-          <div class="ta-meta"><span>距離 <b>約687km</b></span><span>所要 <b>約7時間45分</b>（渋滞なし）</span><span>ETC <b>約14,500円</b>（普通車）</span></div>
-          <div class="ta-note">深夜割引なら約10,150円。長距離運転になるため、現地は地下鉄・徒歩で回れる点も踏まえてご検討を。駐車場は各会場・ホテルで要確認。</div>
-          <a href="https://www.navitime.co.jp/highway/route/searchlist?depIcId=23320&arvIcId=1310&depIcType=ic&arvIcType=ic" target="_blank" rel="noopener" class="ext-link">高速料金・ルート検索</a>
-        </div>
-      </div>
-
-      <div class="local-transport">
-        <div class="transport-card">
-          <h4>🚃 仙台空港アクセス線</h4>
-          <p>仙台空港 → 仙台駅：約25分 ／ 660円。電車で直結。迷わず行ける。</p>
-          <a href="https://www.senat.co.jp/" target="_blank" class="ext-link">時刻表・運賃</a>
-        </div>
-        <div class="transport-card">
-          <h4>🚌 るーぷる仙台</h4>
-          <p>仙台駅 → 瑞鳳殿・仙台城跡を周回。1日乗車券 630円。観光に最適。</p>
-          <a href="https://loople-sendai.jp/" target="_blank" class="ext-link">ルート・時刻表</a>
-        </div>
-        <div class="transport-card">
-          <h4>🚇 地下鉄（南北線）</h4>
-          <p>仙台駅 ↔ 広瀬通・勾当台公園。国分町まで2〜3駅 ／ 徒歩15分も可。</p>
-        </div>
-      </div>
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第2分科会</span><span class="bk-region">中同協</span></div>
+      <h3>変化の時代に維持発展し続ける企業とは何か</h3>
+      <p class="cat">人を生かす経営〈労使見解〉</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">中小企業として「人を生かす経営」を目指すなかで、社員教育・共育をどう捉え実践するか。社員をパートナーとして向き合い、悩みや失敗も含めて今後を学び合う分科会。</p>
+        <p class="rep">報告：梶谷 俊介 氏（<a href="https://okayamatoyota.com/" target="_blank" rel="noopener">岡山トヨタ自動車</a>／岡山）<br>パネリスト：<a href="https://a-monline.jp/" target="_blank" rel="noopener">A.モンライン</a>・<a href="https://www.1st-dt.com/" target="_blank" rel="noopener">ファーストディレクション</a></p>
+      </details>
     </div>
 
-    <!-- 会場アクセス（住所・TEL・地図） -->
-    <style>
-      .venue-access { margin-top: 44px; }
-      .venue-access .va-head { font-family:'Zen Old Mincho',serif; font-size:20px; font-weight:700; color:var(--ink); margin-bottom:6px; }
-      .venue-access .va-sub { font-size:13px; color:var(--muted); margin-bottom:20px; line-height:1.7; }
-      .venue-card { display:grid; grid-template-columns:1fr 1.15fr; background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-radius:12px; overflow:hidden; margin-bottom:16px; }
-      .venue-card .vc-info { padding:20px 22px; }
-      .venue-card .vc-no { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; color:var(--gold); font-size:12px; letter-spacing:1px; }
-      .venue-card .vc-role { font-size:12px; color:var(--muted); margin-left:8px; }
-      .venue-card .vc-name { font-family:'Zen Old Mincho',serif; font-size:18px; font-weight:700; color:var(--ink); margin:5px 0 10px; }
-      .venue-card .vc-row { font-size:13px; color:var(--muted); line-height:1.95; }
-      .venue-card .vc-link { display:inline-block; margin-top:12px; font-size:13px; color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
-      .venue-card .vc-link:hover { color:var(--ink); }
-      .venue-card .vc-map { width:100%; height:100%; min-height:230px; border:0; display:block; }
-      @media (max-width:640px){ .venue-card { grid-template-columns:1fr; } .venue-card .vc-map { min-height:220px; } }
-    </style>
-    <div class="venue-access reveal">
-      <h3 class="va-head">会場アクセス</h3>
-      <p class="va-sub">3会場はすべて青葉区内。各地図はGoogleマップと連動しています（「Googleマップで開く」から経路案内へ）。</p>
-
-      <div class="venue-card">
-        <div class="vc-info">
-          <span class="vc-no">① 会場</span><span class="vc-role">1日目 分科会 ＋ 2日目 全体会</span>
-          <div class="vc-name">仙台国際センター</div>
-          <div class="vc-row">📍 仙台市青葉区青葉山無番地</div>
-          <div class="vc-row">☎ 022-265-2211（代）</div>
-          <div class="vc-row">🚇 地下鉄東西線「国際センター駅」徒歩約1分</div>
-          <div class="vc-row">🚗 東北自動車道「仙台宮城IC」から約10〜15分</div>
-          <a class="vc-link" href="https://www.google.com/maps/search/?api=1&query=仙台国際センター" target="_blank" rel="noopener">Google マップで開く ↗</a>
-        </div>
-        <iframe class="vc-map" src="https://maps.google.com/maps?q=仙台国際センター&z=16&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="仙台国際センターの地図"></iframe>
-      </div>
-
-      <div class="venue-card">
-        <div class="vc-info">
-          <span class="vc-no">② 会場</span><span class="vc-role">1日目 分科会 ＋ 懇親会</span>
-          <div class="vc-name">江陽グランドホテル</div>
-          <div class="vc-row">📍 仙台市青葉区本町2-3-1</div>
-          <div class="vc-row">☎ 022-267-5111（代）</div>
-          <div class="vc-row">🚉 JR「仙台駅」より徒歩約13分</div>
-          <div class="vc-row">🚗 東北自動車道「仙台宮城IC」から約15〜20分</div>
-          <a class="vc-link" href="https://www.google.com/maps/search/?api=1&query=江陽グランドホテル 仙台市青葉区本町2-3-1" target="_blank" rel="noopener">Google マップで開く ↗</a>
-        </div>
-        <iframe class="vc-map" src="https://maps.google.com/maps?q=江陽グランドホテル 仙台市青葉区本町2-3-1&z=16&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="江陽グランドホテルの地図"></iframe>
-      </div>
-
-      <div class="venue-card">
-        <div class="vc-info">
-          <span class="vc-no">③ 会場</span><span class="vc-role">1日目 分科会</span>
-          <div class="vc-name">パレスへいあん</div>
-          <div class="vc-row">📍 仙台市青葉区本町1-2-2</div>
-          <div class="vc-row">☎ 022-265-5111</div>
-          <div class="vc-row">🚉 JR「仙台駅」より徒歩約5分</div>
-          <div class="vc-row">🚗 東北自動車道「仙台宮城IC」から約15〜20分</div>
-          <a class="vc-link" href="https://www.google.com/maps/search/?api=1&query=パレスへいあん 仙台市青葉区本町1-2-2" target="_blank" rel="noopener">Google マップで開く ↗</a>
-        </div>
-        <iframe class="vc-map" src="https://maps.google.com/maps?q=パレスへいあん 仙台市青葉区本町1-2-2&z=16&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="パレスへいあんの地図"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 4. ホテル ===== -->
-<section id="hotel" style="background: rgba(0,0,0,0.02);">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">04</div>
-      <div class="section-title-group">
-        <h2>宿泊候補</h2>
-        <div class="en">Hotel</div>
-      </div>
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第3分科会</span><span class="bk-region">静岡</span></div>
+      <h3>社員と共に歩む、じぶん・かいしゃ・まちづくり</h3>
+      <p class="cat">人を生かす経営で21世紀型企業づくり</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">父の急逝で突如承継し、社員との溝に悩んだ小野寺氏。同友会での学びから大きく自己変革し、「社員や未来の人財に選ばれる会社」を目指す、ありのままの実践報告。</p>
+        <p class="rep">報告：小野寺 敦嗣 氏（<a href="https://fujiarchitect.co.jp/" target="_blank" rel="noopener">富士設計</a>／静岡）</p>
+      </details>
     </div>
 
-    <!-- メリット比較 -->
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;" class="reveal merit-compare-3">
-      <div class="merit-box" style="border-top:3px solid var(--gold);">
-        <h4>🏢 本町（1日目会場）</h4>
-        <ul>
-          <li>1日目の分科会・懇親会（江陽／パレス）に至近</li>
-          <li>江陽グランドホテルは会場そのもの＝移動ゼロ</li>
-          <li>2日目会場へは仙台駅で東西線に乗換</li>
-        </ul>
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第4分科会</span><span class="bk-region">岩手</span></div>
+      <h3>挫折から救ってくれたのは社員と仲間だった</h3>
+      <p class="cat">経営者の全人格的成長</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">3代目として都市圏へ出店し顧客を開拓。自信満々で臨んだ経営指針実践塾でどん底に。声を掛けてくれたベテラン社員に認められ気づいた「自分らしく生きる」ことの意味。</p>
+        <p class="rep">報告：昆 卓広 氏（<a href="https://kon-sekizai.com/" target="_blank" rel="noopener">昆石材店</a>／岩手）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第5分科会</span><span class="bk-region">熊本</span></div>
+      <h3>「モメて モメて モメた！」衝突の先の経営の核</h3>
+      <p class="cat">経営者の自己変革</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">社員の相次ぐ退職、先代との軋轢、青年部での孤立。すべてを周りのせいにする「他責思考」を脱し、痛みを伴う経験を学びに変えて、愛情を持ったリーダーへ脱皮した物語。</p>
+        <p class="rep">報告：小屋松 俊太 氏（<a href="https://www.hikosan.jp/" target="_blank" rel="noopener">司法書士法人小屋松事務所</a>／熊本）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第6分科会</span><span class="bk-region">大阪</span></div>
+      <h3>ひとりで背負う経営から、社員と描くビジョンへ</h3>
+      <p class="cat">経営指針の実践と確立</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">完成された成功談ではなく、不満や混乱という逆境の中で、経営者自らが"旗"を掲げ社員と共に未来を創ろうと挑戦し続ける、変革真っ只中の報告。あきらめない心と向き合い方。</p>
+        <p class="rep">報告：山川 耕平 氏（<a href="https://www.kouyou-shokai.co.jp/" target="_blank" rel="noopener">高洋商会</a>／大阪）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第7分科会</span><span class="bk-region">鹿児島</span></div>
+      <h3>理念が人を引き寄せ、指針が未来を動かす</h3>
+      <p class="cat">経営指針の実践と確立</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">繁華街で理髪店を営む亀澤氏。順調な経営がコロナで揺らぐなか、支えとなったのは同友会で学んだ経営指針。理念をもとに、働きがいのある環境づくりに挑戦した実践。</p>
+        <p class="rep">報告：亀澤 隼人 氏（<a href="https://www.bridge-ltd.co.jp" target="_blank" rel="noopener">ブリッジ</a>／鹿児島）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第8分科会</span><span class="bk-region">香川</span></div>
+      <h3>地域の健康インフラをつくる会社になる</h3>
+      <p class="cat">10年ビジョン</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">「業界を変えたい」と独立するも、自分自身が同じ構造を再現。組織崩壊を経て、社員と共に10年ビジョンを描いたことが転機に。ビジョンを判断基準に業界の変革へ。</p>
+        <p class="rep">報告：中川 郁也 氏（<a href="https://earcs.co.jp/" target="_blank" rel="noopener">EARCS</a>／香川）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第9分科会</span><span class="bk-region">島根</span></div>
+      <h3>債務超過を乗り越えた後継者の本気の覚悟</h3>
+      <p class="cat">変革と挑戦</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">突然の承継で待っていたのは4,400万円の債務超過。「すべては経営者の責任」と向き合った時、会社は変わり始めた。対話・職場改善・自社施工率UPを泥臭く実践。</p>
+        <p class="rep">報告：林 洋介 氏（<a href="https://hayasi-shoji.com/" target="_blank" rel="noopener">林商事</a>／島根）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第10分科会</span><span class="bk-region">広島</span></div>
+      <h3>パワハラを恐れず、本気本音で関わる覚悟</h3>
+      <p class="cat">採用・教育</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">「言っても変わらない」と社員への期待を諦めていないか。成果だけを追い社員を"道具"扱いした結果、離職率8割に直面し改心。本音で関わる採用と教育の本質を問う。</p>
+        <p class="rep">報告：小濱 亮介 氏（<a href="https://www.kk-synergy.co.jp/" target="_blank" rel="noopener">シナジー</a>／広島）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第11分科会</span><span class="bk-region">滋賀</span></div>
+      <h3>人を信じられなかった僕が、仲間に救われるまで</h3>
+      <p class="cat">共に学び、共に育つ</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">"0日デビュー"など独自戦略で成長した美容室MIO。根底にあるのは「多様性こそが人と組織を強くする」という考え。一人ひとりの個性と強みを生かす経営ストーリー。</p>
+        <p class="rep">報告：本田 哲也 氏（<a href="https://www.big-advance.site/c/135/1920" target="_blank" rel="noopener">Mio</a>／滋賀）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第12分科会</span><span class="bk-region">東京</span></div>
+      <h3>「ここが私の居場所」とみんなが言える会社へ</h3>
+      <p class="cat">人が輝く企業づくり</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">一見「よい会社」になったものの、本当に働きがいがあるのか？組織崩壊を恐れて自分の意見を殺していた経営者が、社員一人ひとりと本音で向き合う一歩を踏み出す。</p>
+        <p class="rep">報告：秋吉 利恵 氏（<a href="http://care-support-angel.com/" target="_blank" rel="noopener">エンジェルサポート</a>／東京）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第13分科会</span><span class="bk-region">秋田</span></div>
+      <h3>売上半減。その時、あなたは何をしますか？</h3>
+      <p class="cat">経営戦略の転換・差別化を図る</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">売上の約半分を占めた除雪事業が、暖冬で半減し債務超過目前に。会社を守るため何を捨て何を残すか──企業体質を見直し、自社の「強み」に集中して粗利2倍を実現。</p>
+        <p class="rep">報告：珍田 正輝 氏（<a href="https://chinda.jp/recruit/" target="_blank" rel="noopener">珍田建設</a>／秋田）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第14分科会</span><span class="bk-region">北海道</span></div>
+      <h3>創業91年、老舗の未来をつなぐ「正解のない承継」</h3>
+      <p class="cat">付加価値を高める</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">北海道で唯一ゴム長靴を国内生産する第一ゴム。後継予定のなかった自分と、銀行員から社長になった父。価値観の違う二人が挑戦を重ね、老舗の未来を模索してきた歩み。</p>
+        <p class="rep">報告：藤本 賢人 氏（<a href="https://www.daiichi-gomu.co.jp/" target="_blank" rel="noopener">第一ゴム</a>／北海道）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第15分科会</span><span class="bk-region">埼玉</span></div>
+      <h3>誰が継ぐ？人生をかけた先代の想い</h3>
+      <p class="cat">事業承継 ─ 3兄弟のキングギドラ経営</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">工場移転を機に3兄弟で会社と向き合う時間が始まる。「誰が継いでもいい会社にしよう」──三人の信頼関係を大切に、それぞれの立場で向き合う事業承継の話。</p>
+        <p class="rep">報告：林 俊治 氏（<a href="https://hayashi-coating.co.jp/" target="_blank" rel="noopener">林塗装工業所</a>／埼玉）</p>
+      </details>
+    </div>
+
+    <div class="bk local rev">
+      <div class="bk-top"><span class="bk-no mono">第16分科会</span><span class="bk-region">愛知（自地区）</span></div>
+      <h3>「どうせならおもしろい地域の未来」を共に創る</h3>
+      <p class="cat">地域が輝く企業づくり</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">ノリと勢いで起業し、失敗と仲間の離脱を経て同友会へ。三位一体経営の学びから「地域の良循環が自社の好環境をつくる」と気づき、人と地域を主語に置く企業へ変革。自地区・愛知からの報告です。</p>
+        <p class="rep">報告：千賀 信義 氏（<a href="https://rgst.net/" target="_blank" rel="noopener">レジスタ</a>／愛知）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第17分科会</span><span class="bk-region">奈良</span></div>
+      <h3>熱のある地域へ！〜小さく固く転がっていく〜</h3>
+      <p class="cat">企業づくりと地域づくりを一体として</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">薬局を通じて「熱のある地域」をつくることを目指す。薬を処方するだけでなく、その人の背景を理解し人生に寄り添う「接遇」で、地域のつながりを生み出す実践。</p>
+        <p class="rep">報告：吉川 晃之祐 氏（<a href="https://jibun-pharmacy.com/" target="_blank" rel="noopener">ショーワ薬局</a>／奈良）</p>
+      </details>
+    </div>
+
+    <div class="bk rev">
+      <div class="bk-top"><span class="bk-no mono">第18分科会</span><span class="bk-region">宮城（開催地）</span></div>
+      <h3>鼻につくエリートが、ヒトに助けられてつながった世界</h3>
+      <p class="cat">世界とつながる</p>
+      <details><summary>詳しく見る</summary>
+        <p class="desc">震災で全壊した会社を見て大手商社を退社。「自分だけを信じて」始めた経営で理想と現実に打ちのめされ、「一人では局面を打開できない」と価値観を崩していく開催地・宮城の報告。</p>
+        <p class="rep">報告：布施 太一 氏（<a href="http://fusesyouten.co.jp/" target="_blank" rel="noopener">布施商店</a>／宮城）</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 移動 ============ -->
+  <section id="ido">
+    <div class="sechead">
+      <h2>移動</h2>
+      <span class="count mono">NAGOYA → SENDAI</span>
+    </div>
+
+    <div class="tt rev">
+      <div class="tt-head">
+        <span class="dir">往路　セントレア → 仙台空港</span>
+        <span class="via mono">約1時間10分</span>
       </div>
-      <div class="merit-box" style="border-top:3px solid var(--accent);">
-        <h4>🍻 国分町</h4>
-        <ul>
-          <li>懇親会後すぐ帰れる。終電不要</li>
-          <li>国分町の居酒屋・横丁が全て徒歩圏</li>
-          <li>2日目会場へは地下鉄でやや遠め</li>
-        </ul>
+      <table class="tt-table">
+        <thead>
+          <tr><th>便名</th><th class="num">出発</th><th class="num">到着</th><th>備考</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.ana.co.jp/ja/jp/domestic/" target="_blank" rel="noopener">ANA NH361</a></td>
+            <td class="num">08:15</td><td class="num">09:30</td>
+            <td><span class="rec mono">おすすめ</span><span class="memo">当日入り</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.flypeach.com/en" target="_blank" rel="noopener">Peach MM491</a></td>
+            <td class="num">10:10</td><td class="num">11:25</td>
+            <td><span class="memo">LCC・格安</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.ana.co.jp/ja/jp/domestic/" target="_blank" rel="noopener">ANA NH363</a></td>
+            <td class="num">11:50</td><td class="num">13:05</td>
+            <td><span class="memo">前泊（9/30）向け</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.ibexair.co.jp/" target="_blank" rel="noopener">IBEX FW23</a></td>
+            <td class="num">13:40</td><td class="num">14:45</td>
+            <td><span class="memo">前泊（9/30）向け</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tt rev">
+      <div class="tt-head">
+        <span class="dir">復路　仙台空港 → セントレア</span>
       </div>
-      <div class="merit-box" style="border-top:3px solid var(--teal);">
-        <h4>🚉 仙台駅前【おすすめ】</h4>
+      <table class="tt-table">
+        <thead>
+          <tr><th>便名</th><th class="num">出発</th><th class="num">到着</th><th>備考</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.ibexair.co.jp/" target="_blank" rel="noopener">IBEX FW24</a></td>
+            <td class="num">15:20</td><td class="num">16:30</td>
+            <td><span class="memo">閉会後の早め便</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.flypeach.com/en" target="_blank" rel="noopener">Peach MM494</a></td>
+            <td class="num">18:30</td><td class="num">19:45</td>
+            <td><span class="rec mono">おすすめ</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.ana.co.jp/ja/jp/domestic/" target="_blank" rel="noopener">ANA NH370</a></td>
+            <td class="num">20:25</td><td class="num">21:40</td>
+            <td><span class="memo">最終便・午後たっぷり</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="fare">
+        運賃目安　<b>Peach 約7,700円〜</b>／<b>ANA 約14,000円〜</b>／<b>IBEX 約11,000円〜</b><br>
+        時刻は2026年夏ダイヤ基準。10月の便・時刻は変わる場合があるため、予約時に各社公式でご確認ください。<br>
+        <a href="https://www.meitetsu.co.jp/train/centrair/guidance/index.html" target="_blank" rel="noopener">名鉄 名古屋駅→セントレア 案内 ↗</a>
+      </p>
+    </div>
+
+    <div class="alt rev">
+      <div class="ah"><span class="m mono">RAIL</span><h4>新幹線でお越しの方</h4></div>
+      <div class="route">名古屋 <span>─（東海道新幹線 のぞみ 約1時間40分）→</span> 東京 <span>〔乗換〕─（東北新幹線 はやぶさ 約1時間30分）→</span> 仙台</div>
+      <div class="meta"><span>所要<b>約3時間30分〜</b></span><span>料金<b>約18,680円</b></span></div>
+      <p class="anote">指定席・通常期。直通はなく東京で乗り換え。のぞみ・はやぶさとも本数が多いため、出発時刻は柔軟に選べます。</p>
+      <a href="https://ekitan.com/transit/route/sf-4455/st-1021" target="_blank" rel="noopener">名古屋→仙台 乗換案内 ↗</a>
+    </div>
+
+    <div class="alt rev">
+      <div class="ah"><span class="m mono">CAR</span><h4>お車でお越しの方</h4></div>
+      <div class="route">名古屋IC <span>─（東名・新東名・圏央道・東北自動車道 ほか）→</span> 仙台宮城IC</div>
+      <div class="meta"><span>距離<b>約687km</b></span><span>所要<b>約7時間45分</b></span><span>ETC<b>約14,500円</b></span></div>
+      <p class="anote">所要は渋滞なしの場合。ETCは普通車で、深夜割引なら約10,150円。長距離運転になるため、現地は地下鉄・徒歩で回れる点も踏まえてご検討を。駐車場は各会場・ホテルで要確認。</p>
+      <a href="https://www.navitime.co.jp/highway/route/searchlist?depIcId=23320&arvIcId=1310&depIcType=ic&arvIcType=ic" target="_blank" rel="noopener">高速料金・ルート検索 ↗</a>
+    </div>
+
+    <div class="local rev">
+      <div class="lc">
+        <div class="lh"><span class="m mono">RAIL</span><h4>仙台空港アクセス線</h4></div>
+        <p>仙台空港 → 仙台駅：約25分／660円。電車で直結。迷わず行ける。</p>
+        <a href="https://www.senat.co.jp/" target="_blank" rel="noopener">時刻表・運賃 ↗</a>
+      </div>
+      <div class="lc">
+        <div class="lh"><span class="m mono">BUS</span><h4>るーぷる仙台</h4></div>
+        <p>仙台駅 → 瑞鳳殿・仙台城跡を周回。1日乗車券 630円。観光に最適。</p>
+        <a href="https://loople-sendai.jp/" target="_blank" rel="noopener">ルート・時刻表 ↗</a>
+      </div>
+      <div class="lc">
+        <div class="lh"><span class="m mono">METRO</span><h4>地下鉄 南北線</h4></div>
+        <p>仙台駅 ↔ 広瀬通・勾当台公園。国分町まで2〜3駅／徒歩15分も可。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 会場 ============ -->
+  <section id="kaijo">
+    <div class="sechead">
+      <h2>会場アクセス</h2>
+      <span class="count mono">3 VENUES</span>
+    </div>
+    <p class="lead">3会場はすべて青葉区内。各地図はGoogleマップと連動しています（「Googleマップで開く」から経路案内へ）。</p>
+
+    <div class="vcard rev">
+      <div class="vi">
+        <span class="vno mono">会場 1</span><span class="vrole">1日目 分科会 ＋ 2日目 全体会</span>
+        <div class="vname">仙台国際センター</div>
+        <div class="vrow"><span class="k mono">所在</span><span>仙台市青葉区青葉山無番地</span></div>
+        <div class="vrow"><span class="k mono">電話</span><span>022-265-2211（代）</span></div>
+        <div class="vrow"><span class="k mono">地下鉄</span><span>東西線「国際センター駅」徒歩約1分</span></div>
+        <div class="vrow"><span class="k mono">車</span><span>東北自動車道「仙台宮城IC」から約10〜15分</span></div>
+        <a class="vlink" href="https://www.google.com/maps/search/?api=1&query=仙台国際センター" target="_blank" rel="noopener">Google マップで開く ↗</a>
+      </div>
+      <iframe src="https://maps.google.com/maps?q=仙台国際センター&z=16&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="仙台国際センターの地図"></iframe>
+    </div>
+
+    <div class="vcard rev">
+      <div class="vi">
+        <span class="vno mono">会場 2</span><span class="vrole">1日目 分科会 ＋ 懇親会</span>
+        <div class="vname">江陽グランドホテル</div>
+        <div class="vrow"><span class="k mono">所在</span><span>仙台市青葉区本町2-3-1</span></div>
+        <div class="vrow"><span class="k mono">電話</span><span>022-267-5111（代）</span></div>
+        <div class="vrow"><span class="k mono">徒歩</span><span>JR「仙台駅」より約13分</span></div>
+        <div class="vrow"><span class="k mono">車</span><span>東北自動車道「仙台宮城IC」から約15〜20分</span></div>
+        <a class="vlink" href="https://www.google.com/maps/search/?api=1&query=江陽グランドホテル 仙台市青葉区本町2-3-1" target="_blank" rel="noopener">Google マップで開く ↗</a>
+      </div>
+      <iframe src="https://maps.google.com/maps?q=江陽グランドホテル 仙台市青葉区本町2-3-1&z=16&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="江陽グランドホテルの地図"></iframe>
+    </div>
+
+    <div class="vcard rev">
+      <div class="vi">
+        <span class="vno mono">会場 3</span><span class="vrole">1日目 分科会</span>
+        <div class="vname">パレスへいあん</div>
+        <div class="vrow"><span class="k mono">所在</span><span>仙台市青葉区本町1-2-2</span></div>
+        <div class="vrow"><span class="k mono">電話</span><span>022-265-5111</span></div>
+        <div class="vrow"><span class="k mono">徒歩</span><span>JR「仙台駅」より約5分</span></div>
+        <div class="vrow"><span class="k mono">車</span><span>東北自動車道「仙台宮城IC」から約15〜20分</span></div>
+        <a class="vlink" href="https://www.google.com/maps/search/?api=1&query=パレスへいあん 仙台市青葉区本町1-2-2" target="_blank" rel="noopener">Google マップで開く ↗</a>
+      </div>
+      <iframe src="https://maps.google.com/maps?q=パレスへいあん 仙台市青葉区本町1-2-2&z=16&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="パレスへいあんの地図"></iframe>
+    </div>
+  </section>
+
+  <!-- ============ 宿泊 ============ -->
+  <section id="yado">
+    <div class="sechead">
+      <h2>宿泊候補</h2>
+      <span class="count mono">3 AREAS / 9 HOTELS</span>
+    </div>
+    <p class="lead">どのエリアに泊まるかで、二日間の動きやすさが変わります。まずエリアを選んでください。</p>
+
+    <div class="merits rev">
+      <div class="merit best">
+        <h4>仙台駅前<span class="verdict mono">◎ おすすめ</span></h4>
         <ul>
           <li>東西線で2日目会場（国際センター）へ直行 約6分</li>
           <li>1日目の本町会場も徒歩圏。二日間ともバランス最良</li>
           <li>空港アクセス線・新幹線も直結で発着がラク</li>
         </ul>
       </div>
-    </div>
-
-    <!-- 会場アクセス重視 -->
-    <h3 class="hotel-area-title reveal">🏢 1日目会場エリア（本町）<span>─ 分科会・懇親会に至近</span></h3>
-    <div class="hotel-grid reveal">
-      <div class="hotel-card" style="border-left:3px solid var(--gold);">
-        <h3>江陽グランドホテル <small style="color:var(--accent);">★1日目会場・懇親会場</small></h3>
-        <div class="hotel-area">1日目分科会・懇親会の会場</div>
-        <p>1日目分科会・懇親会の会場に泊まれる。広瀬通駅直結で移動ゼロ。2日目会場へは仙台駅で東西線に乗換。</p>
-        <div class="hotel-access">📍 青葉区本町2-3-1<br>🚇 広瀬通駅 西1出口正面（徒歩0分）</div>
-        <a href="https://www.koyogh.jp/" target="_blank" class="ext-link">公式サイトで予約</a>
+      <div class="merit">
+        <h4>本町<span class="verdict mono">1日目会場</span></h4>
+        <ul>
+          <li>1日目の分科会・懇親会（江陽／パレス）に至近</li>
+          <li>江陽グランドホテルは会場そのもの＝移動ゼロ</li>
+          <li>2日目会場へは仙台駅で東西線に乗換</li>
+        </ul>
       </div>
-      <div class="hotel-card">
-        <h3>ドーミーイン仙台ANNEX</h3>
-        <div class="hotel-area">江陽グランドホテルまで徒歩7分</div>
-        <p>天然温泉「青葉の湯」完備。名物の無料夜鳴きそばで〆られる。リニューアル済みで綺麗。</p>
-        <div class="hotel-access">📍 青葉区中央2-11-26<br>🚇 広瀬通駅から徒歩2分 ／ パレスへいあんまで徒歩8分</div>
-        <a href="https://dormy-hotels.com/dormyinn/hotels/sendai_ax/" target="_blank" class="ext-link">公式サイトで予約</a>
-      </div>
-      <div class="hotel-card">
-        <h3>スーパーホテル仙台・広瀬通り</h3>
-        <div class="hotel-area">本町の1日目会場に近い</div>
-        <p>天然温泉「弦月の湯」付き。焼きたてパンの無料朝食。本町の1日目会場に近く、仙台駅へも1駅。2日目は仙台駅で東西線に乗換。</p>
-        <div class="hotel-access">📍 青葉区中央2-9-23<br>🚇 広瀬通駅 徒歩3分 ／ 江陽グランドホテルまで徒歩5分</div>
-        <a href="https://www.superhotel.co.jp/s_hotels/hirose/" target="_blank" class="ext-link">公式サイトで予約</a>
+      <div class="merit">
+        <h4>国分町<span class="verdict mono">夜重視</span></h4>
+        <ul>
+          <li>懇親会後すぐ帰れる。終電不要</li>
+          <li>国分町の居酒屋・横丁が全て徒歩圏</li>
+          <li>2日目会場へは地下鉄でやや遠め</li>
+        </ul>
       </div>
     </div>
 
-    <!-- 国分町エリア -->
-    <h3 class="hotel-area-title reveal" style="margin-top: 48px;">🍻 国分町エリア <span>─ 夜を楽しむならここ</span></h3>
-    <div class="hotel-grid reveal">
-      <div class="hotel-card">
-        <h3>ホテルグランテラス仙台国分町</h3>
-        <div class="hotel-area">国分町ど真ん中</div>
-        <p>BBHホテルグループ。繁華街のど真ん中で二次会・横丁めぐりに便利。懇親会場（江陽）へも徒歩約10分。</p>
-        <div class="hotel-access">🚇 広瀬通駅から徒歩5分 ／ 仙台駅から徒歩15分</div>
-        <a href="https://breezbay-group.com/hgt-s-kokubuncho/" target="_blank" class="ext-link">公式サイトで予約</a>
+    <div class="harea best rev">
+      <div class="ht">仙台駅前エリア<span class="verdict mono">二日間ともバランス最良</span></div>
+      <p class="hnote">仙台駅は地下鉄東西線で<b>2日目会場・仙台国際センターへ直行（約6分）</b>。1日目の本町会場も徒歩圏で、空港アクセス線・新幹線も直結。二日間を通していちばん動きやすい立地です。</p>
+      <div class="hotel">
+        <div class="hn">ホテルメトロポリタン仙台</div>
+        <p class="hd">JR東日本グループ運営の老舗シティホテル。駅直結で雨に濡れずチェックイン。レストラン・設備も充実。</p>
+        <div class="ha"><span class="k mono">JR</span><span>仙台駅西口直結（徒歩1分）</span></div>
+        <a href="https://sendai.metropolitan.jp/" target="_blank" rel="noopener">公式サイトで予約 ↗</a>
       </div>
-      <div class="hotel-card">
-        <h3>スマイルホテル仙台国分町</h3>
-        <div class="hotel-area">国分町エリア</div>
-        <p>リーズナブルで清潔。コスパ重視の方に。国分町の飲食店まで徒歩圏内。</p>
-        <div class="hotel-access">🚇 広瀬通駅から徒歩7分 ／ 仙台駅から徒歩18分</div>
-        <a href="https://smile-hotels.com/hotels/show/sendaikokubuncho" target="_blank" class="ext-link">公式サイトで予約</a>
+      <div class="hotel">
+        <div class="hn">ダイワロイネットホテル仙台</div>
+        <p class="hd">大和ハウスグループ運営。東口至近の好立地で全室Wi-Fi完備。きれいで安定感のあるビジネスホテル。</p>
+        <div class="ha"><span class="k mono">JR</span><span>仙台駅東口から徒歩2分</span></div>
+        <a href="https://www.daiwaroynet.jp/sendai/" target="_blank" rel="noopener">公式サイトで予約 ↗</a>
       </div>
-      <div class="hotel-card">
-        <h3>御宿 野乃 仙台</h3>
-        <div class="hotel-area">国分町エリア・天然温泉付き</div>
-        <p>ドーミーインチェーン。天然温泉「杜都の湯」と夜鳴きそばが魅力。疲れを癒すなら。</p>
-        <div class="hotel-access">🚇 広瀬通駅から徒歩5分 ／ 仙台駅から徒歩15分</div>
-        <a href="https://dormy-hotels.com/dormyinn/hotels/nono_sendai/" target="_blank" class="ext-link">公式サイトで予約</a>
+      <div class="hotel">
+        <div class="hn">コンフォートホテル仙台西口</div>
+        <p class="hd">無料朝食・フリードリンク・ライブラリーカフェ付き。コスパ最強で、朝から動きたい人に最適。</p>
+        <div class="ha"><span class="k mono">JR</span><span>仙台駅西口から徒歩3分</span></div>
+        <a href="https://www.choice-hotels.jp/hotel/sendai-w/" target="_blank" rel="noopener">公式サイトで予約 ↗</a>
       </div>
     </div>
 
-    <!-- 仙台駅前エリア -->
-    <h3 class="hotel-area-title reveal" style="margin-top: 48px;">🚉 仙台駅前エリア <span>─ 二日間ともバランス最良（おすすめ）</span></h3>
-    <p class="reveal" style="font-size:13px; color:var(--muted); margin:8px 0 18px; line-height:1.8;">仙台駅は地下鉄東西線で<strong style="color:var(--ink);">2日目会場・仙台国際センターへ直行（約6分）</strong>。1日目の本町会場も徒歩圏で、空港アクセス線・新幹線も直結。二日間を通していちばん動きやすい立地です。</p>
-    <div class="hotel-grid reveal">
-      <div class="hotel-card">
-        <h3>ホテルメトロポリタン仙台</h3>
-        <div class="hotel-area">仙台駅西口直結</div>
-        <p>JR東日本グループ運営の老舗シティホテル。駅直結で雨に濡れずチェックイン。レストラン・設備も充実。</p>
-        <div class="hotel-access">🚉 仙台駅西口直結（徒歩1分）</div>
-        <a href="https://sendai.metropolitan.jp/" target="_blank" class="ext-link">公式サイトで予約</a>
+    <div class="harea rev">
+      <div class="ht">1日目会場エリア（本町）<span class="verdict mono">分科会・懇親会に至近</span></div>
+      <div class="hotel">
+        <div class="hn">江陽グランドホテル<small>1日目会場・懇親会場</small></div>
+        <p class="hd">1日目分科会・懇親会の会場に泊まれる。広瀬通駅直結で移動ゼロ。2日目会場へは仙台駅で東西線に乗換。</p>
+        <div class="ha">
+          <span class="k mono">所在</span><span>青葉区本町2-3-1</span>
+          <span class="k mono">地下鉄</span><span>広瀬通駅 西1出口正面（徒歩0分）</span>
+        </div>
+        <a href="https://www.koyogh.jp/" target="_blank" rel="noopener">公式サイトで予約 ↗</a>
       </div>
-      <div class="hotel-card">
-        <h3>ダイワロイネットホテル仙台</h3>
-        <div class="hotel-area">仙台駅東口すぐ</div>
-        <p>大和ハウスグループ運営。東口至近の好立地で全室Wi-Fi完備。きれいで安定感のあるビジネスホテル。</p>
-        <div class="hotel-access">🚉 仙台駅東口から徒歩2分</div>
-        <a href="https://www.daiwaroynet.jp/sendai/" target="_blank" class="ext-link">公式サイトで予約</a>
+      <div class="hotel">
+        <div class="hn">ドーミーイン仙台ANNEX</div>
+        <p class="hd">天然温泉「青葉の湯」完備。名物の無料夜鳴きそばで〆られる。リニューアル済みで綺麗。</p>
+        <div class="ha">
+          <span class="k mono">所在</span><span>青葉区中央2-11-26</span>
+          <span class="k mono">地下鉄</span><span>広瀬通駅から徒歩2分／パレスへいあんまで徒歩8分</span>
+        </div>
+        <a href="https://dormy-hotels.com/dormyinn/hotels/sendai_ax/" target="_blank" rel="noopener">公式サイトで予約 ↗</a>
       </div>
-      <div class="hotel-card">
-        <h3>コンフォートホテル仙台西口</h3>
-        <div class="hotel-area">仙台駅西口・無料朝食付き</div>
-        <p>無料朝食・フリードリンク・ライブラリーカフェ付き。コスパ最強で、朝から動きたい人に最適。</p>
-        <div class="hotel-access">🚉 仙台駅西口から徒歩3分</div>
-        <a href="https://www.choice-hotels.jp/hotel/sendai-w/" target="_blank" class="ext-link">公式サイトで予約</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 5. エリアガイド（テキスト形式） ===== -->
-<section id="area">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-num">05</div>
-      <div class="section-title-group">
-        <h2>仙台の街のイメージ</h2>
-        <div class="en">City Guide for Aichi People</div>
+      <div class="hotel">
+        <div class="hn">スーパーホテル仙台・広瀬通り</div>
+        <p class="hd">天然温泉「弦月の湯」付き。焼きたてパンの無料朝食。本町の1日目会場に近く、仙台駅へも1駅。2日目は仙台駅で東西線に乗換。</p>
+        <div class="ha">
+          <span class="k mono">所在</span><span>青葉区中央2-9-23</span>
+          <span class="k mono">地下鉄</span><span>広瀬通駅 徒歩3分／江陽グランドホテルまで徒歩5分</span>
+        </div>
+        <a href="https://www.superhotel.co.jp/s_hotels/hirose/" target="_blank" rel="noopener">公式サイトで予約 ↗</a>
       </div>
     </div>
 
-    <!-- 名古屋比較メインメッセージ -->
-    <div class="guide-intro reveal">
-      <p>仙台の繁華街（仙台駅・国分町・横丁・本町の会場）はとてもコンパクトで、<strong>ほぼ徒歩圏内</strong>。ただし<strong>2日目会場の仙台国際センターは青葉山</strong>にあり、地下鉄東西線（仙台駅から約5分）またはタクシーで向かいます。<br>愛知県の人もイメージしやすいように、名古屋の街に例えて紹介します。</p>
+    <div class="harea rev">
+      <div class="ht">国分町エリア<span class="verdict mono">夜を楽しむなら</span></div>
+      <div class="hotel">
+        <div class="hn">ホテルグランテラス仙台国分町</div>
+        <p class="hd">BBHホテルグループ。繁華街のど真ん中で二次会・横丁めぐりに便利。懇親会場（江陽）へも徒歩約10分。</p>
+        <div class="ha"><span class="k mono">地下鉄</span><span>広瀬通駅から徒歩5分／仙台駅から徒歩15分</span></div>
+        <a href="https://breezbay-group.com/hgt-s-kokubuncho/" target="_blank" rel="noopener">公式サイトで予約 ↗</a>
+      </div>
+      <div class="hotel">
+        <div class="hn">スマイルホテル仙台国分町</div>
+        <p class="hd">リーズナブルで清潔。コスパ重視の方に。国分町の飲食店まで徒歩圏内。</p>
+        <div class="ha"><span class="k mono">地下鉄</span><span>広瀬通駅から徒歩7分／仙台駅から徒歩18分</span></div>
+        <a href="https://smile-hotels.com/hotels/show/sendaikokubuncho" target="_blank" rel="noopener">公式サイトで予約 ↗</a>
+      </div>
+      <div class="hotel">
+        <div class="hn">御宿 野乃 仙台</div>
+        <p class="hd">ドーミーインチェーン。天然温泉「杜都の湯」と夜鳴きそばが魅力。疲れを癒すなら。</p>
+        <div class="ha"><span class="k mono">地下鉄</span><span>広瀬通駅から徒歩5分／仙台駅から徒歩15分</span></div>
+        <a href="https://dormy-hotels.com/dormyinn/hotels/nono_sendai/" target="_blank" rel="noopener">公式サイトで予約 ↗</a>
+      </div>
     </div>
+  </section>
 
-    <!-- 名古屋比較カード -->
-    <div class="compare-cards reveal">
-      <div class="compare-card">
-        <div class="compare-sendai">🚉 仙台駅</div>
-        <div class="compare-eq">名古屋でいうと…</div>
-        <div class="compare-nagoya">名古屋駅</div>
+  <!-- ============ 街のイメージ ============ -->
+  <section id="machi">
+    <div class="sechead">
+      <h2>仙台の街のイメージ</h2>
+      <span class="count mono">FOR 名古屋</span>
+    </div>
+    <p class="lead">仙台の繁華街（仙台駅・国分町・横丁・本町の会場）はとてもコンパクトで、<b>ほぼ徒歩圏内</b>。ただし<b>2日目会場の仙台国際センターは青葉山</b>にあり、地下鉄東西線（仙台駅から約5分）またはタクシーで向かいます。<br>名古屋の街に例えると、こうなります。</p>
+
+    <div class="eq rev">
+      <div class="eqrow">
+        <div class="eqtop"><span class="s">仙台駅</span><span class="op">≒</span><span class="n">名古屋駅</span></div>
         <p>旅の起点。3F「牛たん通り」で利久・善治郎・伊達の牛たんが全部揃います。お土産もここで完結。</p>
       </div>
-      <div class="compare-card">
-        <div class="compare-sendai">🍻 国分町</div>
-        <div class="compare-eq">名古屋でいうと…</div>
-        <div class="compare-nagoya">栄・錦（よりコンパクト）</div>
+      <div class="eqrow">
+        <div class="eqtop"><span class="s">国分町</span><span class="op">≒</span><span class="n">栄・錦（よりコンパクト）</span></div>
         <p>東北最大の繁華街。居酒屋・バー・横丁が集結。ホテルもこのエリアに集中しているので、飲んだ後も歩いて帰れます。</p>
       </div>
-      <div class="compare-card">
-        <div class="compare-sendai">🏮 文化横丁・壱弐参横丁</div>
-        <div class="compare-eq">名古屋でいうと…</div>
-        <div class="compare-nagoya">大須の横丁</div>
+      <div class="eqrow">
+        <div class="eqtop"><span class="s">文化横丁・壱弐参横丁</span><span class="op">≒</span><span class="n">大須の横丁</span></div>
         <p>大正時代から続く昭和レトロな横丁。昭和25年創業の名酒場「源氏」など、小さな名店がひしめきます。国分町から徒歩5分。</p>
       </div>
-      <div class="compare-card">
-        <div class="compare-sendai">🌳 定禅寺通り</div>
-        <div class="compare-eq">名古屋でいうと…</div>
-        <div class="compare-nagoya">久屋大通（ケヤキ並木）</div>
+      <div class="eqrow">
+        <div class="eqtop"><span class="s">定禅寺通り</span><span class="op">≒</span><span class="n">久屋大通（ケヤキ並木）</span></div>
         <p>ケヤキ並木が美しい仙台のシンボルストリート。10月は紅葉が始まる季節。散歩に最適です。</p>
       </div>
     </div>
 
-    <!-- 距離感まとめ -->
-    <div class="distance-summary reveal">
-      <h3>距離感まとめ ─ 繁華街は徒歩圏内</h3>
-      <div class="distance-items">
-        <div class="dist-row">
-          <span class="dist-from">仙台駅</span>
-          <span class="dist-arrow">→</span>
-          <span class="dist-to">国分町（繁華街）</span>
-          <span class="dist-val">徒歩15分 / 地下鉄2駅</span>
-        </div>
-        <div class="dist-row">
-          <span class="dist-from">仙台駅</span>
-          <span class="dist-arrow">→</span>
-          <span class="dist-to">仙台国際センター（2日目会場）</span>
-          <span class="dist-val">地下鉄東西線 約5分 / タクシー約10分</span>
-        </div>
-        <div class="dist-row">
-          <span class="dist-from">国分町</span>
-          <span class="dist-arrow">→</span>
-          <span class="dist-to">文化横丁</span>
-          <span class="dist-val">徒歩5分</span>
-        </div>
-        <div class="dist-row">
-          <span class="dist-from">ホテル</span>
-          <span class="dist-arrow">→</span>
-          <span class="dist-to">懇親会場</span>
-          <span class="dist-val">徒歩0〜5分</span>
-        </div>
-        <div class="dist-row">
-          <span class="dist-from">仙台駅</span>
-          <span class="dist-arrow">→</span>
-          <span class="dist-to">瑞鳳殿・仙台城跡</span>
-          <span class="dist-val">るーぷるバス15分</span>
-        </div>
+    <div class="dist rev">
+      <h3>距離感まとめ</h3>
+      <div class="drow"><span class="seg">仙台駅<span>→</span>国分町（繁華街）</span><span class="val">徒歩15分 / 地下鉄2駅</span></div>
+      <div class="drow"><span class="seg">仙台駅<span>→</span>仙台国際センター（2日目会場）</span><span class="val">東西線 約5分 / タクシー約10分</span></div>
+      <div class="drow"><span class="seg">国分町<span>→</span>文化横丁</span><span class="val">徒歩5分</span></div>
+      <div class="drow"><span class="seg">ホテル<span>→</span>懇親会場</span><span class="val">徒歩0〜5分</span></div>
+      <div class="drow"><span class="seg">仙台駅<span>→</span>瑞鳳殿・仙台城跡</span><span class="val">るーぷるバス15分</span></div>
+    </div>
+  </section>
+
+  <!-- ============ フッター ============ -->
+  <footer>
+    <div class="flinks">
+      <a href="/pamphlet.pdf" target="_blank" rel="noopener">公式パンフレット（PDF） ↗</a>
+      <a href="https://www.sentabi.jp/" target="_blank" rel="noopener">せんだい旅日和 ↗</a>
+      <a href="https://www.sendai-airport.co.jp/access/" target="_blank" rel="noopener">仙台空港アクセス総合 ↗</a>
+    </div>
+    <div class="org">
+      <div>
+        <span class="on">主催　中小企業家同友会全国協議会</span>
+        〒101-0032 東京都千代田区岩本町3-9-13 岩本町寿共同ビル3F<br>
+        TEL 03-5829-9335／FAX 03-5829-9336　<a href="https://www.doyu.jp/" target="_blank" rel="noopener">doyu.jp ↗</a>
+      </div>
+      <div>
+        <span class="on">設営　一般社団法人宮城県中小企業家同友会</span>
+        〒983-0852 仙台市宮城野区榴岡1-6-3 東口鳳月ビル4F<br>
+        TEL 022-355-2771／FAX 022-257-3220　<a href="https://miyagi.doyu.jp/" target="_blank" rel="noopener">miyagi.doyu.jp ↗</a>
       </div>
     </div>
-  </div>
-</section>
+    <p class="colophon mono">第54回 中小企業家同友会 青年経営者全国交流会 in 仙台 2026 ─ 青全交のしおり</p>
+  </footer>
 
-<footer>
-  <div style="margin-bottom: 16px;">
-    <a href="/pamphlet.pdf" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">公式パンフレット（PDF） ↗</a>
-    &nbsp;&nbsp;
-    <a href="https://www.sentabi.jp/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">せんだい旅日和（仙台観光総合サイト） ↗</a>
-    &nbsp;&nbsp;
-    <a href="https://www.sendai-airport.co.jp/access/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">仙台空港アクセス総合 ↗</a>
-  </div>
-
-  <div style="max-width:840px; margin:0 auto 22px; display:flex; flex-wrap:wrap; gap:18px 44px; justify-content:center; text-align:left;">
-    <div style="font-size:12px; color:rgba(247,243,237,0.6); line-height:1.75;">
-      <div style="color:var(--gold); font-weight:700; margin-bottom:3px;">主催　中小企業家同友会全国協議会</div>
-      〒101-0032 東京都千代田区岩本町3-9-13 岩本町寿共同ビル3F<br>
-      TEL 03-5829-9335／FAX 03-5829-9336　<a href="https://www.doyu.jp/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">doyu.jp ↗</a>
-    </div>
-    <div style="font-size:12px; color:rgba(247,243,237,0.6); line-height:1.75;">
-      <div style="color:var(--gold); font-weight:700; margin-bottom:3px;">設営　一般社団法人宮城県中小企業家同友会</div>
-      〒983-0852 仙台市宮城野区榴岡1-6-3 東口鳳月ビル4F<br>
-      TEL 022-355-2771／FAX 022-257-3220　<a href="https://miyagi.doyu.jp/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">miyagi.doyu.jp ↗</a>
-    </div>
-  </div>
-  中小企業家同友会 青年経営者全国交流会 in 仙台 2026 ─ 青全交のしおり
-</footer>
+</div>
 
 <script>
-// カウントダウン
-const targetDate = new Date('2026-10-01T13:00:00+09:00'); // 1日目 分科会 開会
-function updateCountdown() {
-  const now = new Date();
-  const diff = targetDate - now;
-  if (diff <= 0) {
-    document.getElementById('cd-message').textContent = '開催中です！';
-    document.getElementById('cd-days').textContent = '0';
-    document.getElementById('cd-hours').textContent = '00';
-    document.getElementById('cd-min').textContent = '00';
-    document.getElementById('cd-sec').textContent = '00';
+(function(){
+  'use strict';
+
+  // ---- カウントダウン（開会 = 2026/10/1 13:00 JST 基準） ----
+  var target = new Date('2026-10-01T13:00:00+09:00').getTime();
+  var elDays = document.getElementById('cd-days');
+  var elDetail = document.getElementById('cd-detail');
+  function tick(){
+    var diff = target - Date.now();
+    if (diff <= 0){
+      elDays.textContent = '0';
+      elDetail.textContent = '開催中';
+      return;
+    }
+    var days = Math.floor(diff / 86400000);
+    var hours = Math.floor((diff % 86400000) / 3600000);
+    elDays.textContent = days;
+    elDetail.textContent = 'あと ' + hours + ' 時間 / 10.01 13:00 開会';
+  }
+  tick();
+  setInterval(tick, 60000);
+
+  // ---- 行程レールの描画（初回のみ） ----
+  // 非表示タブでは requestAnimationFrame が発火しないため、同期で付ける。
+  // .drawn が付かなくても線は静的に全表示されるので、崩れることはない。
+  var rail = document.getElementById('rail');
+  if (rail) {
+    rail.classList.add('drawn');
+    // 描画後はアニメーション指定ごと外す。何らかの理由でアニメが進まなくても、
+    // ここで静止状態（＝線が全部見える）に必ず戻る。
+    setTimeout(function(){ rail.classList.remove('drawn'); }, 2500);
+  }
+
+  // ---- スクロール出現 ----
+  var revs = document.querySelectorAll('.rev');
+  function revealAll(){
+    for (var i = 0; i < revs.length; i++) revs[i].classList.add('in');
+  }
+  if (!('IntersectionObserver' in window)){
+    revealAll();
     return;
   }
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const min = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const sec = Math.floor((diff % (1000 * 60)) / 1000);
-  document.getElementById('cd-days').textContent = days;
-  document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-  document.getElementById('cd-min').textContent = String(min).padStart(2, '0');
-  document.getElementById('cd-sec').textContent = String(sec).padStart(2, '0');
-  document.getElementById('cd-message').textContent = '開催まであと…';
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revs.forEach(function(el){ io.observe(el); });
 
-// スクロールリビールアニメーション
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.15 });
-reveals.forEach(el => observer.observe(el));
+  // 保険：何かの理由で監視が動かなくても本文が消えたままにしない
+  setTimeout(revealAll, 4000);
+})();
 </script>
 </body>
 </html>
