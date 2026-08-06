@@ -586,8 +586,11 @@
   }
   @media (max-width: 768px) {
     .compare-cards { grid-template-columns: 1fr; }
-    .dist-row { grid-template-columns: 1fr; gap: 4px; }
-    .dist-val { text-align: left; }
+    /* 縦積みにすると横向きの矢印が宙に浮くので、区間は1行に流して値を下に置く */
+    .dist-row { display: block; padding: 12px 0; }
+    .dist-from, .dist-to, .dist-arrow { display: inline; }
+    .dist-arrow { margin: 0 7px; }
+    .dist-val { display: block; text-align: left; margin-top: 3px; }
   }
 
   .area-grid {
@@ -734,6 +737,13 @@
     grid-template-columns: 1fr 1fr;
     gap: 24px;
     margin-bottom: 48px;
+  }
+  /* 3エリア比較。列指定はHTMLのstyle属性に置かない
+     （インラインだとスマホ用のメディアクエリが効かず3列のまま潰れる） */
+  .merit-compare-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
   }
   .merit-box {
     padding: 28px;
@@ -1177,8 +1187,7 @@
     .compare-nagoya { font-size: 17px; }
     .compare-card p { font-size: 15px; }
     .distance-summary { padding: 24px 20px; }
-    .dist-row { grid-template-columns: 1fr; gap: 4px; font-size: 15px; }
-    .dist-val { text-align: left; }
+    .dist-row { font-size: 15px; }
 
     /* ドットナビ非表示（代わりに下部タブナビ .m-nav を出す） */
     .page-nav { display: none; }
@@ -1921,7 +1930,7 @@
     </div>
 
     <!-- メリット比較 -->
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;" class="reveal merit-compare-3">
+    <div class="reveal merit-compare-3">
       <div class="merit-box" style="border-top:3px solid var(--gold);">
         <h4>🏢 本町（1日目会場）</h4>
         <ul>
