@@ -21,9 +21,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a2e;
+    /* ネイビー地を深くして、その上に載る文字を不透明の階調で持つ（視認性調整） */
+    --ink: #12122a;
     --cream: #f7f3ed;
-    --gold: #c4a265;
+    --gold: #c4a265;          /* 明るい地の上で使う金 */
+    --gold-dark: #e0c68e;     /* ネイビー地の上で使う金 */
+    --on-dark-2: #dcd7cf;     /* ネイビー地の副文 */
+    --on-dark-3: #c8c2b9;     /* ネイビー地の注記・補助 */
     --gold-glow: rgba(196, 162, 101, 0.25);
     --accent: #b8432f;
     --accent-soft: rgba(184, 67, 47, 0.12);
@@ -91,7 +95,7 @@
     font-size: 16px;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-dark);
     margin-bottom: 24px;
     display: block;
   }
@@ -103,10 +107,10 @@
     margin-bottom: 16px;
     line-height: 1.2;
   }
-  .hero h1 span { color: var(--gold); }
+  .hero h1 span { color: var(--gold-dark); }
   .hero-sub {
     font-size: 19px;
-    color: rgba(247,243,237,0.6);
+    color: var(--on-dark-2);
     margin-bottom: 12px;
     letter-spacing: 2px;
   }
@@ -122,7 +126,7 @@
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: clamp(36px, 5vw, 56px);
     font-weight: 800;
-    color: var(--gold);
+    color: var(--gold-dark);
     display: block;
     line-height: 1;
     min-width: 70px;
@@ -130,7 +134,7 @@
   .cd-label {
     font-size: 11px;
     letter-spacing: 3px;
-    color: rgba(247,243,237,0.4);
+    color: var(--on-dark-3);
     text-transform: uppercase;
     margin-top: 6px;
     display: block;
@@ -139,12 +143,12 @@
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 36px;
     font-weight: 800;
-    color: rgba(196,162,101,0.3);
+    color: rgba(224,198,142,0.5);
     margin-top: -16px;
   }
   .cd-message {
     font-size: 15px;
-    color: rgba(247,243,237,0.5);
+    color: var(--on-dark-3);
     margin-top: 32px;
     margin-bottom: 12px;
     letter-spacing: 3px;
@@ -157,7 +161,7 @@
     transform: translateX(-50%);
     font-size: 12px;
     letter-spacing: 4px;
-    color: rgba(247,243,237,0.3);
+    color: var(--on-dark-3);
     animation: bounce 2s ease-in-out infinite;
   }
 
@@ -268,7 +272,7 @@
     font-family: 'Zen Old Mincho', serif;
     font-size: 19px;
     font-weight: 700;
-    color: var(--gold);
+    color: var(--gold-dark);
     margin-bottom: 22px;
   }
   .ft-grid {
@@ -277,12 +281,12 @@
     gap: 24px;
   }
   .free-time-card {
-    border-left: 2px solid var(--gold);
+    border-left: 2px solid var(--gold-dark);
     padding-left: 16px;
   }
   .free-time-card .ft-label {
     font-size: 12px;
-    color: var(--gold);
+    color: var(--gold-dark);
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 6px;
@@ -297,19 +301,19 @@
   }
   .free-time-card .ft-desc {
     font-size: 15px;
-    color: rgba(247,243,237,0.7);
+    color: var(--on-dark-2);
     line-height: 1.6;
     margin-top: 7px;
   }
   .ft-note {
     margin-top: 26px;
     padding-top: 18px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.14);
     font-size: 13px;
-    color: rgba(247,243,237,0.55);
+    color: var(--on-dark-3);
     line-height: 1.9;
   }
-  .ft-note strong { color: rgba(247,243,237,0.85); font-weight: 700; }
+  .ft-note strong { color: var(--cream); font-weight: 700; }
 
   /* ===== グルメ ===== */
   .gourmet-grid {
@@ -558,7 +562,7 @@
     font-family: 'Zen Old Mincho', serif;
     font-size: 20px;
     margin-bottom: 24px;
-    color: var(--gold);
+    color: var(--gold-dark);
   }
   .distance-items { display: flex; flex-direction: column; gap: 0; }
   .dist-row {
@@ -571,9 +575,9 @@
     font-size: 16px;
   }
   .dist-row:last-child { border-bottom: none; }
-  .dist-from { color: var(--gold); font-weight: 700; }
-  .dist-arrow { color: rgba(247,243,237,0.3); text-align: center; }
-  .dist-to { color: rgba(247,243,237,0.8); }
+  .dist-from { color: var(--gold-dark); font-weight: 700; }
+  .dist-arrow { color: var(--on-dark-3); text-align: center; }
+  .dist-to { color: var(--on-dark-2); }
   .dist-val {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
@@ -1033,12 +1037,12 @@
       padding: 9px 2px 8px;
       font-size: 10.5px;
       letter-spacing: 0.5px;
-      color: rgba(247,243,237,0.7);
+      color: var(--on-dark-2);
       text-decoration: none;
       -webkit-tap-highlight-color: transparent;
     }
     .m-nav a .mn-ico { font-size: 17px; line-height: 1; }
-    .m-nav a.active { color: var(--gold); }
+    .m-nav a.active { color: var(--gold-dark); }
     body { padding-bottom: 62px; }
     section, header.hero { scroll-margin-top: 8px; }
   }
@@ -1057,7 +1061,7 @@
   /* ===== フッター ===== */
   footer {
     background: var(--ink);
-    color: rgba(247,243,237,0.3);
+    color: var(--on-dark-3);
     text-align: center;
     padding: 40px;
     font-size: 13px;
@@ -1218,7 +1222,7 @@
     <span class="hero-label">第54回 中小企業家同友会 青年経営者全国交流会 in 仙台</span>
     <h1>青全交のしおり<br><span>in 仙台</span></h1>
     <p class="hero-sub">2026.10.1（木）13:00 ─ 10.2（金）12:15</p>
-    <p style="font-size:15px; color:rgba(255,255,255,0.6); margin-top:8px; letter-spacing:1px; font-style:italic;">「逆境こそ挑戦の舞台！～"旗"を掲げ、共に未来を創ろう」</p>
+    <p style="font-size:15px; color:var(--on-dark-2); margin-top:8px; letter-spacing:1px; font-style:italic;">「逆境こそ挑戦の舞台！～"旗"を掲げ、共に未来を創ろう」</p>
     <p class="cd-message" id="cd-message"></p>
     <div class="countdown" id="countdown">
       <div class="cd-item">
@@ -1372,13 +1376,13 @@
       .pdf-link .pdf-arrow { font-size:13px; opacity:0.7; }
       .apply-box { background:var(--ink); color:var(--cream); border-radius:14px; padding:28px 26px; margin-bottom:28px; }
       .apply-box .fee-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
-      .apply-box .fee { flex:1 1 200px; background:rgba(255,255,255,0.06); border:1px solid rgba(196,162,101,0.35); border-radius:10px; padding:14px 18px; }
-      .apply-box .fee .amt { font-family:'Bricolage Grotesque',sans-serif; font-size:26px; font-weight:800; color:var(--gold); }
-      .apply-box .fee .lbl { font-size:14px; color:rgba(247,243,237,0.7); }
-      .apply-box .deadline { display:inline-block; background:transparent; color:var(--gold); font-weight:700; font-size:14px; padding:5px 14px; border:1px solid rgba(196,162,101,0.6); border-radius:6px; letter-spacing:1px; }
+      .apply-box .fee { flex:1 1 200px; background:rgba(255,255,255,0.07); border:1px solid rgba(224,198,142,0.4); border-radius:10px; padding:14px 18px; }
+      .apply-box .fee .amt { font-family:'Bricolage Grotesque',sans-serif; font-size:26px; font-weight:800; color:var(--gold-dark); }
+      .apply-box .fee .lbl { font-size:14px; color:var(--on-dark-2); }
+      .apply-box .deadline { display:inline-block; background:transparent; color:var(--gold-dark); font-weight:700; font-size:14px; padding:5px 14px; border:1px solid rgba(224,198,142,0.65); border-radius:6px; letter-spacing:1px; }
       .apply-box ul { list-style:none; margin:16px 0 0; padding:0; }
-      .apply-box li { font-size:14.5px; color:rgba(247,243,237,0.8); padding:3px 0 3px 20px; position:relative; line-height:1.7; }
-      .apply-box li::before { content:'▸'; position:absolute; left:0; color:var(--gold); }
+      .apply-box li { font-size:14.5px; color:var(--on-dark-2); padding:3px 0 3px 20px; position:relative; line-height:1.7; }
+      .apply-box li::before { content:'▸'; position:absolute; left:0; color:var(--gold-dark); }
       /* 基調講演 */
       .keynote-box { background:var(--card-bg); border:1px solid rgba(196,162,101,0.35); border-radius:12px; padding:24px 26px; margin-bottom:28px; }
       .keynote-box .k-tag { display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:12px; }
@@ -2114,19 +2118,19 @@
     .share-block { margin: 0 auto 30px; }
     .share-btn {
       display: inline-flex; align-items: center; gap: 10px;
-      background: transparent; color: var(--gold);
-      border: 1px solid rgba(196,162,101,0.6); border-radius: 8px;
+      background: var(--gold-dark); color: var(--ink);
+      border: 1px solid var(--gold-dark); border-radius: 8px;
       padding: 14px 28px; min-height: 48px;
       font-family: 'Zen Kaku Gothic New', sans-serif;
       font-size: 15px; font-weight: 700; letter-spacing: 1px;
       cursor: pointer;
       transition: background .2s ease, color .2s ease, border-color .2s ease;
     }
-    .share-btn:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
-    .share-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .share-btn:hover { background: #f0dcb0; border-color: #f0dcb0; }
+    .share-btn:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
     .share-btn .share-ico { font-size: 17px; line-height: 1; }
     .share-note {
-      font-size: 12.5px; color: rgba(247,243,237,0.6);
+      font-size: 12.5px; color: var(--on-dark-2);
       margin-top: 12px; min-height: 1.5em; line-height: 1.7;
       word-break: break-all;
     }
@@ -2140,23 +2144,23 @@
   </div>
 
   <div style="margin-bottom: 16px;">
-    <a href="/pamphlet.pdf" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">公式パンフレット（PDF） ↗</a>
+    <a href="/pamphlet.pdf" target="_blank" rel="noopener" style="color:var(--gold-dark); text-decoration:none; letter-spacing:2px; font-size:14px;">公式パンフレット（PDF） ↗</a>
     &nbsp;&nbsp;
-    <a href="https://www.sentabi.jp/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">せんだい旅日和（仙台観光総合サイト） ↗</a>
+    <a href="https://www.sentabi.jp/" target="_blank" style="color:var(--gold-dark); text-decoration:none; letter-spacing:2px; font-size:14px;">せんだい旅日和（仙台観光総合サイト） ↗</a>
     &nbsp;&nbsp;
-    <a href="https://www.sendai-airport.co.jp/access/" target="_blank" style="color:var(--gold); text-decoration:none; letter-spacing:2px; font-size:14px;">仙台空港アクセス総合 ↗</a>
+    <a href="https://www.sendai-airport.co.jp/access/" target="_blank" style="color:var(--gold-dark); text-decoration:none; letter-spacing:2px; font-size:14px;">仙台空港アクセス総合 ↗</a>
   </div>
 
   <div style="max-width:840px; margin:0 auto 22px; display:flex; flex-wrap:wrap; gap:18px 44px; justify-content:center; text-align:left;">
-    <div style="font-size:12px; color:rgba(247,243,237,0.6); line-height:1.75;">
-      <div style="color:var(--gold); font-weight:700; margin-bottom:3px;">主催　中小企業家同友会全国協議会</div>
+    <div style="font-size:12px; color:var(--on-dark-2); line-height:1.75;">
+      <div style="color:var(--gold-dark); font-weight:700; margin-bottom:3px;">主催　中小企業家同友会全国協議会</div>
       〒101-0032 東京都千代田区岩本町3-9-13 岩本町寿共同ビル3F<br>
-      TEL 03-5829-9335／FAX 03-5829-9336　<a href="https://www.doyu.jp/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">doyu.jp ↗</a>
+      TEL 03-5829-9335／FAX 03-5829-9336　<a href="https://www.doyu.jp/" target="_blank" rel="noopener" style="color:var(--gold-dark); text-decoration:none;">doyu.jp ↗</a>
     </div>
-    <div style="font-size:12px; color:rgba(247,243,237,0.6); line-height:1.75;">
-      <div style="color:var(--gold); font-weight:700; margin-bottom:3px;">設営　一般社団法人宮城県中小企業家同友会</div>
+    <div style="font-size:12px; color:var(--on-dark-2); line-height:1.75;">
+      <div style="color:var(--gold-dark); font-weight:700; margin-bottom:3px;">設営　一般社団法人宮城県中小企業家同友会</div>
       〒983-0852 仙台市宮城野区榴岡1-6-3 東口鳳月ビル4F<br>
-      TEL 022-355-2771／FAX 022-257-3220　<a href="https://miyagi.doyu.jp/" target="_blank" rel="noopener" style="color:var(--gold); text-decoration:none;">miyagi.doyu.jp ↗</a>
+      TEL 022-355-2771／FAX 022-257-3220　<a href="https://miyagi.doyu.jp/" target="_blank" rel="noopener" style="color:var(--gold-dark); text-decoration:none;">miyagi.doyu.jp ↗</a>
     </div>
   </div>
   中小企業家同友会 青年経営者全国交流会 in 仙台 2026 ─ 青全交のしおり
