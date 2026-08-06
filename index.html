@@ -254,7 +254,7 @@
   }
   .badge-free {
     background: var(--gold-glow);
-    color: var(--gold);
+    color: var(--ink);
   }
   .badge-fixed {
     background: var(--accent-soft);
@@ -533,7 +533,7 @@
   }
   .compare-eq {
     font-size: 13px;
-    color: var(--gold);
+    color: var(--ink);
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -722,7 +722,7 @@
   }
   .hotel-card .hotel-area {
     font-size: 14px;
-    color: var(--gold);
+    color: var(--ink);
     letter-spacing: 1px;
     margin-bottom: 12px;
   }
@@ -1378,7 +1378,7 @@
     <style>
       .official-block { margin-top: 56px; }
       .official-block .ob-head { font-family:'Zen Old Mincho',serif; font-size:22px; font-weight:900; color:var(--ink); margin-bottom:6px; }
-      .official-block .ob-en { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+      .official-block .ob-en { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--ink); margin-bottom:20px; }
       .pdf-link { display:inline-flex; align-items:center; gap:9px; margin-bottom:26px; padding:12px 22px; border:1px solid var(--ink); border-radius:8px; color:var(--ink); text-decoration:none; font-size:14px; font-weight:700; transition:background .2s ease, color .2s ease; }
       .pdf-link:hover { background:var(--ink); color:var(--cream); }
       .pdf-link .pdf-ico { font-size:16px; }
@@ -1394,7 +1394,7 @@
       .apply-box li::before { content:'▸'; position:absolute; left:0; color:var(--gold-dark); }
       /* 基調講演 */
       .keynote-box { background:var(--card-bg); border:1px solid rgba(196,162,101,0.35); border-radius:12px; padding:24px 26px; margin-bottom:28px; }
-      .keynote-box .k-tag { display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:12px; }
+      .keynote-box .k-tag { display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--ink); font-weight:700; margin-bottom:12px; }
       .keynote-box .k-title { font-family:'Zen Old Mincho',serif; font-size:20px; font-weight:700; color:var(--ink); line-height:1.6; }
       .keynote-box .k-sub { font-size:14px; color:var(--muted); margin-top:8px; }
       .keynote-box .k-speaker { font-size:14.5px; color:var(--ink); margin-top:14px; padding-top:14px; border-top:1px solid rgba(26,26,46,0.08); }
@@ -1403,23 +1403,23 @@
       .keynote-box .k-stats { display:flex; flex-wrap:wrap; margin-top:22px; border-top:1px solid rgba(26,26,46,0.12); border-bottom:1px solid rgba(26,26,46,0.12); }
       .keynote-box .k-stat { flex:1 1 0; min-width:74px; text-align:center; padding:16px 6px; position:relative; }
       .keynote-box .k-stat + .k-stat::before { content:''; position:absolute; left:0; top:22%; height:56%; width:1px; background:rgba(26,26,46,0.1); }
-      .keynote-box .k-stat-num { display:block; font-family:'Zen Old Mincho',serif; font-size:25px; font-weight:900; color:var(--gold); line-height:1.1; }
+      .keynote-box .k-stat-num { display:block; font-family:'Zen Old Mincho',serif; font-size:25px; font-weight:900; color:var(--ink); line-height:1.1; }
       .keynote-box .k-stat-lbl { display:block; font-size:12px; color:var(--muted); margin-top:8px; letter-spacing:0.5px; }
       .keynote-box .k-point { font-size:14px; color:var(--muted); line-height:1.95; margin-top:20px; }
       .keynote-box .k-point strong { color:var(--ink); font-family:'Zen Old Mincho',serif; font-weight:700; }
       /* 分科会カード（塗り・枠を抑えた落ち着いた配色） */
       .bunkakai-note { font-size:14px; color:var(--muted); margin-bottom:16px; line-height:1.7; }
       .bunkakai-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(285px,1fr)); gap:12px; }
-      .bk-card { background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-radius:10px; padding:16px 18px; transition:border-color .2s ease; }
+      .bk-card { background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-left:3px solid var(--gold); border-radius:0 10px 10px 0; padding:16px 18px; transition:border-color .2s ease; }
       .bk-card:hover { border-color:rgba(196,162,101,0.55); }
       .bk-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px; gap:8px; }
-      .bk-no { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:800; color:var(--gold); letter-spacing:1px; white-space:nowrap; }
+      .bk-no { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:800; color:var(--ink); letter-spacing:1px; white-space:nowrap; }
       .bk-region { font-size:12px; color:var(--muted); letter-spacing:0.5px; white-space:nowrap; }
-      .bk-region.local { color:var(--gold); font-weight:700; }
+      .bk-region.local { color:var(--ink); font-weight:700; }
       .bk-title { font-family:'Zen Old Mincho',serif; font-size:16.5px; font-weight:700; color:var(--ink); line-height:1.55; }
       .bk-cat { font-size:13px; color:var(--muted); margin-top:7px; }
       .bk-details { margin-top:11px; border-top:1px solid rgba(26,26,46,0.08); padding-top:9px; }
-      .bk-details summary { cursor:pointer; font-size:13px; color:var(--gold); font-weight:700; list-style:none; }
+      .bk-details summary { cursor:pointer; font-size:13px; color:var(--ink); font-weight:700; list-style:none; }
       .bk-details summary::-webkit-details-marker { display:none; }
       .bk-details summary::before { content:'＋ '; }
       .bk-details[open] summary::before { content:'－ '; }
@@ -1477,7 +1477,7 @@
         <p class="k-point"><strong>聞きどころ ─</strong> 逆境からの大胆な事業転換、仲間との徹底した合意形成、そして持続可能性と収益の両立。まさに今回のテーマ「逆境こそ挑戦の舞台」を体現する、実践に裏打ちされた報告です。</p>
       </div>
 
-      <div class="bunkakai-note"><strong style="color:var(--ink);">1日目 分科会（全18）</strong>　─　参加する分科会を<strong style="color:var(--ink);">第1・第2希望</strong>で選んで申込みます。各カードの「詳しく見る」で内容と報告者を確認できます。<br><span style="color:var(--gold); font-weight:700;">★ 第16分科会は自地区・愛知からの報告です。</span></div>
+      <div class="bunkakai-note"><strong style="color:var(--ink);">1日目 分科会（全18）</strong>　─　参加する分科会を<strong style="color:var(--ink);">第1・第2希望</strong>で選んで申込みます。各カードの「詳しく見る」で内容と報告者を確認できます。<br><span style="color:var(--ink); font-weight:700;">★ 第16分科会は自地区・愛知からの報告です。</span></div>
       <details class="bk-all" open>
       <summary>全18分科会を見る（★第16は愛知・自地区）</summary>
       <div class="bunkakai-grid">
@@ -1818,7 +1818,7 @@
           .travel-alt .ta-head { font-family:'Zen Old Mincho',serif; font-size:16px; font-weight:700; color:var(--ink); margin-bottom:9px; }
           .travel-alt .ta-route { font-size:13.5px; color:var(--ink); line-height:1.95; }
           .travel-alt .ta-meta { display:flex; flex-wrap:wrap; gap:6px 20px; margin-top:11px; font-size:13px; color:var(--muted); }
-          .travel-alt .ta-meta b { color:var(--gold); font-family:'Bricolage Grotesque',sans-serif; font-size:15px; }
+          .travel-alt .ta-meta b { color:var(--ink); font-family:'Bricolage Grotesque',sans-serif; font-size:15px; }
           .travel-alt .ta-note { font-size:12px; color:var(--muted); margin-top:9px; line-height:1.75; }
           .travel-alt a.ext-link { display:inline-block; margin-top:11px; }
         </style>
@@ -1863,7 +1863,7 @@
       .venue-access .va-sub { font-size:13px; color:var(--muted); margin-bottom:20px; line-height:1.7; }
       .venue-card { display:grid; grid-template-columns:1fr 1.15fr; background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-radius:12px; overflow:hidden; margin-bottom:16px; }
       .venue-card .vc-info { padding:20px 22px; }
-      .venue-card .vc-no { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; color:var(--gold); font-size:12px; letter-spacing:1px; }
+      .venue-card .vc-no { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; color:var(--ink); font-size:12px; letter-spacing:1px; }
       .venue-card .vc-role { font-size:12px; color:var(--muted); margin-left:8px; }
       .venue-card .vc-name { font-family:'Zen Old Mincho',serif; font-size:18px; font-weight:700; color:var(--ink); margin:5px 0 10px; }
       .venue-card .vc-row { font-size:13px; color:var(--muted); line-height:1.95; }
