@@ -2282,6 +2282,8 @@ reveals.forEach(el => observer.observe(el));
     timer = setTimeout(sync, 120);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
+  // scroll イベントが届かない環境（アプリ内ブラウザ等）でも追従させる保険
+  setInterval(function () { if (!document.hidden) sync(); }, 400);
   window.addEventListener('hashchange', () => setTimeout(sync, 60));
   links.forEach(a => a.addEventListener('click', () => {
     setTimeout(sync, 60);
