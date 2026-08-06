@@ -263,6 +263,15 @@
     background: var(--ink);
     color: var(--cream);
     padding: 32px;
+  }
+  .free-times .ft-head {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+  .ft-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
@@ -278,11 +287,29 @@
     text-transform: uppercase;
     margin-bottom: 6px;
   }
+  .free-time-card .ft-time {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: var(--cream);
+  }
   .free-time-card .ft-desc {
     font-size: 15px;
     color: rgba(247,243,237,0.7);
     line-height: 1.6;
+    margin-top: 7px;
   }
+  .ft-note {
+    margin-top: 26px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    color: rgba(247,243,237,0.55);
+    line-height: 1.9;
+  }
+  .ft-note strong { color: rgba(247,243,237,0.85); font-weight: 700; }
 
   /* ===== グルメ ===== */
   .gourmet-grid {
@@ -983,6 +1010,39 @@
   }
   .page-nav a.active { background: var(--gold); }
 
+  /* ===== スマホ用 下部タブナビ ===== */
+  .m-nav { display: none; }
+  @media (max-width: 768px) {
+    .m-nav {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 200;
+      background: rgba(26,26,46,0.97);
+      border-top: 1px solid rgba(196,162,101,0.35);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      box-shadow: 0 -4px 18px rgba(0,0,0,0.18);
+    }
+    .m-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 9px 2px 8px;
+      font-size: 10.5px;
+      letter-spacing: 0.5px;
+      color: rgba(247,243,237,0.7);
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .m-nav a .mn-ico { font-size: 17px; line-height: 1; }
+    .m-nav a.active { color: var(--gold); }
+    body { padding-bottom: 62px; }
+    section, header.hero { scroll-margin-top: 8px; }
+  }
+
   /* ===== 更新バナー ===== */
   .updated-banner {
     background: var(--gold-glow);
@@ -1055,7 +1115,13 @@
     .compare-cards,
     .merit-compare,
     .merit-compare-3,
-    .free-times { grid-template-columns: 1fr; }
+    .ft-grid { grid-template-columns: 1fr; }
+
+    /* 当日おさえる3つの時刻 */
+    .free-times { padding: 24px 20px; }
+    .free-times .ft-head { font-size: 17px; margin-bottom: 18px; }
+    .ft-grid { gap: 18px; }
+    .free-time-card .ft-time { font-size: 27px; }
 
     /* スケジュール */
     .timeline-item { grid-template-columns: 90px 1fr; gap: 8px; }
@@ -1077,9 +1143,21 @@
     .gourmet-card h3 { font-size: 20px; }
 
     /* アクセス */
-    .flight-table th, .flight-table td { padding: 10px 12px; font-size: 14px; }
+    .flight-table th, .flight-table td { padding: 9px 8px; font-size: 13px; }
     .flight-direction { font-size: 14px; }
     .transport-card { padding: 20px 16px; }
+
+    /* 縦の詰め（1カラムで間延びするのを抑える） */
+    .schedule-grid,
+    .gourmet-grid,
+    .hotel-grid,
+    .area-grid,
+    .compare-cards,
+    .access-layout { gap: 16px; }
+    .free-times { margin-top: 28px; }
+
+    /* タップしやすく */
+    .bk-details summary { padding: 7px 0; }
 
     /* ホテル */
     .hotel-card { padding: 24px 20px; }
@@ -1098,7 +1176,7 @@
     .dist-row { grid-template-columns: 1fr; gap: 4px; font-size: 15px; }
     .dist-val { text-align: left; }
 
-    /* ナビ非表示 */
+    /* ドットナビ非表示（代わりに下部タブナビ .m-nav を出す） */
     .page-nav { display: none; }
 
     /* 距離バー */
@@ -1112,6 +1190,10 @@
     .reveal { opacity: 1; transform: none; }
     body::before { display: none; }
     .page-nav { display: none; }
+    .m-nav { display: none !important; }
+    /* 印刷では18分科会をたたまず全部出す */
+    .bk-all > summary { display: none !important; }
+    .bk-all > .bunkakai-grid { display: grid !important; }
     .scroll-hint { display: none; }
   }
 </style>
@@ -1256,20 +1338,27 @@
       </div>
     </div>
 
-    <!-- 自由時間ハイライト -->
+    <!-- 当日おさえる3つの時刻 -->
     <div class="free-times reveal">
-      <div class="free-time-card">
-        <div class="ft-label">10/1 午前</div>
-        <div class="ft-desc">観光 or 牛タンランチ</div>
+      <div class="ft-head">当日おさえる3つの時刻</div>
+      <div class="ft-grid">
+        <div class="free-time-card">
+          <div class="ft-label">10/1（木）</div>
+          <div class="ft-time">13:00</div>
+          <div class="ft-desc">分科会 開始</div>
+        </div>
+        <div class="free-time-card">
+          <div class="ft-label">10/1（木）</div>
+          <div class="ft-time">19:00</div>
+          <div class="ft-desc">懇親会<br>＠江陽グランドホテル</div>
+        </div>
+        <div class="free-time-card">
+          <div class="ft-label">10/2（金）</div>
+          <div class="ft-time">9:00</div>
+          <div class="ft-desc">全体会 開始<br>＠仙台国際センター</div>
+        </div>
       </div>
-      <div class="free-time-card">
-        <div class="ft-label">10/1 夜</div>
-        <div class="ft-desc">懇親会後 → 二次会（自由）</div>
-      </div>
-      <div class="free-time-card">
-        <div class="ft-label">10/2 午後</div>
-        <div class="ft-desc">観光・お土産・帰路</div>
-      </div>
+      <div class="ft-note"><strong>自由時間</strong>　10/1 午前 観光・牛タンランチ ／ 10/1 夜 懇親会後の二次会（自由） ／ 10/2 午後 観光・お土産・帰路</div>
     </div>
 
     <!-- 公式プログラム & お申込み -->
@@ -1325,7 +1414,22 @@
       .bk-rep { font-size:13.5px; color:var(--ink); margin-top:9px; font-weight:600; }
       .bk-rep a { color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
       .bk-rep a:hover { color:var(--ink); }
-    </style>
+      /* 全18分科会のたたみ込み（スマホのみ閉じる） */
+      .bk-all > summary { display:none; }
+      @media (max-width:768px) {
+        .bk-all > summary {
+          display:block; list-style:none; cursor:pointer;
+          text-align:center; padding:14px 16px;
+          border:1px solid rgba(196,162,101,0.5); border-radius:10px;
+          background:rgba(196,162,101,0.07);
+          color:var(--gold); font-size:14.5px; font-weight:700;
+        }
+        .bk-all > summary::-webkit-details-marker { display:none; }
+        .bk-all > summary::after { content:'　▼'; font-size:11px; }
+        .bk-all[open] > summary { margin-bottom:14px; }
+        .bk-all[open] > summary::after { content:'　▲'; font-size:11px; }
+      }
+</style>
     <div class="official-block reveal">
       <div class="ob-head">公式プログラム & お申込み</div>
       <div class="ob-en">Official Program</div>
@@ -1361,6 +1465,8 @@
       </div>
 
       <div class="bunkakai-note"><strong style="color:var(--ink);">1日目 分科会（全18）</strong>　─　参加する分科会を<strong style="color:var(--ink);">第1・第2希望</strong>で選んで申込みます。各カードの「詳しく見る」で内容と報告者を確認できます。<br><span style="color:var(--gold); font-weight:700;">★ 第16分科会は自地区・愛知からの報告です。</span></div>
+      <details class="bk-all" open>
+      <summary>全18分科会を見る（★第16は愛知・自地区）</summary>
       <div class="bunkakai-grid">
         <div class="bk-card">
           <div class="bk-top"><span class="bk-no">第1分科会</span><span class="bk-region">中同協</span></div>
@@ -1525,6 +1631,7 @@
           </details>
         </div>
       </div>
+      </details>
     </div>
   </div>
 </section>
@@ -2055,6 +2162,15 @@
   中小企業家同友会 青年経営者全国交流会 in 仙台 2026 ─ 青全交のしおり
 </footer>
 
+<!-- スマホ用 下部タブナビ -->
+<nav class="m-nav" aria-label="セクション">
+  <a href="#schedule"><span class="mn-ico" aria-hidden="true">🗓</span>日程</a>
+  <a href="#gourmet"><span class="mn-ico" aria-hidden="true">🍴</span>グルメ</a>
+  <a href="#access"><span class="mn-ico" aria-hidden="true">🚄</span>移動</a>
+  <a href="#hotel"><span class="mn-ico" aria-hidden="true">🏨</span>宿</a>
+  <a href="#area"><span class="mn-ico" aria-hidden="true">🗺</span>周辺</a>
+</nav>
+
 <script>
 // カウントダウン
 const targetDate = new Date('2026-10-01T13:00:00+09:00'); // 1日目 分科会 開会
@@ -2128,6 +2244,40 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 reveals.forEach(el => observer.observe(el));
+
+// スマホでは全18分科会を最初たたんでおく（PCは従来どおり全表示）
+(function () {
+  if (!window.matchMedia('(max-width: 768px)').matches) return;
+  const all = document.querySelector('.bk-all');
+  if (all) all.removeAttribute('open');
+})();
+
+// 現在地ハイライト（下部タブナビ／PCのドットナビ 共通）
+(function () {
+  const links = document.querySelectorAll('.m-nav a, .page-nav a');
+  if (!links.length) return;
+  const sections = ['schedule', 'gourmet', 'access', 'hotel', 'area']
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+  if (!sections.length) return;
+
+  let ticking = false;
+  function sync() {
+    ticking = false;
+    const line = window.scrollY + window.innerHeight * 0.3;
+    let current = '';
+    sections.forEach(sec => {
+      if (sec.offsetTop <= line) current = sec.id;
+    });
+    links.forEach(a => {
+      a.classList.toggle('active', !!current && a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(sync); }
+  }, { passive: true });
+  sync();
+})();
 </script>
 </body>
 </html>
