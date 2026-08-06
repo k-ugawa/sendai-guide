@@ -2261,9 +2261,7 @@ reveals.forEach(el => observer.observe(el));
     .filter(Boolean);
   if (!sections.length) return;
 
-  let ticking = false;
   function sync() {
-    ticking = false;
     const line = window.scrollY + window.innerHeight * 0.3;
     let current = '';
     sections.forEach(sec => {
@@ -2273,9 +2271,22 @@ reveals.forEach(el => observer.observe(el));
       a.classList.toggle('active', !!current && a.getAttribute('href') === '#' + current);
     });
   }
-  window.addEventListener('scroll', () => {
-    if (!ticking) { ticking = true; requestAnimationFrame(sync); }
-  }, { passive: true });
+
+  // スクロール中（間引き）／タップ直後／ハッシュ変更 のいずれでも更新する。
+  // requestAnimationFrame には依存させない（描画が止まる状況でも効かせるため）
+  let last = 0, timer = null;
+  function onScroll() {
+    const now = Date.now();
+    if (now - last > 120) { last = now; sync(); return; }
+    clearTimeout(timer);
+    timer = setTimeout(sync, 120);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('hashchange', () => setTimeout(sync, 60));
+  links.forEach(a => a.addEventListener('click', () => {
+    setTimeout(sync, 60);
+    setTimeout(sync, 400);
+  }));
   sync();
 })();
 </script>
