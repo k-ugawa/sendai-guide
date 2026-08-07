@@ -1060,7 +1060,8 @@
       stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
     }
     .m-nav a.active { color: var(--gold-dark); }
-    body { padding-bottom: 62px; }
+    /* 下部ナビ(約60px)＋iPhoneのホームバー分。固定値だとフッターが隠れる */
+    body { padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
     section, header.hero { scroll-margin-top: 8px; }
   }
 
