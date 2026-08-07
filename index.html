@@ -1044,16 +1044,24 @@
       align-items: center;
       justify-content: center;
       gap: 4px;
-      padding: 9px 2px 8px;
-      font-size: 10.5px;
+      padding: 8px 2px 7px;
+      font-size: 12px;
       letter-spacing: 0.5px;
       color: var(--on-dark-2);
       text-decoration: none;
       -webkit-tap-highlight-color: transparent;
     }
-    .m-nav a .mn-ico { font-size: 17px; line-height: 1; }
+    .m-nav a .mn-ico { line-height: 0; }
+    /* 線画アイコン。stroke を currentColor にしてあるので、
+       選択中はアイコンも文字と一緒に金へ変わる */
+    .m-nav a .mn-ico svg {
+      width: 19px; height: 19px; display: block;
+      fill: none; stroke: currentColor;
+      stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+    }
     .m-nav a.active { color: var(--gold-dark); }
-    body { padding-bottom: 62px; }
+    /* 下部ナビ(約60px)＋iPhoneのホームバー分。固定値だとフッターが隠れる */
+    body { padding-bottom: calc(66px + env(safe-area-inset-bottom, 0px)); }
     section, header.hero { scroll-margin-top: 8px; }
   }
 
@@ -2177,11 +2185,11 @@
 
 <!-- スマホ用 下部タブナビ -->
 <nav class="m-nav" aria-label="セクション">
-  <a href="#schedule"><span class="mn-ico" aria-hidden="true">🗓</span>日程</a>
-  <a href="#gourmet"><span class="mn-ico" aria-hidden="true">🍴</span>グルメ</a>
-  <a href="#access"><span class="mn-ico" aria-hidden="true">🚄</span>移動</a>
-  <a href="#hotel"><span class="mn-ico" aria-hidden="true">🏨</span>宿</a>
-  <a href="#area"><span class="mn-ico" aria-hidden="true">🗺</span>周辺</a>
+  <a href="#schedule"><span class="mn-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16"/></svg></span>日程</a>
+  <a href="#gourmet"><span class="mn-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 3v6a3 3 0 0 0 6 0V3M7 9v12M17 3c-1.5 2-2 4-2 7 0 1.5.5 2 2 2h2M19 3v18"/></svg></span>グルメ</a>
+  <a href="#access"><span class="mn-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 10h12M9 21l2-4M15 21l-2-4"/></svg></span>移動</a>
+  <a href="#hotel"><span class="mn-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h3a1 1 0 0 1 1 1v11M4 21h17M8 7h1M8 11h1M12 7h1M12 11h1M9 21v-4h2v4"/></svg></span>宿</a>
+  <a href="#area"><span class="mn-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/></svg></span>周辺</a>
 </nav>
 
 <script>
