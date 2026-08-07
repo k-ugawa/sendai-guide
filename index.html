@@ -731,6 +731,28 @@
     color: var(--muted);
     line-height: 1.7;
   }
+  /* スケジュール表から分科会ブロックへの導線 */
+  .jump-link {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(58,84,79,0.4);
+    padding-bottom: 1px;
+  }
+  .jump-link::before { content: ''; display: block; }
+  .jump-link:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* Day1カード内の会場一覧。住所と行き方は別の行に置く
+     （1行にまとめるとカッコの途中で折り返して読みにくい） */
+  .day-venue { font-size: 14px; color: var(--muted); padding: 8px 0; line-height: 1.8; }
+  .day-venue .dv-item { margin-bottom: 14px; }
+  .day-venue .dv-item:last-child { margin-bottom: 0; }
+  .day-venue .dv-addr { padding-left: 1.6em; font-size: 13.5px; margin-top: 2px; }
+  .day-venue .dv-access { padding-left: 1.6em; font-size: 13px; margin-top: 1px; }
+
   /* メリット比較 */
   .merit-compare {
     display: grid;
@@ -1293,23 +1315,26 @@
         </div>
         <div class="timeline-item">
           <span class="time">13:00〜18:00</span>
-          <span class="event">分科会（全18分科会）</span>
+          <span class="event">分科会（全18分科会）<a href="#bunkakai" class="jump-link">全18分科会を見る ▼</a></span>
           <span></span>
         </div>
-        <div style="font-size:14px; color:var(--muted); padding:8px 0; line-height:1.8;">
+        <div class="day-venue">
           <strong style="color:var(--ink);">会場（3か所）</strong>
           <div style="margin-top:8px;">
-            <div style="margin-bottom:12px;">
+            <div class="dv-item">
               📍 <a href="https://www.aobayama.jp/" target="_blank" style="color:var(--teal); font-weight:600;">仙台国際センター</a>
-              <div style="padding-left:1.6em; font-size:13.5px; margin-top:2px;">青葉区青葉山（地下鉄東西線「国際センター駅」徒歩1分）</div>
+              <div class="dv-addr">青葉区青葉山</div>
+              <div class="dv-access">地下鉄東西線「国際センター駅」徒歩1分</div>
             </div>
-            <div style="margin-bottom:12px;">
+            <div class="dv-item">
               📍 <a href="https://www.koyogh.jp/" target="_blank" style="color:var(--teal); font-weight:600;">江陽グランドホテル</a>
-              <div style="padding-left:1.6em; font-size:13.5px; margin-top:2px;">青葉区本町2-3-1（JR仙台駅 徒歩13分／懇親会会場）</div>
+              <div class="dv-addr">青葉区本町2-3-1</div>
+              <div class="dv-access">JR仙台駅 徒歩13分／懇親会会場</div>
             </div>
-            <div>
+            <div class="dv-item">
               📍 <a href="https://palace-heian.com/" target="_blank" style="color:var(--teal); font-weight:600;">パレスへいあん</a>
-              <div style="padding-left:1.6em; font-size:13.5px; margin-top:2px;">青葉区本町1-2-2（JR仙台駅 徒歩5分）</div>
+              <div class="dv-addr">青葉区本町1-2-2</div>
+              <div class="dv-access">JR仙台駅 徒歩5分</div>
             </div>
           </div>
         </div>
@@ -1382,110 +1407,12 @@
       <div class="ft-note"><strong>自由時間</strong>　10/1 午前 観光・牛タンランチ ／ 10/1 夜 懇親会後の二次会（自由） ／ 10/2 午後 観光・お土産・帰路</div>
     </div>
 
-    <!-- 公式プログラム & お申込み -->
-    <style>
-      .official-block { margin-top: 56px; }
-      .official-block .ob-head { font-family:'Zen Old Mincho',serif; font-size:22px; font-weight:900; color:var(--ink); margin-bottom:6px; }
-      .official-block .ob-en { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--ink); margin-bottom:20px; }
-      .pdf-link { display:inline-flex; align-items:center; gap:9px; margin-bottom:26px; padding:12px 22px; border:1px solid var(--ink); border-radius:8px; color:var(--ink); text-decoration:none; font-size:14px; font-weight:700; transition:background .2s ease, color .2s ease; }
-      .pdf-link:hover { background:var(--ink); color:var(--cream); }
-      .pdf-link .pdf-ico { font-size:16px; }
-      .pdf-link .pdf-arrow { font-size:13px; opacity:0.7; }
-      .apply-box { background:var(--ink); color:var(--cream); border-radius:14px; padding:28px 26px; margin-bottom:28px; }
-      .apply-box .fee-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
-      .apply-box .fee { flex:1 1 200px; background:rgba(255,255,255,0.07); border:1px solid rgba(224,198,142,0.4); border-radius:10px; padding:14px 18px; }
-      .apply-box .fee .amt { font-family:'Bricolage Grotesque',sans-serif; font-size:26px; font-weight:800; color:var(--gold-dark); }
-      .apply-box .fee .lbl { font-size:14px; color:var(--on-dark-2); }
-      .apply-box .deadline { display:inline-block; background:transparent; color:var(--gold-dark); font-weight:700; font-size:14px; padding:5px 14px; border:1px solid rgba(224,198,142,0.65); border-radius:6px; letter-spacing:1px; }
-      .apply-box ul { list-style:none; margin:16px 0 0; padding:0; }
-      .apply-box li { font-size:14.5px; color:var(--on-dark-2); padding:3px 0 3px 20px; position:relative; line-height:1.7; }
-      .apply-box li::before { content:'▸'; position:absolute; left:0; color:var(--gold-dark); }
-      /* 基調講演 */
-      .keynote-box { background:var(--card-bg); border:1px solid rgba(196,162,101,0.35); border-radius:12px; padding:24px 26px; margin-bottom:28px; }
-      .keynote-box .k-tag { display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--ink); font-weight:700; margin-bottom:12px; }
-      .keynote-box .k-title { font-family:'Zen Old Mincho',serif; font-size:20px; font-weight:700; color:var(--ink); line-height:1.6; }
-      .keynote-box .k-sub { font-size:14px; color:var(--muted); margin-top:8px; }
-      .keynote-box .k-speaker { font-size:14.5px; color:var(--ink); margin-top:14px; padding-top:14px; border-top:1px solid rgba(26,26,46,0.08); }
-      .keynote-box .k-story { font-size:15px; color:var(--ink); line-height:2.0; margin-top:14px; }
-      /* 実績スタットバンド（塗りなし・社報風） */
-      .keynote-box .k-stats { display:flex; flex-wrap:wrap; margin-top:22px; border-top:1px solid rgba(26,26,46,0.12); border-bottom:1px solid rgba(26,26,46,0.12); }
-      .keynote-box .k-stat { flex:1 1 0; min-width:74px; text-align:center; padding:16px 6px; position:relative; }
-      .keynote-box .k-stat + .k-stat::before { content:''; position:absolute; left:0; top:22%; height:56%; width:1px; background:rgba(26,26,46,0.1); }
-      .keynote-box .k-stat-num { display:block; font-family:'Zen Old Mincho',serif; font-size:25px; font-weight:900; color:var(--ink); line-height:1.1; }
-      .keynote-box .k-stat-lbl { display:block; font-size:12px; color:var(--muted); margin-top:8px; letter-spacing:0.5px; }
-      .keynote-box .k-point { font-size:14px; color:var(--muted); line-height:1.95; margin-top:20px; }
-      .keynote-box .k-point strong { color:var(--ink); font-family:'Zen Old Mincho',serif; font-weight:700; }
-      /* 分科会カード（塗り・枠を抑えた落ち着いた配色） */
-      .bunkakai-note { font-size:14px; color:var(--muted); margin-bottom:16px; line-height:1.7; }
-      .bunkakai-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(285px,1fr)); gap:12px; }
-      .bk-card { background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-left:3px solid var(--gold); border-radius:0 10px 10px 0; padding:16px 18px; transition:border-color .2s ease; }
-      .bk-card:hover { border-color:rgba(196,162,101,0.55); }
-      .bk-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px; gap:8px; }
-      .bk-no { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:800; color:var(--ink); letter-spacing:1px; white-space:nowrap; }
-      .bk-region { font-size:12px; color:var(--muted); letter-spacing:0.5px; white-space:nowrap; }
-      .bk-region.local { color:var(--ink); font-weight:700; }
-      .bk-title { font-family:'Zen Old Mincho',serif; font-size:16.5px; font-weight:700; color:var(--ink); line-height:1.55; }
-      .bk-cat { font-size:13px; color:var(--muted); margin-top:7px; }
-      .bk-details { margin-top:11px; border-top:1px solid rgba(26,26,46,0.08); padding-top:9px; }
-      .bk-details summary { cursor:pointer; font-size:13px; color:var(--ink); font-weight:700; list-style:none; }
-      .bk-details summary::-webkit-details-marker { display:none; }
-      .bk-details summary::before { content:'＋ '; }
-      .bk-details[open] summary::before { content:'－ '; }
-      .bk-desc { font-size:13.5px; color:var(--muted); line-height:1.85; margin-top:10px; }
-      .bk-rep { font-size:13.5px; color:var(--ink); margin-top:9px; font-weight:600; }
-      .bk-rep a { color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
-      .bk-rep a:hover { color:var(--ink); }
-      /* 全18分科会のたたみ込み（スマホのみ閉じる） */
-      .bk-all > summary { display:none; }
-      @media (max-width:768px) {
-        .bk-all > summary {
-          display:block; list-style:none; cursor:pointer;
-          text-align:center; padding:14px 16px;
-          border:1px solid rgba(196,162,101,0.7); border-radius:10px;
-          background:rgba(196,162,101,0.12);
-          color:var(--ink); font-size:14.5px; font-weight:700;
-        }
-        .bk-all > summary::-webkit-details-marker { display:none; }
-        .bk-all > summary::after { content:'　▼'; font-size:11px; }
-        .bk-all[open] > summary { margin-bottom:14px; }
-        .bk-all[open] > summary::after { content:'　▲'; font-size:11px; }
-      }
-</style>
-    <div class="official-block reveal">
-      <div class="ob-head">公式プログラム & お申込み</div>
-      <div class="ob-en">Official Program</div>
-      <a href="/pamphlet.pdf" target="_blank" rel="noopener" class="pdf-link"><span class="pdf-ico">📄</span>公式パンフレット（PDF）を開く<span class="pdf-arrow">↗</span></a>
-
-      <div class="apply-box">
-        <div class="fee-row">
-          <div class="fee"><span class="amt">29,000円</span><div class="lbl">懇親会あり（定員1,000名）</div></div>
-          <div class="fee"><span class="amt">16,000円</span><div class="lbl">懇親会なし</div></div>
-        </div>
-        <span class="deadline">申込締切　2026年9月16日（水）</span>
-        <ul>
-          <li><strong style="color:var(--cream);">2日間参加が必須</strong>（宿泊・交通費は別）</li>
-          <li>事前申込制。希望分科会を<strong style="color:var(--cream);">第1・第2希望</strong>で申請し、懇親会の参加/不参加を選択します</li>
-          <li>お申込みは所属同友会（名古屋・第9支部）経由で。会場の都合で第2希望になる場合あり</li>
-          <li>9/17（木）以降のキャンセルは会費を全額ご負担いただきます</li>
-        </ul>
-      </div>
-
-      <div class="keynote-box">
-        <span class="k-tag">2日目 全体会 ─ 基調講演</span>
-        <div class="k-title">奪い合う漁業から分かち合う漁業への転換が、<br>付加価値を生み、持続可能な地域づくりに</div>
-        <div class="k-sub">〜子ども達の未来のために企業家として何を残すのか〜</div>
-        <div class="k-speaker">講師：<strong>後藤 清広 氏</strong>（後藤海産 代表／宮城県漁業協同組合 志津川支所 戸倉出張所カキ部会長）</div>
-        <p class="k-story">東日本大震災で、船も養殖設備もすべてを失った後藤氏。絶望のなか、仲間の漁師と<strong>年100回を超える議論</strong>を重ね、養殖いかだを震災前の<strong>3分の1</strong>まで減らす決断をします。量を追う「奪い合う漁業」から、海を育て地域の未来を守る「分け合う漁業」へ──。その結果、南三陸・戸倉のカキは<strong>生産量2倍・所得1.5倍</strong>を実現し、環境負荷はむしろ低下。2016年には<strong>日本初のASC養殖場認証</strong>を取得しました。</p>
-        <div class="k-stats">
-          <div class="k-stat"><span class="k-stat-num">1/3</span><span class="k-stat-lbl">いかだ削減</span></div>
-          <div class="k-stat"><span class="k-stat-num">2倍</span><span class="k-stat-lbl">生産量</span></div>
-          <div class="k-stat"><span class="k-stat-num">1.5倍</span><span class="k-stat-lbl">所得</span></div>
-          <div class="k-stat"><span class="k-stat-num">日本初</span><span class="k-stat-lbl">ASC認証</span></div>
-        </div>
-        <p class="k-point"><strong>聞きどころ ─</strong> 逆境からの大胆な事業転換、仲間との徹底した合意形成、そして持続可能性と収益の両立。まさに今回のテーマ「逆境こそ挑戦の舞台」を体現する、実践に裏打ちされた報告です。</p>
-      </div>
-
-      <div class="bunkakai-note"><strong style="color:var(--ink);">1日目 分科会（全18）</strong>　─　参加する分科会を<strong style="color:var(--ink);">第1・第2希望</strong>で選んで申込みます。各カードの「詳しく見る」で内容と報告者を確認できます。<br><span style="color:var(--ink); font-weight:700;">★ 第16分科会は自地区・愛知からの報告です。</span></div>
+    <!-- 1日目 分科会（全18） -->
+    <div class="bunkakai-block reveal" id="bunkakai">
+      <div class="ob-head">1日目 分科会（全18）</div>
+      <div class="ob-en">Sessions</div>
+      <div class="bunkakai-note">参加する分科会を<strong style="color:var(--ink);">第1・第2希望</strong>で選んで申込みます。各カードの「詳しく見る」で内容と報告者を確認できます。<br><span style="color:var(--ink); font-weight:700;">★ 第16分科会は自地区・愛知からの報告です。</span></div>
+div>
       <details class="bk-all" open>
       <summary>全18分科会を見る（★第16は愛知・自地区）</summary>
       <div class="bunkakai-grid">
@@ -1653,6 +1580,112 @@
         </div>
       </div>
       </details>
+    </div>
+
+    <!-- 公式プログラム & お申込み -->
+    <style>
+      .official-block, .bunkakai-block { margin-top: 56px; }
+      .bunkakai-block { scroll-margin-top: 12px; }
+      .ob-head { font-family:'Zen Old Mincho',serif; font-size:22px; font-weight:900; color:var(--ink); margin-bottom:6px; }
+      .ob-en { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--ink); margin-bottom:20px; }
+      .pdf-link { display:inline-flex; align-items:center; gap:9px; margin-bottom:26px; padding:12px 22px; border:1px solid var(--ink); border-radius:8px; color:var(--ink); text-decoration:none; font-size:14px; font-weight:700; transition:background .2s ease, color .2s ease; }
+      .pdf-link:hover { background:var(--ink); color:var(--cream); }
+      .pdf-link .pdf-ico { font-size:16px; }
+      .pdf-link .pdf-arrow { font-size:13px; opacity:0.7; }
+      .apply-box { background:var(--ink); color:var(--cream); border-radius:14px; padding:28px 26px; margin-bottom:28px; }
+      .apply-box .fee-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
+      .apply-box .fee { flex:1 1 200px; background:rgba(255,255,255,0.07); border:1px solid rgba(224,198,142,0.4); border-radius:10px; padding:14px 18px; }
+      .apply-box .fee .amt { font-family:'Bricolage Grotesque',sans-serif; font-size:26px; font-weight:800; color:var(--gold-dark); }
+      .apply-box .fee .lbl { font-size:14px; color:var(--on-dark-2); }
+      .apply-box .deadline { display:inline-block; background:transparent; color:var(--gold-dark); font-weight:700; font-size:14px; padding:5px 14px; border:1px solid rgba(224,198,142,0.65); border-radius:6px; letter-spacing:1px; }
+      .apply-box ul { list-style:none; margin:16px 0 0; padding:0; }
+      .apply-box li { font-size:14.5px; color:var(--on-dark-2); padding:3px 0 3px 20px; position:relative; line-height:1.7; }
+      .apply-box li::before { content:'▸'; position:absolute; left:0; color:var(--gold-dark); }
+      /* 基調講演 */
+      .keynote-box { background:var(--card-bg); border:1px solid rgba(196,162,101,0.35); border-radius:12px; padding:24px 26px; margin-bottom:28px; }
+      .keynote-box .k-tag { display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--ink); font-weight:700; margin-bottom:12px; }
+      .keynote-box .k-title { font-family:'Zen Old Mincho',serif; font-size:20px; font-weight:700; color:var(--ink); line-height:1.6; }
+      .keynote-box .k-sub { font-size:14px; color:var(--muted); margin-top:8px; }
+      .keynote-box .k-speaker { font-size:14.5px; color:var(--ink); margin-top:14px; padding-top:14px; border-top:1px solid rgba(26,26,46,0.08); }
+      .keynote-box .k-story { font-size:15px; color:var(--ink); line-height:2.0; margin-top:14px; }
+      /* 実績スタットバンド（塗りなし・社報風） */
+      .keynote-box .k-stats { display:flex; flex-wrap:wrap; margin-top:22px; border-top:1px solid rgba(26,26,46,0.12); border-bottom:1px solid rgba(26,26,46,0.12); }
+      .keynote-box .k-stat { flex:1 1 0; min-width:74px; text-align:center; padding:16px 6px; position:relative; }
+      .keynote-box .k-stat + .k-stat::before { content:''; position:absolute; left:0; top:22%; height:56%; width:1px; background:rgba(26,26,46,0.1); }
+      .keynote-box .k-stat-num { display:block; font-family:'Zen Old Mincho',serif; font-size:25px; font-weight:900; color:var(--ink); line-height:1.1; }
+      .keynote-box .k-stat-lbl { display:block; font-size:12px; color:var(--muted); margin-top:8px; letter-spacing:0.5px; }
+      .keynote-box .k-point { font-size:14px; color:var(--muted); line-height:1.95; margin-top:20px; }
+      .keynote-box .k-point strong { color:var(--ink); font-family:'Zen Old Mincho',serif; font-weight:700; }
+      /* 分科会カード（塗り・枠を抑えた落ち着いた配色） */
+      .bunkakai-note { font-size:14px; color:var(--muted); margin-bottom:16px; line-height:1.7; }
+      .bunkakai-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(285px,1fr)); gap:12px; }
+      .bk-card { background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-left:3px solid var(--gold); border-radius:0 10px 10px 0; padding:16px 18px; transition:border-color .2s ease; }
+      .bk-card:hover { border-color:rgba(196,162,101,0.55); }
+      .bk-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px; gap:8px; }
+      .bk-no { font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:800; color:var(--ink); letter-spacing:1px; white-space:nowrap; }
+      .bk-region { font-size:12px; color:var(--muted); letter-spacing:0.5px; white-space:nowrap; }
+      .bk-region.local { color:var(--ink); font-weight:700; }
+      .bk-title { font-family:'Zen Old Mincho',serif; font-size:16.5px; font-weight:700; color:var(--ink); line-height:1.55; }
+      .bk-cat { font-size:13px; color:var(--muted); margin-top:7px; }
+      .bk-details { margin-top:11px; border-top:1px solid rgba(26,26,46,0.08); padding-top:9px; }
+      .bk-details summary { cursor:pointer; font-size:13px; color:var(--ink); font-weight:700; list-style:none; }
+      .bk-details summary::-webkit-details-marker { display:none; }
+      .bk-details summary::before { content:'＋ '; }
+      .bk-details[open] summary::before { content:'－ '; }
+      .bk-desc { font-size:13.5px; color:var(--muted); line-height:1.85; margin-top:10px; }
+      .bk-rep { font-size:13.5px; color:var(--ink); margin-top:9px; font-weight:600; }
+      .bk-rep a { color:var(--teal); text-decoration:underline; text-underline-offset:2px; }
+      .bk-rep a:hover { color:var(--ink); }
+      /* 全18分科会のたたみ込み（スマホのみ閉じる） */
+      .bk-all > summary { display:none; }
+      @media (max-width:768px) {
+        .bk-all > summary {
+          display:block; list-style:none; cursor:pointer;
+          text-align:center; padding:14px 16px;
+          border:1px solid rgba(196,162,101,0.7); border-radius:10px;
+          background:rgba(196,162,101,0.12);
+          color:var(--ink); font-size:14.5px; font-weight:700;
+        }
+        .bk-all > summary::-webkit-details-marker { display:none; }
+        .bk-all > summary::after { content:'　▼'; font-size:11px; }
+        .bk-all[open] > summary { margin-bottom:14px; }
+        .bk-all[open] > summary::after { content:'　▲'; font-size:11px; }
+      }
+</style>
+    <div class="official-block reveal">
+      <div class="ob-head">公式プログラム & お申込み</div>
+      <div class="ob-en">Official Program</div>
+      <a href="/pamphlet.pdf" target="_blank" rel="noopener" class="pdf-link"><span class="pdf-ico">📄</span>公式パンフレット（PDF）を開く<span class="pdf-arrow">↗</span></a>
+
+      <div class="apply-box">
+        <div class="fee-row">
+          <div class="fee"><span class="amt">29,000円</span><div class="lbl">懇親会あり（定員1,000名）</div></div>
+          <div class="fee"><span class="amt">16,000円</span><div class="lbl">懇親会なし</div></div>
+        </div>
+        <span class="deadline">申込締切　2026年9月16日（水）</span>
+        <ul>
+          <li><strong style="color:var(--cream);">2日間参加が必須</strong>（宿泊・交通費は別）</li>
+          <li>事前申込制。希望分科会を<strong style="color:var(--cream);">第1・第2希望</strong>で申請し、懇親会の参加/不参加を選択します</li>
+          <li>お申込みは所属同友会（名古屋・第9支部）経由で。会場の都合で第2希望になる場合あり</li>
+          <li>9/17（木）以降のキャンセルは会費を全額ご負担いただきます</li>
+        </ul>
+      </div>
+
+      <div class="keynote-box">
+        <span class="k-tag">2日目 全体会 ─ 基調講演</span>
+        <div class="k-title">奪い合う漁業から分かち合う漁業への転換が、<br>付加価値を生み、持続可能な地域づくりに</div>
+        <div class="k-sub">〜子ども達の未来のために企業家として何を残すのか〜</div>
+        <div class="k-speaker">講師：<strong>後藤 清広 氏</strong>（後藤海産 代表／宮城県漁業協同組合 志津川支所 戸倉出張所カキ部会長）</div>
+        <p class="k-story">東日本大震災で、船も養殖設備もすべてを失った後藤氏。絶望のなか、仲間の漁師と<strong>年100回を超える議論</strong>を重ね、養殖いかだを震災前の<strong>3分の1</strong>まで減らす決断をします。量を追う「奪い合う漁業」から、海を育て地域の未来を守る「分け合う漁業」へ──。その結果、南三陸・戸倉のカキは<strong>生産量2倍・所得1.5倍</strong>を実現し、環境負荷はむしろ低下。2016年には<strong>日本初のASC養殖場認証</strong>を取得しました。</p>
+        <div class="k-stats">
+          <div class="k-stat"><span class="k-stat-num">1/3</span><span class="k-stat-lbl">いかだ削減</span></div>
+          <div class="k-stat"><span class="k-stat-num">2倍</span><span class="k-stat-lbl">生産量</span></div>
+          <div class="k-stat"><span class="k-stat-num">1.5倍</span><span class="k-stat-lbl">所得</span></div>
+          <div class="k-stat"><span class="k-stat-num">日本初</span><span class="k-stat-lbl">ASC認証</span></div>
+        </div>
+        <p class="k-point"><strong>聞きどころ ─</strong> 逆境からの大胆な事業転換、仲間との徹底した合意形成、そして持続可能性と収益の両立。まさに今回のテーマ「逆境こそ挑戦の舞台」を体現する、実践に裏打ちされた報告です。</p>
+      </div>
+
     </div>
   </div>
 </section>
