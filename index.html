@@ -18,6 +18,10 @@
 <meta property="og:image:alt" content="青全交のしおり in 仙台 2026年10月1日〜2日">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sendai.apppro-web.com/ogp.jpg">
+<!-- 転送されてURLに余計なクエリが付いても、正規URLに寄せる -->
+<link rel="canonical" href="https://sendai.apppro-web.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f7f3ed">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Old+Mincho:wght@400;700;900&family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1097,6 +1101,30 @@
     letter-spacing: 1px;
   }
   .updated-banner strong { color: var(--ink); }
+  /* 何度も見に来る人が差分だけ追えるように、更新履歴をたたんで置く */
+  .ub-log > summary {
+    cursor: pointer; list-style: none;
+    display: inline-block; padding: 2px 0;
+  }
+  .ub-log > summary::-webkit-details-marker { display: none; }
+  .ub-log .ub-more {
+    margin-left: 10px; color: var(--teal); font-weight: 700;
+    border-bottom: 1px solid rgba(58,84,79,0.4); padding-bottom: 1px;
+    white-space: nowrap;
+  }
+  .ub-log .ub-more::after { content: ' ▾'; }
+  .ub-log[open] .ub-more::after { content: ' ▴'; }
+  .ub-log ul {
+    list-style: none; margin: 10px auto 2px; padding: 12px 16px;
+    max-width: 640px; text-align: left; line-height: 1.85;
+    background: rgba(255,255,255,0.55); border-radius: 8px;
+  }
+  .ub-log li { font-size: 12.5px; letter-spacing: 0; }
+  .ub-log li + li {
+    margin-top: 7px; padding-top: 7px;
+    border-top: 1px solid rgba(18,18,42,0.08);
+  }
+  .ub-log b { color: var(--ink); }
 
   /* ===== フッター ===== */
   footer {
@@ -1244,7 +1272,16 @@
 <body>
 
 <!-- 更新バナー -->
-<div class="updated-banner">最終更新：<strong>2026年8月6日</strong> ─ このページは随時更新されます</div>
+<div class="updated-banner">
+  <details class="ub-log">
+    <summary>最終更新 <strong>8/6</strong> ─ 分科会一覧を日程のすぐ下へ移動しました<span class="ub-more">更新履歴</span></summary>
+    <ul>
+      <li><b>8/6</b>　分科会一覧を日程のすぐ下へ移動。スマホでの見やすさを全体的に調整</li>
+      <li><b>7/20</b>　呼称を「青全交のしおり in 仙台」に変更。カウントダウンを開会（10/1 13:00）基準に</li>
+      <li><b>7/17</b>　公式パンフレットの内容を反映（全18分科会・基調講演・会費・申込締切・会場アクセス・移動手段）</li>
+    </ul>
+  </details>
+</div>
 
 <!-- ページ内ナビ -->
 <nav class="page-nav">
@@ -2261,7 +2298,7 @@ setInterval(updateCountdown, 1000);
   const shareUrl = 'https://sendai.apppro-web.com/';
   const shareData = {
     title: '青全交のしおり in 仙台 2026',
-    text: '第54回 青年経営者全国交流会 in 仙台（10/1〜2）のしおりです。日程・会場・宿泊・移動をまとめています。',
+    text: '第54回 青年経営者全国交流会 in 仙台（10/1〜2）のしおりです。日程・会場・宿泊・移動をまとめています。申込は9/16まで、分科会は第1・第2希望で選びます。',
     url: shareUrl,
   };
 
