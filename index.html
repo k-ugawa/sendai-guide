@@ -363,32 +363,32 @@
   }
 
   /* みんなの仙台マップ（Googleマイマップ埋め込み） */
-  .map-embed {
+  .mymap-embed {
     margin-bottom: 40px;
     background: var(--card-bg);
     border: 1px solid rgba(0,0,0,0.06);
     padding: 24px 28px 28px;
     position: relative;
   }
-  .map-embed::before {
+  .mymap-embed::before {
     content: "";
     position: absolute; top: 0; left: 0;
     width: 100%; height: 3px;
     background: var(--gold);
   }
-  .map-embed h3 {
+  .mymap-embed h3 {
     font-family: "Zen Old Mincho", serif;
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 8px;
   }
-  .map-embed .map-lead {
+  .mymap-embed .mymap-lead {
     font-size: 15px;
     color: var(--muted);
     line-height: 1.7;
     margin-bottom: 16px;
   }
-  .map-embed .map-frame {
+  .mymap-embed .mymap-frame {
     position: relative;
     width: 100%;
     height: 0;
@@ -396,23 +396,23 @@
     border: 1px solid rgba(0,0,0,0.1);
     background: #e9e5df;
   }
-  .map-embed .map-frame iframe {
+  .mymap-embed .mymap-frame iframe {
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     border: 0;
   }
-  .map-embed .map-legend {
+  .mymap-embed .mymap-legend {
     display: flex; flex-wrap: wrap;
     gap: 8px 20px;
     margin-top: 14px;
     font-size: 14px;
     color: var(--muted);
   }
-  .map-embed .map-legend b { color: var(--ink); font-weight: 700; }
-  .map-embed .map-actions { margin-top: 14px; }
+  .mymap-embed .mymap-legend b { color: var(--ink); font-weight: 700; }
+  .mymap-embed .mymap-actions { margin-top: 14px; }
   @media (max-width: 768px) {
-    .map-embed { padding: 20px 16px 22px; }
-    .map-embed .map-frame { padding-bottom: 120%; }
+    .mymap-embed { padding: 20px 16px 22px; }
+    .mymap-embed .mymap-frame { padding-bottom: 120%; }
   }
 
   /* ナイトタイムフロー */
@@ -1790,19 +1790,19 @@
       </div>
     </div>
 
-    <div class="map-embed reveal">
+    <div class="mymap-embed reveal">
       <h3>🗺 みんなの仙台マップ</h3>
-      <p class="map-lead">会場・ランチ・夜の店・朝食をひとつの地図にまとめました。地図左上のボタンでジャンル別の一覧を開け、ピンを押すと評価・営業時間・向いている場面が出ます。スマホなら「Googleマップで大きく開く」が見やすいです。</p>
-      <div class="map-frame">
+      <p class="mymap-lead">会場・ランチ・夜の店・朝食をひとつの地図にまとめました。地図左上のボタンでジャンル別の一覧を開け、ピンを押すと評価・営業時間・向いている場面が出ます。スマホなら「Googleマップで大きく開く」が見やすいです。</p>
+      <div class="mymap-frame">
         <iframe src="https://www.google.com/maps/d/embed?mid=10tuS1GGsep5CeTrfwWhMqOBfyfZpY-A&amp;ehbc=2E312F&amp;ll=38.2625%2C140.8745&amp;z=15" title="2026青全交in仙台 みんなの仙台マップ" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <div class="map-legend">
+      <div class="mymap-legend">
         <span><b>会場</b> 分科会・懇親会・全体会</span>
         <span><b>昼・ランチ</b> 牛タン・海鮮丼</span>
         <span><b>夜・居酒屋</b> 国分町・二次会</span>
         <span><b>朝食</b> 10/2 全体会前・仙台駅</span>
       </div>
-      <div class="map-actions">
+      <div class="mymap-actions">
         <a href="https://www.google.com/maps/d/viewer?mid=10tuS1GGsep5CeTrfwWhMqOBfyfZpY-A" target="_blank" rel="noopener" class="ext-link">Googleマップで大きく開く</a>
       </div>
     </div>
