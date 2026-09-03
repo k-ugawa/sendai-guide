@@ -362,6 +362,59 @@
     line-height: 1.7;
   }
 
+  /* みんなの仙台マップ（Googleマイマップ埋め込み） */
+  .map-embed {
+    margin-bottom: 40px;
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 24px 28px 28px;
+    position: relative;
+  }
+  .map-embed::before {
+    content: "";
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--gold);
+  }
+  .map-embed h3 {
+    font-family: "Zen Old Mincho", serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .map-embed .map-lead {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .map-embed .map-frame {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 62%;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: #e9e5df;
+  }
+  .map-embed .map-frame iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+  .map-embed .map-legend {
+    display: flex; flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .map-embed .map-legend b { color: var(--ink); font-weight: 700; }
+  .map-embed .map-actions { margin-top: 14px; }
+  @media (max-width: 768px) {
+    .map-embed { padding: 20px 16px 22px; }
+    .map-embed .map-frame { padding-bottom: 120%; }
+  }
+
   /* ナイトタイムフロー */
   .night-flow {
     margin-top: 48px;
@@ -1274,11 +1327,11 @@
 <!-- 更新バナー -->
 <div class="updated-banner">
   <details class="ub-log">
-    <summary>最終更新 <strong>8/6</strong> ─ 分科会一覧を日程のすぐ下へ移動しました<span class="ub-more">更新履歴</span></summary>
+    <summary>最終更新 <strong>9/3</strong> ─ グルメ欄に「みんなの仙台マップ」（会場・ランチ・夜・朝食の地図）を追加しました<span class="ub-more">更新履歴</span></summary>
     <ul>
+      <li><b>9/3</b>　グルメ欄に「みんなの仙台マップ」を追加。会場3か所＋ランチ5軒・夜の店7軒・朝食2軒を地図で確認できます</li>
       <li><b>8/6</b>　分科会一覧を日程のすぐ下へ移動。スマホでの見やすさを全体的に調整</li>
       <li><b>7/20</b>　呼称を「青全交のしおり in 仙台」に変更。カウントダウンを開会（10/1 13:00）基準に</li>
-      <li><b>7/17</b>　公式パンフレットの内容を反映（全18分科会・基調講演・会費・申込締切・会場アクセス・移動手段）</li>
     </ul>
   </details>
 </div>
@@ -1734,6 +1787,23 @@
       <div class="section-title-group">
         <h2>グルメ & 楽しみ方</h2>
         <div class="en">Gourmet & Entertainment</div>
+      </div>
+    </div>
+
+    <div class="map-embed reveal">
+      <h3>🗺 みんなの仙台マップ</h3>
+      <p class="map-lead">会場・ランチ・夜の店・朝食をひとつの地図にまとめました。地図左上のボタンでジャンル別の一覧を開け、ピンを押すと評価・営業時間・向いている場面が出ます。スマホなら「Googleマップで大きく開く」が見やすいです。</p>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/d/embed?mid=10tuS1GGsep5CeTrfwWhMqOBfyfZpY-A&amp;ehbc=2E312F&amp;ll=38.2625%2C140.8745&amp;z=15" title="2026青全交in仙台 みんなの仙台マップ" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="map-legend">
+        <span><b>会場</b> 分科会・懇親会・全体会</span>
+        <span><b>昼・ランチ</b> 牛タン・海鮮丼</span>
+        <span><b>夜・居酒屋</b> 国分町・二次会</span>
+        <span><b>朝食</b> 10/2 全体会前・仙台駅</span>
+      </div>
+      <div class="map-actions">
+        <a href="https://www.google.com/maps/d/viewer?mid=10tuS1GGsep5CeTrfwWhMqOBfyfZpY-A" target="_blank" rel="noopener" class="ext-link">Googleマップで大きく開く</a>
       </div>
     </div>
 
