@@ -1327,12 +1327,12 @@
 <!-- 更新バナー -->
 <div class="updated-banner">
   <details class="ub-log">
-    <summary>最終更新 <strong>9/20</strong> ─ 参加申込の受付終了を反映しました<span class="ub-more">更新履歴</span></summary>
+    <summary>最終更新 <strong>9/20</strong> ─ 受付終了の反映と、懇親会場への移動の目安を追加しました<span class="ub-more">更新履歴</span></summary>
     <ul>
+      <li><b>9/20</b>　仙台国際センターで分科会に参加される方向けに、懇親会場（江陽グランドホテル）までの移動の目安を「エリアガイド」の距離感まとめに追加しました</li>
       <li><b>9/20</b>　参加申込の受付が終了しました。愛知県からの参加者は188名です（キャンセル規定は引き続き掲載）</li>
       <li><b>9/18</b>　分科会ごとの会場（建物・階・部屋）を掲載しました。分科会の欄の「分科会会場のご案内」でご確認いただけます</li>
       <li><b>9/3</b>　飛行機の時刻を各社の 10月ダイヤ（7/1〜10/24）で再確認。掲載7便は変更なし。前泊向けに IBEX の 12:45発・20:05発を追加</li>
-      <li><b>9/3</b>　グルメ欄に「みんなの仙台マップ」を追加。会場3か所＋ランチ5軒・夜の店7軒・朝食2軒を地図で確認できます</li>
     </ul>
   </details>
 </div>
@@ -1502,7 +1502,7 @@
     <div class="bunkakai-block reveal" id="bunkakai">
       <div class="ob-head">1日目 分科会（全18）</div>
       <div class="ob-en">Sessions</div>
-      <div class="bunkakai-note">各分科会の<strong style="color:var(--ink);">会場（建物・階・部屋）</strong>は、下の分科会ごとのカードに記載しています。建物名を押すと、会場の地図とアクセス方法をご覧いただけます。<br>会場は3つの建物に分かれており、江陽グランドホテルとパレスへいあんは本町、<strong style="color:var(--ink);">仙台国際センターは青葉山にあり、本町からは徒歩圏外</strong>です（地下鉄東西線「国際センター駅」下車）。仙台国際センターで分科会に参加され、懇親会にもご参加の方は、懇親会会場（江陽グランドホテル・19:00開始）までの移動時間をお見込みください。<br><span style="color:var(--ink); font-weight:700;">★ 第16分科会は自地区・愛知からの報告です。</span></div>
+      <div class="bunkakai-note">各分科会の<strong style="color:var(--ink);">会場（建物・階・部屋）</strong>は、下の分科会ごとのカードに記載しています。建物名を押すと、会場の地図とアクセス方法をご覧いただけます。<br>会場は3つの建物に分かれており、江陽グランドホテルとパレスへいあんは本町、<strong style="color:var(--ink);">仙台国際センターは青葉山にあり、本町からは徒歩圏外</strong>です（地下鉄東西線「国際センター駅」下車）。仙台国際センターで分科会に参加され、懇親会にもご参加の方は、懇親会会場（江陽グランドホテル・19:00開始）への移動が必要です。<a href="#distance">移動の目安はこちら</a>。<br><span style="color:var(--ink); font-weight:700;">★ 第16分科会は自地区・愛知からの報告です。</span></div>
       <!-- 分科会会場のご案内。会場を載せるのはこの一覧だけ（出典: 主催の「分科会会場一覧」PDF） -->
       <details class="bk-all" open>
       <summary>全18分科会の会場と内容を見る（★第16は愛知・自地区）</summary>
@@ -1729,6 +1729,8 @@
       .keynote-box .k-point strong { color:var(--ink); font-family:'Zen Old Mincho',serif; font-weight:700; }
       /* 分科会カード（塗り・枠を抑えた落ち着いた配色） */
       .bunkakai-note { font-size:14px; color:var(--muted); margin-bottom:16px; line-height:1.7; }
+      .bunkakai-note a { color:var(--teal); font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+      .distance-summary[id] { scroll-margin-top:12px; }
       .bunkakai-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(285px,1fr)); gap:12px; }
       .bk-card { background:var(--card-bg); border:1px solid rgba(26,26,46,0.1); border-left:3px solid var(--gold); border-radius:0 10px 10px 0; padding:16px 18px; transition:border-color .2s ease; }
       .bk-card:hover { border-color:rgba(196,162,101,0.55); }
@@ -2267,7 +2269,7 @@
     </div>
 
     <!-- 距離感まとめ -->
-    <div class="distance-summary reveal">
+    <div class="distance-summary reveal" id="distance">
       <h3>距離感まとめ ─ 繁華街は徒歩圏内</h3>
       <div class="distance-items">
         <div class="dist-row">
@@ -2281,6 +2283,12 @@
           <span class="dist-arrow">→</span>
           <span class="dist-to">仙台国際センター（2日目会場）</span>
           <span class="dist-val">地下鉄東西線 約5分 / タクシー約10分</span>
+        </div>
+        <div class="dist-row">
+          <span class="dist-from">仙台国際センター</span>
+          <span class="dist-arrow">→</span>
+          <span class="dist-to">江陽グランドホテル（1日目 懇親会場）</span>
+          <span class="dist-val">地下鉄東西線で仙台駅へ約5分 ＋ 仙台駅から徒歩13分</span>
         </div>
         <div class="dist-row">
           <span class="dist-from">国分町</span>
