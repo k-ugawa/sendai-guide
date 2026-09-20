@@ -1702,13 +1702,15 @@
       .pdf-link .pdf-ico { font-size:16px; }
       .pdf-link .pdf-arrow { font-size:13px; opacity:0.7; }
       .apply-box { background:var(--ink); color:var(--cream); border-radius:14px; padding:28px 26px; margin-bottom:28px; }
-      .apply-box .fee-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
+      .apply-box .apply-lead { font-family:'Zen Old Mincho',serif; font-size:20px; font-weight:700; color:var(--gold-dark); line-height:1.6; margin-bottom:16px; }
+      .apply-box .fee-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:16px; }
+      .apply-box .apply-msg { font-size:15px; color:var(--cream); line-height:1.9; }
       .apply-box .fee { flex:0 1 260px; background:rgba(255,255,255,0.07); border:1px solid rgba(224,198,142,0.4); border-radius:10px; padding:14px 18px; }
       .apply-box .fee .amt { font-family:'Bricolage Grotesque',sans-serif; font-size:26px; font-weight:800; color:var(--gold-dark); }
       .apply-box .fee .lbl { font-size:14px; color:var(--on-dark-2); }
       .apply-box .deadline { display:inline-block; background:transparent; color:var(--gold-dark); font-weight:700; font-size:14px; padding:5px 14px; border:1px solid rgba(224,198,142,0.65); border-radius:6px; letter-spacing:1px; }
-      .apply-box ul { list-style:none; margin:16px 0 0; padding:0; }
-      .apply-box li { font-size:14.5px; color:var(--on-dark-2); padding:3px 0 3px 20px; position:relative; line-height:1.7; }
+      .apply-box ul { list-style:none; margin:18px 0 0; padding:16px 0 0; border-top:1px solid rgba(255,255,255,0.14); }
+      .apply-box li { font-size:13.5px; color:var(--on-dark-3); padding:3px 0 3px 20px; position:relative; line-height:1.7; }
       .apply-box li::before { content:'▸'; position:absolute; left:0; color:var(--gold-dark); }
       /* 基調講演 */
       .keynote-box { background:var(--card-bg); border:1px solid rgba(196,162,101,0.35); border-radius:12px; padding:24px 26px; margin-bottom:28px; }
@@ -1773,10 +1775,11 @@
       <a href="/pamphlet.pdf" target="_blank" rel="noopener" class="pdf-link"><span class="pdf-ico">📄</span>公式パンフレット（PDF）を開く<span class="pdf-arrow">↗</span></a>
 
       <div class="apply-box">
+        <div class="apply-lead">たくさんのお申込み、ありがとうございました</div>
         <div class="fee-row">
           <div class="fee"><span class="amt">188名</span><div class="lbl">愛知県からの参加者</div></div>
         </div>
-        <span class="deadline">参加申込の受付は終了しました</span>
+        <p class="apply-msg">おかげさまで、参加申込の受付は終了しました。<br>10月1日、仙台でお会いしましょう。</p>
         <ul>
           <li>9/17（木）以降のキャンセルは、会費（懇親会あり 29,000円／懇親会なし 16,000円）を<strong style="color:var(--cream);">全額ご負担</strong>いただきます</li>
         </ul>
