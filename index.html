@@ -118,45 +118,26 @@
     margin-bottom: 12px;
     letter-spacing: 2px;
   }
-  .countdown {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-  }
-  .cd-item { text-align: center; }
-  .cd-num {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 800;
+  /* 閉会後のお礼のご挨拶（開催前はここにカウントダウンを置いていた） */
+  .thanks { margin-top: 38px; }
+  .thanks-lead {
+    font-family: 'Zen Old Mincho', serif;
+    font-size: clamp(24px, 4.2vw, 34px);
+    font-weight: 700;
     color: var(--gold-dark);
-    display: block;
-    line-height: 1;
-    min-width: 70px;
+    line-height: 1.5;
   }
-  .cd-label {
-    font-size: 11px;
-    letter-spacing: 3px;
+  .thanks-body {
+    font-size: 16px;
+    color: var(--cream);
+    line-height: 2;
+    margin-top: 16px;
+  }
+  .thanks-note {
+    font-size: 13px;
     color: var(--on-dark-3);
-    text-transform: uppercase;
-    margin-top: 6px;
-    display: block;
-  }
-  .cd-sep {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 36px;
-    font-weight: 800;
-    color: rgba(224,198,142,0.5);
-    margin-top: -16px;
-  }
-  .cd-message {
-    font-size: 15px;
-    color: var(--on-dark-3);
-    margin-top: 32px;
-    margin-bottom: 12px;
-    letter-spacing: 3px;
-    text-align: center;
+    line-height: 1.8;
+    margin-top: 18px;
   }
   .scroll-hint {
     position: absolute;
@@ -1220,9 +1201,8 @@
     .hero h1 { font-size: 36px; letter-spacing: 4px; }
     .hero-sub { font-size: 16px; }
     .hero-label { font-size: 11px; letter-spacing: 4px; }
-    .cd-num { font-size: 32px; min-width: 50px; }
-    .cd-sep { font-size: 24px; }
-    .cd-label { font-size: 9px; }
+    .thanks-lead { font-size: 22px; }
+    .thanks-body { font-size: 14.5px; line-height: 1.95; }
     .scroll-hint { display: none; }
 
     /* セクションヘッダー */
@@ -1327,12 +1307,12 @@
 <!-- 更新バナー -->
 <div class="updated-banner">
   <details class="ub-log">
-    <summary>最終更新 <strong>9/20</strong> ─ 受付終了の反映と、移動・観光情報の見直しを行いました<span class="ub-more">更新履歴</span></summary>
+    <summary>最終更新 <strong>10/6</strong> ─ 閉会にあたり、お礼のご挨拶を掲載しました<span class="ub-more">更新履歴</span></summary>
     <ul>
+      <li><b>10/6</b>　第54回 青全交 in 仙台が閉会しました。ご参加とご利用のお礼を掲載し、開催までのカウントダウンを終了しました</li>
       <li><b>9/20</b>　宿泊エリアから懇親会場までの所要時間をエリア別に修正し、瑞鳳殿の御開帳の記載を公式に合わせました</li>
       <li><b>9/20</b>　仙台国際センターで分科会に参加される方向けに、懇親会場（江陽グランドホテル）までの移動の目安を「エリアガイド」の距離感まとめに追加しました</li>
       <li><b>9/20</b>　参加申込の受付が終了しました。愛知県からの参加者は188名です（キャンセル規定は引き続き掲載）</li>
-      <li><b>9/18</b>　分科会ごとの会場（建物・階・部屋）を掲載しました。分科会の欄の「分科会会場のご案内」でご確認いただけます</li>
     </ul>
   </details>
 </div>
@@ -1353,27 +1333,10 @@
     <h1>青全交のしおり<br><span>in 仙台</span></h1>
     <p class="hero-sub">2026.10.1（木）13:00 ─ 10.2（金）12:15</p>
     <p style="font-size:15px; color:var(--on-dark-2); margin-top:8px; letter-spacing:1px; font-style:italic;">「逆境こそ挑戦の舞台！～"旗"を掲げ、共に未来を創ろう」</p>
-    <p class="cd-message" id="cd-message"></p>
-    <div class="countdown" id="countdown">
-      <div class="cd-item">
-        <span class="cd-num" id="cd-days">---</span>
-        <span class="cd-label">Days</span>
-      </div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item">
-        <span class="cd-num" id="cd-hours">--</span>
-        <span class="cd-label">Hours</span>
-      </div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item">
-        <span class="cd-num" id="cd-min">--</span>
-        <span class="cd-label">Min</span>
-      </div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item">
-        <span class="cd-num" id="cd-sec">--</span>
-        <span class="cd-label">Sec</span>
-      </div>
+    <div class="thanks">
+      <p class="thanks-lead">2日間、ありがとうございました</p>
+      <p class="thanks-body">第54回 青全交 in 仙台は、10月1日・2日の日程を終えて閉会しました。<br>このしおりをご覧いただき、ありがとうございました。</p>
+      <p class="thanks-note">このページは、開催前のご案内のまま記録として残しています。</p>
     </div>
   </div>
   <div class="scroll-hint">SCROLL ↓</div>
@@ -1777,14 +1740,11 @@
       <a href="/pamphlet.pdf" target="_blank" rel="noopener" class="pdf-link"><span class="pdf-ico">📄</span>公式パンフレット（PDF）を開く<span class="pdf-arrow">↗</span></a>
 
       <div class="apply-box">
-        <div class="apply-lead">たくさんのお申込み、ありがとうございました</div>
+        <div class="apply-lead">開催の記録</div>
         <div class="fee-row">
           <div class="fee"><span class="amt">188名</span><div class="lbl">愛知県からの参加者</div></div>
         </div>
-        <p class="apply-msg">おかげさまで、参加申込の受付は終了しました。<br>10月1日、仙台でお会いしましょう。</p>
-        <ul>
-          <li>9/17（木）以降のキャンセルは、会費（懇親会あり 29,000円／懇親会なし 16,000円）を<strong style="color:var(--cream);">全額ご負担</strong>いただきます</li>
-        </ul>
+        <p class="apply-msg">10月1日・2日の2日間、仙台で開催されました。</p>
       </div>
 
       <div class="keynote-box">
@@ -2377,31 +2337,6 @@
 </nav>
 
 <script>
-// カウントダウン
-const targetDate = new Date('2026-10-01T13:00:00+09:00'); // 1日目 分科会 開会
-function updateCountdown() {
-  const now = new Date();
-  const diff = targetDate - now;
-  if (diff <= 0) {
-    document.getElementById('cd-message').textContent = '開催中です！';
-    document.getElementById('cd-days').textContent = '0';
-    document.getElementById('cd-hours').textContent = '00';
-    document.getElementById('cd-min').textContent = '00';
-    document.getElementById('cd-sec').textContent = '00';
-    return;
-  }
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const min = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const sec = Math.floor((diff % (1000 * 60)) / 1000);
-  document.getElementById('cd-days').textContent = days;
-  document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-  document.getElementById('cd-min').textContent = String(min).padStart(2, '0');
-  document.getElementById('cd-sec').textContent = String(sec).padStart(2, '0');
-  document.getElementById('cd-message').textContent = '開催まであと…';
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
 
 // 共有ボタン（スマホ=OSの共有シート／PC=URLをコピー）
 (function () {
@@ -2412,7 +2347,7 @@ setInterval(updateCountdown, 1000);
   const shareUrl = 'https://sendai.apppro-web.com/';
   const shareData = {
     title: '青全交のしおり in 仙台 2026',
-    text: '第54回 青年経営者全国交流会 in 仙台（10/1〜2）のしおりです。日程・会場・宿泊・移動をまとめています。分科会ごとの会場（建物・部屋）も掲載しています。',
+    text: '第54回 青年経営者全国交流会 in 仙台（10/1〜2）のしおりです。開催は終了しました。日程・会場・分科会・宿泊・移動の記録を残しています。',
     url: shareUrl,
   };
 
